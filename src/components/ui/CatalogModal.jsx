@@ -177,25 +177,7 @@ export const CatalogModal = ({ isOpen, onClose, onSelectPlantForInspection, onAd
                   </div>
 
                   {/* Action buttons */}
-                  <div className="flex items-center gap-1.5 pt-2 border-t border-slate-100">
-                    <button
-                      onClick={() => onAddToCart && onAddToCart(plant)}
-                      className="flex-1 py-2.5 rounded-xl text-xs font-black flex items-center justify-center gap-1 bg-emerald-700 text-white hover:bg-emerald-800 transition-colors shadow-sm"
-                    >
-                      🛒 Add to Cart
-                    </button>
-
-                    <button
-                      onClick={() => {
-                        onClose();
-                        onSelectPlantForInspection(plant.id);
-                      }}
-                      className="py-2.5 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1 text-sage-900 bg-slate-100 hover:bg-slate-200 transition-all border border-slate-200"
-                    >
-                      <Eye className="w-3.5 h-3.5" />
-                      Inspect
-                    </button>
-
+                  <div className="flex flex-col gap-2 pt-2 border-t border-slate-100">
                     <a
                       href={generatePlantWhatsAppLink({
                         plantName: plant.name,
@@ -203,11 +185,32 @@ export const CatalogModal = ({ isOpen, onClose, onSelectPlantForInspection, onAd
                       })}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2.5 rounded-xl bg-emerald-100 text-emerald-800 hover:bg-emerald-200 transition-colors"
-                      title="Order on WhatsApp 0304-0450065"
+                      className="w-full py-2.5 rounded-xl bg-emerald-700 text-white hover:bg-emerald-800 transition-colors text-xs font-black flex items-center justify-center gap-1.5 shadow-sm"
+                      title="Direct 1-Click Order on WhatsApp"
                     >
-                      <MessageCircle className="w-4 h-4 fill-emerald-800/20" />
+                      <MessageCircle className="w-4 h-4 fill-white/20" />
+                      <span>Direct WhatsApp (03040450065)</span>
                     </a>
+
+                    <div className="flex items-center gap-1.5">
+                      <button
+                        onClick={() => onAddToCart && onAddToCart(plant)}
+                        className="flex-1 py-2.5 rounded-xl text-xs font-black flex items-center justify-center gap-1 bg-slate-100 text-emerald-950 hover:bg-emerald-50 border border-slate-200 transition-colors"
+                      >
+                        🛒 Add to Cart
+                      </button>
+
+                      <button
+                        onClick={() => {
+                          onClose();
+                          onSelectPlantForInspection(plant.id);
+                        }}
+                        className="py-2.5 px-4 rounded-xl text-xs font-bold flex items-center justify-center gap-1 text-emerald-950 bg-slate-100 hover:bg-slate-200 transition-all border border-slate-200"
+                      >
+                        <Eye className="w-3.5 h-3.5" />
+                        Inspect
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
