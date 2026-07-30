@@ -37,13 +37,13 @@ export const PlantInspectorModal = ({
 
   return (
     <div className="fixed inset-y-0 right-0 z-50 w-full max-w-xl p-4 md:p-6 flex flex-col pointer-events-auto">
-      <div className="glass-panel-bright text-sage-900 h-full rounded-3xl p-6 overflow-y-auto flex flex-col justify-between shadow-2xl border border-cream-200">
+      <div className="glass-panel-bright text-sage-900 h-full rounded-3xl p-6 overflow-y-auto flex flex-col justify-between shadow-2xl border border-cream-200 bg-white/95 backdrop-blur-md">
         {/* Header Bar */}
         <div>
           <div className="flex items-center justify-between mb-4 border-b border-cream-200 pb-4">
-            <div className="inline-flex items-center gap-2 text-xs font-bold text-gold-600 uppercase tracking-widest">
-              <Sparkles className="w-4 h-4" />
-              <span>3D INSPECTION VIEW</span>
+            <div className="inline-flex items-center gap-2 text-xs font-bold text-emerald-800 uppercase tracking-widest">
+              <Sparkles className="w-4 h-4 text-amber-500" />
+              <span>BOTANICAL PLANT INSPECTOR</span>
             </div>
             <button
               onClick={onClose}
@@ -56,12 +56,12 @@ export const PlantInspectorModal = ({
           {/* Plant Title & Badge */}
           <div className="flex items-start justify-between mb-2">
             <div>
-              <h2 className="font-serif text-2xl md:text-3xl font-bold text-sage-900 mb-1">
+              <h2 className="font-serif text-2xl md:text-3xl font-bold text-sage-950 mb-1">
                 {plant.name}
               </h2>
               <p className="text-xs italic text-sage-600">{plant.latinName}</p>
             </div>
-            <span className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold border border-emerald-300 whitespace-nowrap">
+            <span className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-extrabold border border-emerald-300 whitespace-nowrap">
               {plant.badge}
             </span>
           </div>
@@ -72,8 +72,8 @@ export const PlantInspectorModal = ({
 
           {/* 1. Pot Customizer Selector */}
           <div className="mb-6 p-4 rounded-2xl bg-white border border-cream-200 shadow-sm">
-            <h4 className="text-xs font-bold text-gold-600 uppercase tracking-wider mb-3">
-              Select Custom 3D Planter Pot
+            <h4 className="text-xs font-extrabold text-emerald-800 uppercase tracking-wider mb-3">
+              Select Custom Planter Pot
             </h4>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
               {POT_OPTIONS.map((pot) => (
@@ -82,7 +82,7 @@ export const PlantInspectorModal = ({
                   onClick={() => onPotChange(pot.id)}
                   className={`p-2.5 rounded-xl text-left border text-xs transition-all ${
                     activePotType === pot.id
-                      ? 'border-gold-500 bg-gold-300/20 text-sage-900 font-bold shadow-sm'
+                      ? 'border-emerald-600 bg-emerald-50 text-sage-950 font-black shadow-sm'
                       : 'border-cream-200 bg-cream-50 text-sage-700 hover:bg-cream-100'
                   }`}
                 >
@@ -104,9 +104,9 @@ export const PlantInspectorModal = ({
           {/* 2. Growth Timeline Simulator */}
           <div className="mb-6 p-4 rounded-2xl bg-white border border-cream-200 shadow-sm">
             <div className="flex items-center justify-between mb-3">
-              <h4 className="text-xs font-bold text-gold-600 uppercase tracking-wider flex items-center gap-1.5">
+              <h4 className="text-xs font-extrabold text-emerald-800 uppercase tracking-wider flex items-center gap-1.5">
                 <Calendar className="w-3.5 h-3.5" />
-                Growth Timeline Simulator
+                Growth Timeline Horizon
               </h4>
               <span className="text-[10px] text-sage-600 font-semibold">Select Age Horizon</span>
             </div>
@@ -118,7 +118,7 @@ export const PlantInspectorModal = ({
                   onClick={() => setSelectedTimeline(key)}
                   className={`flex-1 py-1.5 rounded-lg text-xs font-bold transition-all ${
                     selectedTimeline === key
-                      ? 'bg-sage-900 text-cream-50 shadow-md'
+                      ? 'bg-emerald-800 text-white shadow-md'
                       : 'text-sage-700 hover:text-sage-900'
                   }`}
                 >
@@ -138,7 +138,7 @@ export const PlantInspectorModal = ({
               <Sun className="w-5 h-5 text-amber-500" />
               <div>
                 <div className="text-[10px] text-sage-600 uppercase font-semibold">Sunlight</div>
-                <div className="text-xs font-bold text-sage-900">{plant.sunlight}</div>
+                <div className="text-xs font-bold text-sage-950">{plant.sunlight}</div>
               </div>
             </div>
 
@@ -146,7 +146,7 @@ export const PlantInspectorModal = ({
               <Droplets className="w-5 h-5 text-blue-500" />
               <div>
                 <div className="text-[10px] text-sage-600 uppercase font-semibold">Watering</div>
-                <div className="text-xs font-bold text-sage-900">{plant.watering}</div>
+                <div className="text-xs font-bold text-sage-950">{plant.watering}</div>
               </div>
             </div>
 
@@ -154,7 +154,7 @@ export const PlantInspectorModal = ({
               <Wind className="w-5 h-5 text-emerald-600" />
               <div>
                 <div className="text-[10px] text-sage-600 uppercase font-semibold">Air Cleaner</div>
-                <div className="text-xs font-bold text-sage-900">{plant.airPurifying}% Score</div>
+                <div className="text-xs font-bold text-sage-950">{plant.airPurifying}% Score</div>
               </div>
             </div>
 
@@ -162,7 +162,7 @@ export const PlantInspectorModal = ({
               <ShieldAlert className="w-5 h-5 text-orange-500" />
               <div>
                 <div className="text-[10px] text-sage-600 uppercase font-semibold">Pet Safety</div>
-                <div className="text-xs font-bold text-sage-900">
+                <div className="text-xs font-bold text-sage-950">
                   {plant.petFriendly ? 'Pet Safe' : 'Keep Away Pets'}
                 </div>
               </div>
@@ -177,7 +177,7 @@ export const PlantInspectorModal = ({
               <span className="text-[10px] text-sage-600 uppercase tracking-widest block font-semibold">
                 TOTAL ESTIMATED COST
               </span>
-              <span className="font-serif text-2xl md:text-3xl font-bold text-sage-900">
+              <span className="font-serif text-2xl md:text-3xl font-bold text-emerald-900">
                 PKR {totalPrice.toLocaleString()}
               </span>
             </div>
@@ -186,14 +186,14 @@ export const PlantInspectorModal = ({
             <div className="flex items-center gap-3 bg-cream-100 rounded-full px-3.5 py-1.5 border border-cream-200">
               <button
                 onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                className="text-lg font-extrabold text-sage-900 hover:scale-110"
+                className="text-lg font-extrabold text-sage-950 hover:scale-110"
               >
                 -
               </button>
-              <span className="text-sm font-bold text-sage-900 w-6 text-center">{quantity}</span>
+              <span className="text-sm font-bold text-sage-950 w-6 text-center">{quantity}</span>
               <button
                 onClick={() => setQuantity(quantity + 1)}
-                className="text-lg font-extrabold text-sage-900 hover:scale-110"
+                className="text-lg font-extrabold text-sage-950 hover:scale-110"
               >
                 +
               </button>
@@ -207,19 +207,19 @@ export const PlantInspectorModal = ({
               placeholder="Your Name"
               value={customerName}
               onChange={(e) => setCustomerName(e.target.value)}
-              className="w-full px-3 py-2 rounded-xl text-xs bg-white border border-cream-200 text-sage-900 placeholder-sage-400 focus:outline-none focus:ring-1 focus:ring-sage-500 font-semibold"
+              className="w-full px-3 py-2 rounded-xl text-xs bg-white border border-cream-200 text-sage-950 placeholder-sage-400 focus:outline-none focus:ring-1 focus:ring-emerald-500 font-semibold"
             />
             <input
               type="tel"
               placeholder="0304-0450065"
               value={customerPhone}
               onChange={(e) => setCustomerPhone(e.target.value)}
-              className="w-full px-3 py-2 rounded-xl text-xs bg-white border border-cream-200 text-sage-900 placeholder-sage-400 focus:outline-none focus:ring-1 focus:ring-sage-500 font-semibold"
+              className="w-full px-3 py-2 rounded-xl text-xs bg-white border border-cream-200 text-sage-950 placeholder-sage-400 focus:outline-none focus:ring-1 focus:ring-emerald-500 font-semibold"
             />
             <select
               value={customerCity}
               onChange={(e) => setCustomerCity(e.target.value)}
-              className="w-full px-3 py-2 rounded-xl text-xs bg-white border border-cream-200 text-sage-900 focus:outline-none focus:ring-1 focus:ring-sage-500 font-semibold"
+              className="w-full px-3 py-2 rounded-xl text-xs bg-white border border-cream-200 text-sage-950 focus:outline-none focus:ring-1 focus:ring-emerald-500 font-semibold"
             >
               <option value="Lahore">📍 Lahore</option>
               <option value="Arifwala">📍 Arifwala</option>
@@ -247,10 +247,10 @@ export const PlantInspectorModal = ({
 
             <button
               onClick={handleOrderWhatsApp}
-              className="flex-1 btn-luxury-primary py-3.5 rounded-2xl text-sm font-bold flex items-center justify-center gap-2 shadow-xl"
+              className="flex-1 bg-gradient-to-r from-emerald-600 to-teal-700 text-white py-3.5 rounded-2xl text-sm font-extrabold flex items-center justify-center gap-2 shadow-xl hover:from-emerald-700 hover:to-teal-800 transition-all"
             >
               <MessageCircle className="w-5 h-5 fill-white/20" />
-              Order WhatsApp (03040450065)
+              WhatsApp (03040450065)
             </button>
           </div>
         </div>

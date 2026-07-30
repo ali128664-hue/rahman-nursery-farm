@@ -42,7 +42,7 @@ export const CatalogModal = ({ isOpen, onClose, onSelectPlantForInspection, onAd
   });
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 md:p-8 bg-sage-900/60 backdrop-blur-md pointer-events-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 md:p-8 bg-sage-950/70 backdrop-blur-md pointer-events-auto">
       <div
         className="bg-white w-full max-w-6xl max-h-[90vh] rounded-3xl overflow-hidden flex flex-col shadow-2xl border border-cream-200"
         style={{ animation: 'fadeIn 0.25s ease' }}
@@ -50,11 +50,11 @@ export const CatalogModal = ({ isOpen, onClose, onSelectPlantForInspection, onAd
         {/* Modal Header */}
         <div className="p-5 md:p-7 border-b border-cream-200 flex items-center justify-between bg-white">
           <div>
-            <div className="inline-flex items-center gap-2 text-xs font-extrabold text-gold-600 uppercase tracking-widest mb-1">
+            <div className="inline-flex items-center gap-2 text-xs font-extrabold text-amber-600 uppercase tracking-widest mb-1">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>A-Z Nursery Catalog • Plant.pk Verified Rates • Lahore • Sahiwal • Pakpattan</span>
+              <span>A-Z Nursery Catalog • Plant.pk Verified Rates • Pattoki • Lahore • Sahiwal</span>
             </div>
-            <h2 className="font-serif text-2xl md:text-4xl font-bold text-sage-900">
+            <h2 className="font-serif text-2xl md:text-4xl font-bold text-sage-950">
               Full Botanical Collection
             </h2>
             <p className="text-xs text-sage-600 mt-0.5 font-semibold">
@@ -70,16 +70,16 @@ export const CatalogModal = ({ isOpen, onClose, onSelectPlantForInspection, onAd
         </div>
 
         {/* Filter & Search */}
-        <div className="p-4 border-b border-cream-200 bg-cream-50/60 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+        <div className="p-4 border-b border-cream-200 bg-slate-50 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
           <div className="flex items-center gap-2 overflow-x-auto w-full pb-1 scrollbar-none">
             {PLANT_CATEGORIES.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all border ${
+                className={`px-3.5 py-1.5 rounded-full text-xs font-black whitespace-nowrap transition-all border ${
                   activeCategory === cat.id
-                    ? 'bg-sage-900 text-cream-50 border-sage-900 shadow-md'
-                    : 'bg-white text-sage-700 border-cream-200 hover:border-sage-400 hover:bg-cream-50'
+                    ? 'bg-emerald-800 text-white border-emerald-800 shadow-md'
+                    : 'bg-white text-sage-800 border-slate-200 hover:border-emerald-400 hover:bg-emerald-50'
                 }`}
               >
                 {cat.label}
@@ -94,13 +94,13 @@ export const CatalogModal = ({ isOpen, onClose, onSelectPlantForInspection, onAd
               placeholder="Search plants, timber, grass..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 rounded-full text-xs bg-white border border-cream-200 text-sage-900 focus:outline-none focus:ring-2 focus:ring-sage-400 font-semibold"
+              className="w-full pl-9 pr-4 py-2 rounded-full text-xs bg-white border border-slate-300 text-sage-950 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-semibold"
             />
           </div>
         </div>
 
         {/* Plant Cards Grid */}
-        <div className="p-5 md:p-6 overflow-y-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 bg-cream-50/20">
+        <div className="p-5 md:p-6 overflow-y-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 bg-slate-50/50">
           {filteredPlants.length === 0 ? (
             <div className="col-span-3 text-center py-16 text-sage-500 font-semibold">
               No plants found. Try a different search or category.
@@ -112,7 +112,7 @@ export const CatalogModal = ({ isOpen, onClose, onSelectPlantForInspection, onAd
             return (
               <div
                 key={plant.id}
-                className="bg-white rounded-2xl overflow-hidden shadow-md border border-cream-200 flex flex-col hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                className="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 flex flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 {/* Colored header strip with category emoji & price */}
                 <div
@@ -127,7 +127,7 @@ export const CatalogModal = ({ isOpen, onClose, onSelectPlantForInspection, onAd
                       </div>
                       <div className="text-[10px] font-extrabold text-white/90 flex items-center gap-1">
                         {[...Array(Math.round(plant.rating))].map((_, i) => (
-                          <Star key={i} className="w-2.5 h-2.5 fill-gold-400 text-gold-400" />
+                          <Star key={i} className="w-2.5 h-2.5 fill-amber-400 text-amber-400" />
                         ))}
                         <span className="ml-0.5">{plant.rating}</span>
                       </div>
@@ -151,24 +151,24 @@ export const CatalogModal = ({ isOpen, onClose, onSelectPlantForInspection, onAd
                   </span>
 
                   {/* Name & Latin */}
-                  <h3 className="font-serif text-base md:text-lg font-bold text-sage-900 mb-0.5 leading-snug">
+                  <h3 className="font-serif text-base md:text-lg font-bold text-sage-950 mb-0.5 leading-snug">
                     {plant.name}
                   </h3>
-                  <p className="text-[11px] italic text-sage-400 mb-2">{plant.latinName}</p>
+                  <p className="text-[11px] italic text-sage-500 mb-2">{plant.latinName}</p>
 
-                  <p className="text-xs text-sage-700 line-clamp-2 mb-3 leading-relaxed flex-1">
+                  <p className="text-xs text-sage-800 line-clamp-2 mb-3 leading-relaxed flex-1">
                     {plant.description}
                   </p>
 
                   {/* Quick specs row */}
                   <div className="grid grid-cols-2 gap-1.5 mb-3 text-[11px]">
-                    <div className="bg-cream-50 border border-cream-200 rounded-lg px-2 py-1.5">
+                    <div className="bg-slate-50 border border-slate-200 rounded-lg px-2 py-1.5">
                       <span className="text-sage-500">☀️</span> {plant.sunlight}
                     </div>
-                    <div className="bg-cream-50 border border-cream-200 rounded-lg px-2 py-1.5">
+                    <div className="bg-slate-50 border border-slate-200 rounded-lg px-2 py-1.5">
                       <span className="text-sage-500">💧</span> {plant.watering}
                     </div>
-                    <div className="bg-cream-50 border border-cream-200 rounded-lg px-2 py-1.5">
+                    <div className="bg-slate-50 border border-slate-200 rounded-lg px-2 py-1.5">
                       <span className="text-sage-500">📏</span> {plant.height}
                     </div>
                     <div className={`rounded-lg px-2 py-1.5 font-bold text-[10px] ${diffClass}`}>
@@ -177,10 +177,10 @@ export const CatalogModal = ({ isOpen, onClose, onSelectPlantForInspection, onAd
                   </div>
 
                   {/* Action buttons */}
-                  <div className="flex items-center gap-1.5 pt-2 border-t border-cream-100">
+                  <div className="flex items-center gap-1.5 pt-2 border-t border-slate-100">
                     <button
                       onClick={() => onAddToCart && onAddToCart(plant)}
-                      className="flex-1 py-2 rounded-xl text-xs font-extrabold flex items-center justify-center gap-1 bg-emerald-600 text-white hover:bg-emerald-700 transition-colors shadow-sm"
+                      className="flex-1 py-2.5 rounded-xl text-xs font-black flex items-center justify-center gap-1 bg-emerald-700 text-white hover:bg-emerald-800 transition-colors shadow-sm"
                     >
                       🛒 Add to Cart
                     </button>
@@ -190,10 +190,10 @@ export const CatalogModal = ({ isOpen, onClose, onSelectPlantForInspection, onAd
                         onClose();
                         onSelectPlantForInspection(plant.id);
                       }}
-                      className="py-2 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1 text-sage-800 bg-cream-100 hover:bg-cream-200 transition-all border border-cream-200"
+                      className="py-2.5 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1 text-sage-900 bg-slate-100 hover:bg-slate-200 transition-all border border-slate-200"
                     >
                       <Eye className="w-3.5 h-3.5" />
-                      3D
+                      Inspect
                     </button>
 
                     <a
@@ -203,7 +203,7 @@ export const CatalogModal = ({ isOpen, onClose, onSelectPlantForInspection, onAd
                       })}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-xl bg-emerald-100 text-emerald-800 hover:bg-emerald-200 transition-colors"
+                      className="p-2.5 rounded-xl bg-emerald-100 text-emerald-800 hover:bg-emerald-200 transition-colors"
                       title="Order on WhatsApp 0304-0450065"
                     >
                       <MessageCircle className="w-4 h-4 fill-emerald-800/20" />
