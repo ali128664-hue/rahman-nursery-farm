@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShoppingCart, MessageCircle, MapPin, Store, TreePine, Home, Users, BookOpen } from 'lucide-react';
+import { ShoppingCart, MessageCircle, MapPin, Store, TreePine, Home, Users, BookOpen, Wrench } from 'lucide-react';
 import { RAHMAN_WHATSAPP_NUMBER } from '../../utils/whatsappHelper';
 
 export const Navbar = ({
@@ -9,14 +9,14 @@ export const Navbar = ({
   onOpenCart,
 }) => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 pointer-events-auto">
+    <header className="fixed top-0 left-0 right-0 z-30 pointer-events-auto">
       {/* Top Shopify Announcement Bar */}
       <div className="bg-emerald-950 text-amber-300 py-1.5 px-4 text-center text-[10px] sm:text-xs font-black tracking-widest uppercase border-b border-amber-400/30 flex items-center justify-center gap-2 shadow-md">
         <span>🚚 NATIONWIDE CARGO DISPATCH • CHAK HASSAN ARAIN, PAKISTAN HUB</span>
         <span className="hidden md:inline">• HELPLINE: 0304-0450065</span>
       </div>
 
-      <div className="px-3 py-2.5 md:px-8 md:py-3">
+      <div className="px-3 py-2 md:px-8 md:py-2.5">
         <nav className="max-w-7xl mx-auto rounded-full px-4 py-2 md:px-6 md:py-2.5 flex items-center justify-between border border-emerald-500/25 shadow-2xl bg-white/95 backdrop-blur-xl">
 
           {/* Brand Logo & Name */}
@@ -87,7 +87,22 @@ export const Navbar = ({
               }`}
             >
               <TreePine className="w-3.5 h-3.5 text-emerald-700" />
-              <span>Bagh Lagwao</span>
+              <span>Bagh Packages</span>
+            </button>
+
+            <button
+              onClick={() => {
+                if (onTabChange) onTabChange('services');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className={`flex items-center gap-1 px-3 py-1.5 rounded-full transition-all border ${
+                activeTab === 'services'
+                  ? 'bg-emerald-900 text-white border-emerald-900 shadow-md font-black'
+                  : 'bg-transparent text-emerald-950 border-transparent hover:bg-emerald-50'
+              }`}
+            >
+              <Wrench className="w-3.5 h-3.5 text-emerald-700" />
+              <span>Services</span>
             </button>
 
             <button

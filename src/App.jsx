@@ -7,6 +7,7 @@ import { ShopPage } from './components/ui/ShopPage';
 import { BlogPage } from './components/ui/BlogPage';
 import { ContactPage } from './components/ui/ContactPage';
 import { BaghPackagesPage } from './components/ui/BaghPackagesPage';
+import { ServicesPage } from './components/ui/ServicesPage';
 import { CatalogModal } from './components/ui/CatalogModal';
 import { PlantInspectorModal } from './components/ui/PlantInspectorModal';
 import { AIGardenPlannerModal } from './components/ui/AIGardenPlannerModal';
@@ -26,7 +27,7 @@ export default function App() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [selectedPlant, setSelectedPlant] = useState(null);
   const [activePotType, setActivePotType] = useState('terracotta');
-  const [activeTab, setActiveTab] = useState('home'); // 'home', 'shop', 'orchard', 'blog', 'about', 'contact'
+  const [activeTab, setActiveTab] = useState('home'); // 'home', 'shop', 'orchard', 'services', 'blog', 'about', 'contact'
 
   // Modals & Drawers
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
@@ -126,6 +127,8 @@ export default function App() {
         <ContactPage />
       ) : activeTab === 'orchard' ? (
         <BaghPackagesPage />
+      ) : activeTab === 'services' ? (
+        <ServicesPage onOpenContact={() => setActiveTab('contact')} />
       ) : activeTab === 'about' ? (
         <div className="pt-24 min-h-screen">
           <FamilyHeritagSection onOpenContact={() => setActiveTab('contact')} />
@@ -145,7 +148,7 @@ export default function App() {
           <StorySections
             onOpenCatalog={() => setActiveTab('shop')}
             onSelectPlantById={(id) => handleSelectPlantById(id)}
-            onOpenLandscaping={() => setIsLandscapingOpen(true)}
+            onOpenLandscaping={() => setActiveTab('services')}
           />
 
           {/* Clean Verified Reviews */}
@@ -155,13 +158,14 @@ export default function App() {
 
       {/* Footer Section */}
       <Footer
-        onOpenCatalog={() => setActiveTab('shop')}
-        onOpenAIPlanner={() => setIsAIPlannerOpen(true)}
-        onOpenContact={() => setActiveTab('contact')}
+        onNavigateTab={(tab) => {
+          setActiveTab(tab);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
       />
 
       {/* Floating Bottom Quick Action Bar (Mobile & Desktop) */}
-      <div className="fixed bottom-5 right-5 z-40 flex items-center gap-3 pointer-events-auto">
+      <div className="fixed bottom-5 right-5 z-30 flex items-center gap-3 pointer-events-auto">
         
         {/* Toggle to Full Store */}
         <button
