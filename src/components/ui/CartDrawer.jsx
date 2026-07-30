@@ -20,30 +20,29 @@ export const CartDrawer = ({ isOpen, onClose, cart, onUpdateQuantity, onRemoveIt
 
     let itemsText = cart.map((item, index) => {
       const lineTotal = item.plant.pricePKR * item.quantity;
-      return `${index + 1}️⃣ *${item.plant.name}*
-   • Qty: ${item.quantity} × PKR ${item.plant.pricePKR.toLocaleString()} = *PKR ${lineTotal.toLocaleString()}*
-   • Spec: ☀️ ${item.plant.sunlight} | 💧 ${item.plant.watering}
-   • Badge: ${item.plant.badge || '🌿 Verified Stock'}`;
+      return `${index + 1}. *${item.plant.name}*
+   • Quantity: ${item.quantity} × PKR ${item.plant.pricePKR.toLocaleString()} = *PKR ${lineTotal.toLocaleString()}*
+   • Category: ${item.plant.category || 'Nursery Stock'}`;
     }).join('\n\n');
 
-    const message = `🛒 *NEW MULTI-ITEM ORDER — RAHMAN NURSERY FARM* 🛒
-📍 *Chak Hassan Arain, Arifwala • Official Dispatch Hub*
+    const message = `*NEW MULTI-ITEM ORDER — RAHMAN NURSERY FARM*
+*Chak Hassan Arain, Arifwala • Official Dispatch Hub*
 ------------------------------------------------
-👤 *CUSTOMER DELIVERY DETAILS:*
+*CUSTOMER DELIVERY DETAILS:*
 • *Customer Name:* ${customerName || 'Valued Client'}
-• *Delivery City:* 📍 ${city}
-• *Phone Number:* 📱 ${customerPhone || 'Will share in chat'}
-${notes ? `• *Special Notes:* 📝 ${notes}\n` : ''}------------------------------------------------
-📦 *ORDERED ITEMS (${totalItems} Total):*
+• *Delivery City:* ${city}
+• *Phone Number:* ${customerPhone || 'Will share in chat'}
+${notes ? `• *Special Notes:* ${notes}\n` : ''}------------------------------------------------
+*ORDERED ITEMS (${totalItems} Total):*
 
 ${itemsText}
 
 ------------------------------------------------
-💵 *SUBTOTAL AMOUNT:* PKR ${totalPrice.toLocaleString()}
-🚚 *DELIVERY CHARGE:* Calculated based on ${city} distance
+*SUBTOTAL ITEM AMOUNT:* PKR ${totalPrice.toLocaleString()}
+*DELIVERY CHARGES:* Alag honge (Delivery charges k liye kripya call ya chat par rabta karein)
 ------------------------------------------------
 Assalam o Alaikum Ansar Hussain Bhai (0304-0450065)!
-Main ne Rahman Nursery Farm website se yeh order bill compose kiya hai. Kripya availability check karke billing details aur dispatch timing share kar dein. Shukriya!`;
+Main ne Rahman Nursery Farm website se yeh order bill compose kiya hai. Kripya plant availability aur delivery charges call/chat par confirm kar dein. Shukriya!`;
 
     window.open(`https://wa.me/${RAHMAN_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
   };
