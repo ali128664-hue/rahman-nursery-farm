@@ -32,7 +32,7 @@ export const Navbar = ({
             <span className="text-[10px] tracking-widest text-amber-700 uppercase font-black block flex items-center gap-1">
               <span>50+ YEARS HERITAGE</span>
               <span className="w-1 h-1 rounded-full bg-emerald-600 inline-block" />
-              <span>PATTOKI HUB</span>
+              <span>PAKISTANI PLANTS HUB</span>
             </span>
           </div>
         </div>

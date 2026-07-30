@@ -9,7 +9,7 @@ export const PLANT_CATEGORIES = [
   },
   {
     "id": "fruit",
-    "label": "🍊 Fruit Trees & Orchards (Amrood, Mango, Kinnow, Anaar)"
+    "label": "🍊 Fruit Trees & Orchards (Aam, Amrood, Kinnow, Anaar, Saib)"
   },
   {
     "id": "palms",
@@ -117,9 +117,9 @@ export const ORCHARD_SERVICES = [
     "yieldPerAcre": "300 – 500 Mann / Year at Maturity",
     "bestFor": "Multan, Bahawalpur, Sahiwal & Rahim Yar Khan Belt",
     "color": "#FF9800",
-    "description": "Turn-key commercial Mango orchard with Multani Chaunsa, Sindhri, and Anwar Ratol grafted trees. Includes field layout, deep pit preparation, organic manure, and 2-year growth monitoring.",
+    "description": "Turn-key commercial Mango orchard with Multani Chaunsa, Sindhri, Anwar Ratol, and Alphonso grafted trees. Includes field layout, deep pit preparation, organic manure, and 2-year growth monitoring.",
     "includes": [
-      "110+ Premium Grafted Chaunsa, Sindhri & Anwar Ratol saplings",
+      "110+ Premium Grafted Chaunsa, Sindhri, Anwar Ratol & Alphonso saplings",
       "Deep pit digging (3ft × 3ft) with river sand & organic manure blend",
       "Termite prevention treatment (Anti-sewank application)",
       "Fruit fly trap installation guidance & canopy pruning",
@@ -129,6 +129,7 @@ export const ORCHARD_SERVICES = [
       "Multani Chaunsa",
       "Sindhri",
       "Anwar Ratol",
+      "Alphonso",
       "Dusehri"
     ]
   },
@@ -144,9 +145,9 @@ export const ORCHARD_SERVICES = [
     "yieldPerAcre": "500 – 800 Crates / Year",
     "bestFor": "Sargodha, Sahiwal, Toba Tek Singh & Faisalabad Belt",
     "color": "#F57C00",
-    "description": "High-earning Kinnu Citrus & Blood Orange orchard service. Acclimatized grafted rootstock for maximum juice content, bright orange skin, and heavy winter yield.",
+    "description": "High-earning Kinnu Citrus, Musambi & Blood Orange orchard service. Acclimatized grafted rootstock for maximum juice content, bright orange skin, and heavy winter yield.",
     "includes": [
-      "180+ Grafted Kinnu & Blood Orange saplings",
+      "180+ Grafted Kinnu, Musambi & Blood Orange saplings",
       "Professional ridge/bed planting layout for efficient irrigation",
       "Micronutrient (Zinc + Iron + Boron) initial soil application",
       "Canker & citrus psylla management plan",
@@ -155,7 +156,7 @@ export const ORCHARD_SERVICES = [
     "varieties": [
       "Export Kinnu",
       "Red Blood Orange",
-      "Desi Malta",
+      "Sweet Limetta Musambi",
       "Seedless Lemon"
     ]
   },
@@ -240,13 +241,526 @@ export const FREQUENTLY_ASKED_QUESTIONS = [
 
 export const PLANTS_DATA = [
   {
+    "id": "anwar-ratol-mango",
+    "name": "Anwar Ratol Mango (انوار رٹول آم)",
+    "category": "fruit",
+    "latinName": "انوار رٹول آم • Grafted (2 - 3 ft)",
+    "pricePKR": 1750,
+    "rating": 5,
+    "reviewsCount": 57,
+    "badge": "🥭 Fragrant Sweet Ratol",
+    "description": "Famous Anwar Ratol grafted mango sapling known for extreme sweetness and intense aroma. Price Range: PKR 1,499 - 1,950. Size: Grafted (2 - 3 ft).",
+    "sunlight": "Full Sun",
+    "watering": "Regular",
+    "height": "2 – 6 ft",
+    "airPurifying": 95,
+    "difficulty": "Easy",
+    "petFriendly": true,
+    "origin": "Chak Hassan Arain (Rahman Nursery Farm)",
+    "colorTheme": "#059669",
+    "growthTimeline": {
+      "1 Year": "Healthy growing plant.",
+      "3 Years": "Mature specimen."
+    },
+    "careGuide": [
+      "Cultivated in acclimatized soil.",
+      "Requires moderate sunlight and organic compost."
+    ]
+  },
+  {
+    "id": "chaunsa-mango-pot",
+    "name": "Chaunsa Mango (چونسہ آم – 12\" Pot)",
+    "category": "fruit",
+    "latinName": "چونسہ آم • 12\" Pot / Bag",
+    "pricePKR": 2700,
+    "rating": 5,
+    "reviewsCount": 93,
+    "badge": "🥭 Multani Chaunsa",
+    "description": "Classic Pakistani Chaunsa Mango tree in 12\" grow bag ready for immediate garden or orchard planting. Price Range: PKR 2,450 - 2,950. Size: 12\" Pot / Bag.",
+    "sunlight": "Full Sun",
+    "watering": "Regular",
+    "height": "3 – 8 ft",
+    "airPurifying": 95,
+    "difficulty": "Easy",
+    "petFriendly": true,
+    "origin": "Chak Hassan Arain (Rahman Nursery Farm)",
+    "colorTheme": "#059669",
+    "growthTimeline": {
+      "1 Year": "Healthy growing plant.",
+      "3 Years": "Mature specimen."
+    },
+    "careGuide": [
+      "Cultivated in acclimatized soil.",
+      "Requires moderate sunlight and organic compost."
+    ]
+  },
+  {
+    "id": "dussehri-mango-earthball",
+    "name": "Dussehri Mango (دسیری آم – 12\" Earth Ball)",
+    "category": "fruit",
+    "latinName": "دسیری آم • 12\" Earth Ball",
+    "pricePKR": 2290,
+    "rating": 5,
+    "reviewsCount": 76,
+    "badge": "🥭 Dussehri Sweetness",
+    "description": "Delicious Dussehri mango variety with fiberless sweet pulp. Price Range: PKR 1,250 - 3,330. Size: 12\" Earth Ball.",
+    "sunlight": "Full Sun",
+    "watering": "Regular",
+    "height": "3 – 8 ft",
+    "airPurifying": 95,
+    "difficulty": "Easy",
+    "petFriendly": true,
+    "origin": "Chak Hassan Arain (Rahman Nursery Farm)",
+    "colorTheme": "#059669",
+    "growthTimeline": {
+      "1 Year": "Healthy growing plant.",
+      "3 Years": "Mature specimen."
+    },
+    "careGuide": [
+      "Cultivated in acclimatized soil.",
+      "Requires moderate sunlight and organic compost."
+    ]
+  },
+  {
+    "id": "alphonso-hapus-mango",
+    "name": "Alphonso Mango (ہاپوس آم – Premium Grafted)",
+    "category": "fruit",
+    "latinName": "ہاپوس آم • Premium Grafted",
+    "pricePKR": 9950,
+    "rating": 5,
+    "reviewsCount": 44,
+    "badge": "👑 King Alphonso",
+    "description": "Exotic Alphonso Hapus mango premium grafted variety prized globally for rich saffron aroma. Price Range: PKR 8,550 - 12,600. Size: Premium Grafted.",
+    "sunlight": "Full Sun",
+    "watering": "Regular",
+    "height": "3 – 10 ft",
+    "airPurifying": 95,
+    "difficulty": "Moderate",
+    "petFriendly": true,
+    "origin": "Chak Hassan Arain (Rahman Nursery Farm)",
+    "colorTheme": "#059669",
+    "growthTimeline": {
+      "1 Year": "Healthy growing plant.",
+      "3 Years": "Mature specimen."
+    },
+    "careGuide": [
+      "Cultivated in acclimatized soil.",
+      "Requires moderate sunlight and organic compost."
+    ]
+  },
+  {
+    "id": "dudh-pedo-thai-mango",
+    "name": "Dudh Pedo Mango (تھائی آم / دودھ پیڑو)",
+    "category": "fruit",
+    "latinName": "تھائی آم / دودھ پیڑو • Premium Grafted",
+    "pricePKR": 9950,
+    "rating": 5,
+    "reviewsCount": 58,
+    "badge": "🥭 Thai Dudh Pedo",
+    "description": "Exotic Thai Dudh Pedo sweet mango grafted rootstock fruiting heavily in containers. Price Range: PKR 9,000 - 11,700. Size: Premium Grafted.",
+    "sunlight": "Full Sun",
+    "watering": "Regular",
+    "height": "3 – 10 ft",
+    "airPurifying": 95,
+    "difficulty": "Moderate",
+    "petFriendly": true,
+    "origin": "Chak Hassan Arain (Rahman Nursery Farm)",
+    "colorTheme": "#059669",
+    "growthTimeline": {
+      "1 Year": "Healthy growing plant.",
+      "3 Years": "Mature specimen."
+    },
+    "careGuide": [
+      "Cultivated in acclimatized soil.",
+      "Requires moderate sunlight and organic compost."
+    ]
+  },
+  {
+    "id": "pairi-asian-mango",
+    "name": "Pairi Mango (ایشیائی آم / پیری)",
+    "category": "fruit",
+    "latinName": "ایشیائی آم / پیری • Premium Grafted",
+    "pricePKR": 8500,
+    "rating": 5,
+    "reviewsCount": 58,
+    "badge": "🥭 Asian Pairi Variety",
+    "description": "Aromatic Pairi mango with juicy sweet orange flesh. Price Range: PKR 7,650 - 9,900. Size: Premium Grafted.",
+    "sunlight": "Full Sun",
+    "watering": "Regular",
+    "height": "3 – 10 ft",
+    "airPurifying": 95,
+    "difficulty": "Moderate",
+    "petFriendly": true,
+    "origin": "Chak Hassan Arain (Rahman Nursery Farm)",
+    "colorTheme": "#059669",
+    "growthTimeline": {
+      "1 Year": "Healthy growing plant.",
+      "3 Years": "Mature specimen."
+    },
+    "careGuide": [
+      "Cultivated in acclimatized soil.",
+      "Requires moderate sunlight and organic compost."
+    ]
+  },
+  {
+    "id": "fajri-mango-tree",
+    "name": "Fajri Mango (فجری آم – Large Fruit)",
+    "category": "fruit",
+    "latinName": "فجری آم • Fruit Tree (4-6 ft)",
+    "pricePKR": 3330,
+    "rating": 5,
+    "reviewsCount": 77,
+    "badge": "🥭 Large Fajri Mango",
+    "description": "Huge-sized Fajri mango bearing colossal sweet fruits in late summer season. Price Range: PKR 3,330. Size: Fruit Tree (4-6 ft).",
+    "sunlight": "Full Sun",
+    "watering": "Regular",
+    "height": "4 – 12 ft",
+    "airPurifying": 95,
+    "difficulty": "Easy",
+    "petFriendly": true,
+    "origin": "Chak Hassan Arain (Rahman Nursery Farm)",
+    "colorTheme": "#059669",
+    "growthTimeline": {
+      "1 Year": "Healthy growing plant.",
+      "3 Years": "Mature specimen."
+    },
+    "careGuide": [
+      "Cultivated in acclimatized soil.",
+      "Requires moderate sunlight and organic compost."
+    ]
+  },
+  {
+    "id": "langra-mango-tree",
+    "name": "Langra Mango (لنگڑا آم)",
+    "category": "fruit",
+    "latinName": "لنگڑا آم • Fruit Tree (3-5 ft)",
+    "pricePKR": 1080,
+    "rating": 5,
+    "reviewsCount": 106,
+    "badge": "🥭 Tangy Sweet Langra",
+    "description": "Traditional green Langra mango tree with rich distinct aromatic taste. Price Range: PKR 1,080. Size: Fruit Tree (3-5 ft).",
+    "sunlight": "Full Sun",
+    "watering": "Regular",
+    "height": "3 – 10 ft",
+    "airPurifying": 95,
+    "difficulty": "Easy",
+    "petFriendly": true,
+    "origin": "Chak Hassan Arain (Rahman Nursery Farm)",
+    "colorTheme": "#059669",
+    "growthTimeline": {
+      "1 Year": "Healthy growing plant.",
+      "3 Years": "Mature specimen."
+    },
+    "careGuide": [
+      "Cultivated in acclimatized soil.",
+      "Requires moderate sunlight and organic compost."
+    ]
+  },
+  {
+    "id": "lal-badshah-mango",
+    "name": "Lal Badshah Mango (لال بادشاہ آم)",
+    "category": "fruit",
+    "latinName": "لال بادشاہ آم • Fruit Tree (4-6 ft)",
+    "pricePKR": 3330,
+    "rating": 5,
+    "reviewsCount": 76,
+    "badge": "🔴 Red Lal Badshah",
+    "description": "Striking red-skinned Pakistani Lal Badshah mango variety. Price Range: PKR 3,330. Size: Fruit Tree (4-6 ft).",
+    "sunlight": "Full Sun",
+    "watering": "Regular",
+    "height": "4 – 12 ft",
+    "airPurifying": 95,
+    "difficulty": "Easy",
+    "petFriendly": true,
+    "origin": "Chak Hassan Arain (Rahman Nursery Farm)",
+    "colorTheme": "#059669",
+    "growthTimeline": {
+      "1 Year": "Healthy growing plant.",
+      "3 Years": "Mature specimen."
+    },
+    "careGuide": [
+      "Cultivated in acclimatized soil.",
+      "Requires moderate sunlight and organic compost."
+    ]
+  },
+  {
+    "id": "desi-mango-seedling",
+    "name": "Desi Mango Seedling (دیسی آم – 2 ft)",
+    "category": "fruit",
+    "latinName": "دیسی آم • Seedling (2 ft)",
+    "pricePKR": 1800,
+    "rating": 5,
+    "reviewsCount": 78,
+    "badge": "🥭 Desi Pickling Mango",
+    "description": "Strong native Desi mango seedling used for pickling (Achaar) and robust rootstock grafting. Price Range: PKR 813 - 3,330. Size: Seedling (2 ft).",
+    "sunlight": "Full Sun",
+    "watering": "Regular",
+    "height": "2 – 6 ft",
+    "airPurifying": 95,
+    "difficulty": "Easiest",
+    "petFriendly": true,
+    "origin": "Chak Hassan Arain (Rahman Nursery Farm)",
+    "colorTheme": "#059669",
+    "growthTimeline": {
+      "1 Year": "Healthy growing plant.",
+      "3 Years": "Mature specimen."
+    },
+    "careGuide": [
+      "Cultivated in acclimatized soil.",
+      "Requires moderate sunlight and organic compost."
+    ]
+  },
+  {
+    "id": "sapodilla-cheeku",
+    "name": "Sapodilla / Cheeku Tree (چیکو – 18\" Bag)",
+    "category": "fruit",
+    "latinName": "چیکو • 18\" Bag (Large)",
+    "pricePKR": 6500,
+    "rating": 5,
+    "reviewsCount": 62,
+    "badge": "🤎 Sweet Cheeku",
+    "description": "Large established Cheeku fruit tree bearing sweet brown malted-flavored fruits year-round. Price Range: PKR 5,500 - 7,500. Size: 18\" Bag (Large).",
+    "sunlight": "Full Sun",
+    "watering": "Moderate",
+    "height": "4 – 10 ft",
+    "airPurifying": 95,
+    "difficulty": "Easy",
+    "petFriendly": true,
+    "origin": "Chak Hassan Arain (Rahman Nursery Farm)",
+    "colorTheme": "#059669",
+    "growthTimeline": {
+      "1 Year": "Healthy growing plant.",
+      "3 Years": "Mature specimen."
+    },
+    "careGuide": [
+      "Cultivated in acclimatized soil.",
+      "Requires moderate sunlight and organic compost."
+    ]
+  },
+  {
+    "id": "kala-kallu-apple",
+    "name": "Kala Kallu Apple Tree (سیب کالا کلو)",
+    "category": "fruit",
+    "latinName": "سیب کالا کلو • Fruit Tree (3-5 ft)",
+    "pricePKR": 1500,
+    "rating": 5,
+    "reviewsCount": 71,
+    "badge": "🍎 Black Red Apple",
+    "description": "Deep dark red Kala Kallu apple variety acclimatized for Northern Punjab & hilly regions. Price Range: PKR 1,500. Size: Fruit Tree (3-5 ft).",
+    "sunlight": "Full Sun / Cold Winter",
+    "watering": "Moderate",
+    "height": "3 – 8 ft",
+    "airPurifying": 95,
+    "difficulty": "Moderate",
+    "petFriendly": true,
+    "origin": "Chak Hassan Arain (Rahman Nursery Farm)",
+    "colorTheme": "#059669",
+    "growthTimeline": {
+      "1 Year": "Healthy growing plant.",
+      "3 Years": "Mature specimen."
+    },
+    "careGuide": [
+      "Cultivated in acclimatized soil.",
+      "Requires moderate sunlight and organic compost."
+    ]
+  },
+  {
+    "id": "avocado-plant-exotic",
+    "name": "Avocado Plant (ایوکاڈو – Exotic Fruit)",
+    "category": "fruit",
+    "latinName": "ایوکاڈو • Exotic Fruit Tree",
+    "pricePKR": 3000,
+    "rating": 5,
+    "reviewsCount": 50,
+    "badge": "🥑 Butter Avocado",
+    "description": "Exotic creamy Avocado fruit tree adapted for home gardens and shade houses. Price Range: PKR 3,000. Size: Exotic Fruit Tree.",
+    "sunlight": "Partial / Full Sun",
+    "watering": "Moderate",
+    "height": "3 – 8 ft",
+    "airPurifying": 95,
+    "difficulty": "Moderate",
+    "petFriendly": true,
+    "origin": "Chak Hassan Arain (Rahman Nursery Farm)",
+    "colorTheme": "#059669",
+    "growthTimeline": {
+      "1 Year": "Healthy growing plant.",
+      "3 Years": "Mature specimen."
+    },
+    "careGuide": [
+      "Cultivated in acclimatized soil.",
+      "Requires moderate sunlight and organic compost."
+    ]
+  },
+  {
+    "id": "dragon-fruit-plant",
+    "name": "Dragon Fruit Cactus Plant (ڈریگن فروٹ)",
+    "category": "fruit",
+    "latinName": "ڈریگن فروٹ • Cactus / Fruit",
+    "pricePKR": 2500,
+    "rating": 5,
+    "reviewsCount": 46,
+    "badge": "🐉 Exotic Dragon Fruit",
+    "description": "Fascinating fruiting cactus producing vibrant magenta dragon fruits with white/red sweet pulp. Price Range: PKR 2,500. Size: Cactus / Fruit.",
+    "sunlight": "Full Sun",
+    "watering": "Low",
+    "height": "3 – 6 ft vine",
+    "airPurifying": 95,
+    "difficulty": "Easy",
+    "petFriendly": true,
+    "origin": "Chak Hassan Arain (Rahman Nursery Farm)",
+    "colorTheme": "#059669",
+    "growthTimeline": {
+      "1 Year": "Healthy growing plant.",
+      "3 Years": "Mature specimen."
+    },
+    "careGuide": [
+      "Cultivated in acclimatized soil.",
+      "Requires moderate sunlight and organic compost."
+    ]
+  },
+  {
+    "id": "lisbon-lemon-12",
+    "name": "Lisbon Lemon (لسبن لیموں – 12\" Bag)",
+    "category": "fruit",
+    "latinName": "لسبن لیموں • 12\" Bag",
+    "pricePKR": 1850,
+    "rating": 5,
+    "reviewsCount": 42,
+    "badge": "🍋 High Juice Lemon",
+    "description": "Lisbon high-juice commercial lemon tree fruiting heavily in containers. Price Range: PKR 1,250 - 2,500. Size: 12\" Bag.",
+    "sunlight": "Full Sun",
+    "watering": "Regular",
+    "height": "3 – 6 ft",
+    "airPurifying": 95,
+    "difficulty": "Easiest",
+    "petFriendly": false,
+    "origin": "Chak Hassan Arain (Rahman Nursery Farm)",
+    "colorTheme": "#059669",
+    "growthTimeline": {
+      "1 Year": "Healthy growing plant.",
+      "3 Years": "Mature specimen."
+    },
+    "careGuide": [
+      "Cultivated in acclimatized soil.",
+      "Requires moderate sunlight and organic compost."
+    ]
+  },
+  {
+    "id": "peach-aaru-tree",
+    "name": "Peach Tree Grafted (آڑو کا درخت)",
+    "category": "fruit",
+    "latinName": "آڑو کا درخت • Grafted Plant",
+    "pricePKR": 1980,
+    "rating": 5,
+    "reviewsCount": 68,
+    "badge": "🍑 Sweet Peach",
+    "description": "Grafted Pakistani Aaru peach tree bearing juicy pink-blushed sweet peaches. Price Range: PKR 1,760 - 2,300. Size: Grafted Plant.",
+    "sunlight": "Full Sun",
+    "watering": "Regular",
+    "height": "3 – 8 ft",
+    "airPurifying": 95,
+    "difficulty": "Moderate",
+    "petFriendly": true,
+    "origin": "Chak Hassan Arain (Rahman Nursery Farm)",
+    "colorTheme": "#059669",
+    "growthTimeline": {
+      "1 Year": "Healthy growing plant.",
+      "3 Years": "Mature specimen."
+    },
+    "careGuide": [
+      "Cultivated in acclimatized soil.",
+      "Requires moderate sunlight and organic compost."
+    ]
+  },
+  {
+    "id": "sweet-limetta-musambi",
+    "name": "Sweet Limetta / Musambi (موسمبی)",
+    "category": "fruit",
+    "latinName": "موسمبی • Grafted Plant",
+    "pricePKR": 1250,
+    "rating": 5,
+    "reviewsCount": 58,
+    "badge": "🍊 Sweet Musambi",
+    "description": "Juicy sweet Musambi citrus tree essential for fresh winter fruit juice. Price Range: PKR 1,199 - 1,350. Size: Grafted Plant.",
+    "sunlight": "Full Sun",
+    "watering": "Regular",
+    "height": "3 – 7 ft",
+    "airPurifying": 95,
+    "difficulty": "Easy",
+    "petFriendly": false,
+    "origin": "Chak Hassan Arain (Rahman Nursery Farm)",
+    "colorTheme": "#059669",
+    "growthTimeline": {
+      "1 Year": "Healthy growing plant.",
+      "3 Years": "Mature specimen."
+    },
+    "careGuide": [
+      "Cultivated in acclimatized soil.",
+      "Requires moderate sunlight and organic compost."
+    ]
+  },
+  {
+    "id": "black-grapes-narang",
+    "name": "Black Grapes Narang Vine (کالے انگور)",
+    "category": "fruit",
+    "latinName": "کالے انگور • Fruit Vine",
+    "pricePKR": 1350,
+    "rating": 5,
+    "reviewsCount": 85,
+    "badge": "🍇 Sweet Black Grapes",
+    "description": "Deep black sweet grape vine climbing fast over garden pergolas. Price Range: PKR 1,299 - 1,400. Size: Fruit Vine.",
+    "sunlight": "Full Sun",
+    "watering": "Moderate",
+    "height": "6 – 15 ft vine",
+    "airPurifying": 95,
+    "difficulty": "Moderate",
+    "petFriendly": true,
+    "origin": "Chak Hassan Arain (Rahman Nursery Farm)",
+    "colorTheme": "#059669",
+    "growthTimeline": {
+      "1 Year": "Healthy growing plant.",
+      "3 Years": "Mature specimen."
+    },
+    "careGuide": [
+      "Cultivated in acclimatized soil.",
+      "Requires moderate sunlight and organic compost."
+    ]
+  },
+  {
+    "id": "jujube-ber-tree",
+    "name": "Jujube / Indian Plum Tree (بیر کا درخت)",
+    "category": "fruit",
+    "latinName": "بیر کا درخت • Fruit Tree (4-8 ft)",
+    "pricePKR": 4250,
+    "rating": 5,
+    "reviewsCount": 52,
+    "badge": "🟢 Desi Sweet Ber",
+    "description": "Large Pakistani Sufi Ber tree bearing huge crisp apple-sized sweet jujube fruits. Price Range: PKR 3,900 - 4,680. Size: Fruit Tree (4-8 ft).",
+    "sunlight": "Full Sun",
+    "watering": "Low",
+    "height": "4 – 15 ft",
+    "airPurifying": 95,
+    "difficulty": "Easiest",
+    "petFriendly": true,
+    "origin": "Chak Hassan Arain (Rahman Nursery Farm)",
+    "colorTheme": "#059669",
+    "growthTimeline": {
+      "1 Year": "Healthy growing plant.",
+      "3 Years": "Mature specimen."
+    },
+    "careGuide": [
+      "Cultivated in acclimatized soil.",
+      "Requires moderate sunlight and organic compost."
+    ]
+  },
+  {
     "id": "zz-plant",
     "name": "ZZ Plant (Zamioculcas zamiifolia)",
     "category": "indoor",
     "latinName": "زی زی پلانٹ • Indoor (10\" Pot)",
     "pricePKR": 3950,
     "rating": 5,
-    "reviewsCount": 73,
+    "reviewsCount": 43,
     "badge": "🪴 Zero Maintenance",
     "description": "Indestructible indoor plant with glossy dark green waxy leaves. Thrives in dark corners and requires almost zero watering. Price Range: PKR 3,500 - 4,500. Size: Indoor (10\" Pot).",
     "sunlight": "Low to Bright Light",
@@ -262,7 +776,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -273,7 +787,7 @@ export const PLANTS_DATA = [
     "latinName": "پیس للی • Indoor (10\" Pot)",
     "pricePKR": 7950,
     "rating": 5,
-    "reviewsCount": 76,
+    "reviewsCount": 103,
     "badge": "🤍 Air Purifier",
     "description": "Elegant white spathes blooming indoors. NASA top-rated air purifying plant for bedrooms and drawing rooms. Price Range: PKR 6,500 - 9,500. Size: Indoor (10\" Pot).",
     "sunlight": "Low Indirect Light",
@@ -289,7 +803,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -300,7 +814,7 @@ export const PLANTS_DATA = [
     "latinName": "پیس للی لارج • Indoor (12\" Pot)",
     "pricePKR": 13500,
     "rating": 5,
-    "reviewsCount": 65,
+    "reviewsCount": 61,
     "badge": "⭐ Large Specimen",
     "description": "Large bushy Peace Lily with multiple white blooms. High-impact indoor air cleaner for executive lounges. Price Range: PKR 12,500 - 15,000. Size: Indoor (12\" Pot).",
     "sunlight": "Low Indirect Light",
@@ -316,7 +830,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -327,7 +841,7 @@ export const PLANTS_DATA = [
     "latinName": "سانپ پودا • Indoor (12\" Pot)",
     "pricePKR": 1150,
     "rating": 5,
-    "reviewsCount": 75,
+    "reviewsCount": 66,
     "badge": "🌙 Night Oxygen",
     "description": "Classic Sansevieria Saanp Pauda emitting oxygen all night. Essential bedroom air purifier in Pakistan. Price Range: PKR 850 - 1,500. Size: Indoor (12\" Pot).",
     "sunlight": "Low to Bright Light",
@@ -343,7 +857,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -354,7 +868,7 @@ export const PLANTS_DATA = [
     "latinName": "سانپ پودا کارپوریٹ • Large Corporate",
     "pricePKR": 7500,
     "rating": 5,
-    "reviewsCount": 92,
+    "reviewsCount": 42,
     "badge": "🏢 Corporate Specimen",
     "description": "Tall 4ft variegated gold-edged Snake Plant in architectural planter for corporate offices and DHA lobbies. Price Range: PKR 6,500 - 8,500. Size: Large Corporate.",
     "sunlight": "Low to Bright Light",
@@ -370,7 +884,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -381,7 +895,7 @@ export const PLANTS_DATA = [
     "latinName": "نین منی پلانٹ • Indoor (12\" Pot)",
     "pricePKR": 1525,
     "rating": 5,
-    "reviewsCount": 62,
+    "reviewsCount": 43,
     "badge": "💚 Trailing Neon",
     "description": "Vibrant electric lime-green neon money plant foliage trailing from shelves or climbing moss poles. Price Range: PKR 1,250 - 1,800. Size: Indoor (12\" Pot).",
     "sunlight": "Bright Indirect",
@@ -397,7 +911,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -408,7 +922,7 @@ export const PLANTS_DATA = [
     "latinName": "نین منی پلانٹ لارج • Indoor (18\" Pot)",
     "pricePKR": 6500,
     "rating": 5,
-    "reviewsCount": 103,
+    "reviewsCount": 81,
     "badge": "🌿 Verified Stock",
     "description": "Towering 6ft Moss Pole Neon Money Plant creating an instant green wall statement in living rooms. Price Range: PKR 5,500 - 7,500. Size: Indoor (18\" Pot).",
     "sunlight": "Bright Indirect",
@@ -424,7 +938,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -435,7 +949,7 @@ export const PLANTS_DATA = [
     "latinName": "منی پلانٹ ہارٹ لیف • Indoor (12\" Pot)",
     "pricePKR": 1950,
     "rating": 5,
-    "reviewsCount": 110,
+    "reviewsCount": 99,
     "badge": "💚 Cascading Heart",
     "description": "Heart-shaped velvety green leaves cascading gracefully down hanging baskets and plant stands. Price Range: PKR 1,500 - 2,500. Size: Indoor (12\" Pot).",
     "sunlight": "Low to Medium",
@@ -451,7 +965,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -462,7 +976,7 @@ export const PLANTS_DATA = [
     "latinName": "اینتھوریم سرخ • Indoor (10\" Pot)",
     "pricePKR": 9950,
     "rating": 5,
-    "reviewsCount": 68,
+    "reviewsCount": 60,
     "badge": "🌺 Exotic Red Bloom",
     "description": "Glossy red heart-shaped waxy blooms that last for months indoors. Luxury exotic gift plant. Price Range: PKR 8,500 - 13,000. Size: Indoor (10\" Pot).",
     "sunlight": "Bright Filtered",
@@ -478,7 +992,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -489,7 +1003,7 @@ export const PLANTS_DATA = [
     "latinName": "اینتھوریم لارج • Indoor (12\" Pot)",
     "pricePKR": 13750,
     "rating": 5,
-    "reviewsCount": 71,
+    "reviewsCount": 51,
     "badge": "⭐ Luxury Gift",
     "description": "Large multi-bloom red Anthurium in ceramic planter for executive desks and dining tables. Price Range: PKR 12,500 - 15,000. Size: Indoor (12\" Pot).",
     "sunlight": "Bright Filtered",
@@ -505,7 +1019,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -516,7 +1030,7 @@ export const PLANTS_DATA = [
     "latinName": "ربر پلانٹ بلیک • Indoor (12\" Pot)",
     "pricePKR": 980,
     "rating": 5,
-    "reviewsCount": 117,
+    "reviewsCount": 94,
     "badge": "🌿 Burgundy Gloss",
     "description": "Deep blackish-burgundy glossy leaves. Tough indoor air purifier for living rooms and office corners. Price Range: PKR 850 - 1,200. Size: Indoor (12\" Pot).",
     "sunlight": "Bright Indirect",
@@ -532,7 +1046,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -543,7 +1057,7 @@ export const PLANTS_DATA = [
     "latinName": "لکی بانس • Indoor (10\" Pot)",
     "pricePKR": 2950,
     "rating": 5,
-    "reviewsCount": 74,
+    "reviewsCount": 115,
     "badge": "🎋 Feng Shui Luck",
     "description": "Traditional 3-tier braided Lucky Bamboo bringing positive energy, luck, and green elegance indoors. Price Range: PKR 2,500 - 3,500. Size: Indoor (10\" Pot).",
     "sunlight": "Low / Water Glass",
@@ -559,7 +1073,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -570,7 +1084,7 @@ export const PLANTS_DATA = [
     "latinName": "فلواینڈرون ریڈ • Indoor (12\" Pot)",
     "pricePKR": 2950,
     "rating": 5,
-    "reviewsCount": 47,
+    "reviewsCount": 51,
     "badge": "🌿 Red Stem Specimen",
     "description": "Glossy dark green leaves with deep burgundy-red undersides and stems. Modern indoor plant. Price Range: PKR 2,500 - 3,500. Size: Indoor (12\" Pot).",
     "sunlight": "Indirect Light",
@@ -586,7 +1100,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -597,7 +1111,7 @@ export const PLANTS_DATA = [
     "latinName": "اسپراگاس ماری • Indoor (12\" Pot)",
     "pricePKR": 1150,
     "rating": 5,
-    "reviewsCount": 71,
+    "reviewsCount": 44,
     "badge": "🌿 Soft Lace Fronds",
     "description": "Feathery cloud-like lace fronds spilling out of planters. Ideal for shaded patios and balconies. Price Range: PKR 850 - 1,500. Size: Indoor (12\" Pot).",
     "sunlight": "Bright Shade",
@@ -613,7 +1127,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -624,7 +1138,7 @@ export const PLANTS_DATA = [
     "latinName": "امبریلا پام • Indoor (12\" Pot)",
     "pricePKR": 720,
     "rating": 5,
-    "reviewsCount": 48,
+    "reviewsCount": 54,
     "badge": "☔ Umbrella Fronds",
     "description": "Fun umbrella-shaped whorled green fronds. Loves moist soil and water gardens. Price Range: PKR 650 - 800. Size: Indoor (12\" Pot).",
     "sunlight": "Bright Light",
@@ -640,7 +1154,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -651,7 +1165,7 @@ export const PLANTS_DATA = [
     "latinName": "جیڈ پلانٹ • Small (3\" Pot)",
     "pricePKR": 480,
     "rating": 5,
-    "reviewsCount": 82,
+    "reviewsCount": 63,
     "badge": "🪴 Money Jade",
     "description": "Miniature succulent with thick round money-shaped leaves. Popular desk gift plant for good fortune. Price Range: PKR 350 - 650. Size: Small (3\" Pot).",
     "sunlight": "Bright Sunny Window",
@@ -667,7 +1181,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -678,7 +1192,7 @@ export const PLANTS_DATA = [
     "latinName": "سانگ آف انڈیا • Large (18\" Pot)",
     "pricePKR": 4950,
     "rating": 5,
-    "reviewsCount": 82,
+    "reviewsCount": 57,
     "badge": "🟡 Yellow Variegated",
     "description": "Dazzling yellow-and-green spiraling foliage tree. High-impact architectural plant for lounges. Price Range: PKR 3,500 - 6,500. Size: Large (18\" Pot).",
     "sunlight": "Bright Indirect",
@@ -694,7 +1208,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -705,7 +1219,7 @@ export const PLANTS_DATA = [
     "latinName": "چین ڈول ٹری • 12\" Pot (3-5 ft)",
     "pricePKR": 980,
     "rating": 5,
-    "reviewsCount": 51,
+    "reviewsCount": 49,
     "badge": "🌿 Glossy Emerald",
     "description": "Feathery lace-like glossy emerald green indoor tree. Fast growing leafy indoor houseplant. Price Range: PKR 850 - 1,200. Size: 12\" Pot (3-5 ft).",
     "sunlight": "Bright Light",
@@ -721,7 +1235,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -732,7 +1246,7 @@ export const PLANTS_DATA = [
     "latinName": "بوسٹن فرنز • Hanging Basket",
     "pricePKR": 1800,
     "rating": 5,
-    "reviewsCount": 76,
+    "reviewsCount": 65,
     "badge": "🌿 Hanging Basket",
     "description": "Cascading feathery green fronds in hanging baskets. Excellent natural indoor air humidifier. Price Range: PKR 1,500 - 2,200. Size: Hanging Basket.",
     "sunlight": "Shade / Humidity",
@@ -748,7 +1262,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -759,7 +1273,7 @@ export const PLANTS_DATA = [
     "latinName": "گلابی کیسیا (محمد رفیق اسپیشلٹی) • Flowering Tree (2 ft to 10 ft)",
     "pricePKR": 8500,
     "rating": 5,
-    "reviewsCount": 116,
+    "reviewsCount": 66,
     "badge": "🌸 Muhammad Rafiq Specialty",
     "description": "World-famous Pink Shower Tree (گلابی کیسیا). Muhammad Rafiq's signature specialty crop from Chak Hassan Arain. Explodes in spectacular pink blossom clusters every summer. Price Range: PKR 2,499 - 20,000. Size: Flowering Tree (2 ft to 10 ft).",
     "sunlight": "Full Sun",
@@ -775,7 +1289,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -786,7 +1300,7 @@ export const PLANTS_DATA = [
     "latinName": "موتیا پھول • Flowering Shrub",
     "pricePKR": 350,
     "rating": 5,
-    "reviewsCount": 55,
+    "reviewsCount": 49,
     "badge": "🌸 Heritage Fragrance",
     "description": "Pure white intensely fragrant Motia blooms. Pakistan's national favourite flower for courtyards. Price Range: PKR 250 - 450. Size: Flowering Shrub.",
     "sunlight": "Full Sun",
@@ -802,7 +1316,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -813,7 +1327,7 @@ export const PLANTS_DATA = [
     "latinName": "گلاب کا پودا • Flowering Shrub",
     "pricePKR": 650,
     "rating": 5,
-    "reviewsCount": 83,
+    "reviewsCount": 72,
     "badge": "🌹 Classic Rose",
     "description": "Richly scented roses in Red, Pink, Yellow, White, and Orange. Blooms heavily in winter and spring. Price Range: PKR 550 - 750. Size: Flowering Shrub.",
     "sunlight": "Full Morning Sun",
@@ -829,7 +1343,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -840,7 +1354,7 @@ export const PLANTS_DATA = [
     "latinName": "رات کی رانی • Flowering Shrub",
     "pricePKR": 450,
     "rating": 5,
-    "reviewsCount": 58,
+    "reviewsCount": 40,
     "badge": "🌙 Night Fragrance",
     "description": "Small tubular flowers opening at dusk, releasing intoxicating fragrance across the entire neighborhood. Price Range: PKR 350 - 550. Size: Flowering Shrub.",
     "sunlight": "Partial / Full Sun",
@@ -856,7 +1370,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -867,7 +1381,7 @@ export const PLANTS_DATA = [
     "latinName": "جھمکا بیل • Climber/Vine",
     "pricePKR": 500,
     "rating": 5,
-    "reviewsCount": 118,
+    "reviewsCount": 117,
     "badge": "🌺 Dangling Lanterns",
     "description": "Cascading bright red dangling flower lanterns climbing over garden fences and archways. Price Range: PKR 450 - 550. Size: Climber/Vine.",
     "sunlight": "Full Sun",
@@ -883,7 +1397,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -894,7 +1408,7 @@ export const PLANTS_DATA = [
     "latinName": "ویسٹیریا پرپل بیل • Purple Flower Vine",
     "pricePKR": 3750,
     "rating": 5,
-    "reviewsCount": 53,
+    "reviewsCount": 91,
     "badge": "💜 Purple Cascade",
     "description": "Breathtaking 12-inch cascading racemes of fragrant purple flowers covering pergolas and boundary walls. Price Range: PKR 2,500 - 5,000. Size: Purple Flower Vine.",
     "sunlight": "Full Sun",
@@ -910,7 +1424,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -921,7 +1435,7 @@ export const PLANTS_DATA = [
     "latinName": "چاندی / سدا بہار • Ground Cover",
     "pricePKR": 450,
     "rating": 5,
-    "reviewsCount": 65,
+    "reviewsCount": 76,
     "badge": "🤍 Year-Round White",
     "description": "Pure white pinwheel-shaped flowers blooming non-stop all 12 months. Ideal for garden borders. Price Range: PKR 350 - 550. Size: Ground Cover.",
     "sunlight": "Full / Partial Sun",
@@ -937,7 +1451,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -948,7 +1462,7 @@ export const PLANTS_DATA = [
     "latinName": "ایکزورا پھول • Flowering Shrub",
     "pricePKR": 550,
     "rating": 5,
-    "reviewsCount": 113,
+    "reviewsCount": 60,
     "badge": "🌸 Dense Flower Ball",
     "description": "Tight round clusters of fiery orange, red, and yellow star flowers blooming in summer. Price Range: PKR 450 - 650. Size: Flowering Shrub.",
     "sunlight": "Full Sun",
@@ -964,7 +1478,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -975,7 +1489,7 @@ export const PLANTS_DATA = [
     "latinName": "جیٹروفا • Flowering Shrub",
     "pricePKR": 480,
     "rating": 5,
-    "reviewsCount": 52,
+    "reviewsCount": 57,
     "badge": "🔴 Scarlet Star",
     "description": "Ever-blooming scarlet red star flowers attracting butterflies and hummingbirds all year. Price Range: PKR 350 - 650. Size: Flowering Shrub.",
     "sunlight": "Full Sun",
@@ -991,7 +1505,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1002,7 +1516,7 @@ export const PLANTS_DATA = [
     "latinName": "بٹرفلائی بش • Flowering Shrub",
     "pricePKR": 1250,
     "rating": 5,
-    "reviewsCount": 47,
+    "reviewsCount": 61,
     "badge": "🦋 Butterfly Magnet",
     "description": "Long sweet-scented purple-pink flower spikes drawing dozens of colorful butterflies to your garden. Price Range: PKR 1,000 - 1,500. Size: Flowering Shrub.",
     "sunlight": "Full Sun",
@@ -1018,7 +1532,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1029,7 +1543,7 @@ export const PLANTS_DATA = [
     "latinName": "ہار سنگھار • Shrub (1-2 ft)",
     "pricePKR": 480,
     "rating": 5,
-    "reviewsCount": 65,
+    "reviewsCount": 117,
     "badge": "🧡 Orange Center Bloom",
     "description": "Sacred Pakistani tree with white petals and bright orange stems that fall in early morning carpet. Price Range: PKR 350 - 650. Size: Shrub (1-2 ft).",
     "sunlight": "Full / Partial Sun",
@@ -1045,7 +1559,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1056,7 +1570,7 @@ export const PLANTS_DATA = [
     "latinName": "گارڈینیا / گندھ راج • Flowering Shrub",
     "pricePKR": 550,
     "rating": 5,
-    "reviewsCount": 56,
+    "reviewsCount": 73,
     "badge": "🤍 Intoxicating Perfume",
     "description": "Creamy white velvety roses with the richest sweet perfume in the plant world. Price Range: PKR 450 - 650. Size: Flowering Shrub.",
     "sunlight": "Morning Sun",
@@ -1072,7 +1586,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1083,7 +1597,7 @@ export const PLANTS_DATA = [
     "latinName": "ٹیکساس سیج • Ground Cover",
     "pricePKR": 420,
     "rating": 5,
-    "reviewsCount": 110,
+    "reviewsCount": 94,
     "badge": "💜 Silver-Purple Shrub",
     "description": "Silvery-grey foliage bursting into vibrant magenta-purple flowers after rain showers. Price Range: PKR 350 - 500. Size: Ground Cover.",
     "sunlight": "Full Sun",
@@ -1099,7 +1613,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1110,7 +1624,7 @@ export const PLANTS_DATA = [
     "latinName": "سپائیڈر پلانٹ • Ground Cover / Pot",
     "pricePKR": 125,
     "rating": 5,
-    "reviewsCount": 102,
+    "reviewsCount": 74,
     "badge": "🌿 Pet Safe Purifier",
     "description": "Cascading green-and-white arching blades producing mini baby plantlets. 100% pet safe. Price Range: PKR 100 - 150. Size: Ground Cover / Pot.",
     "sunlight": "Indirect Light",
@@ -1126,7 +1640,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1137,7 +1651,7 @@ export const PLANTS_DATA = [
     "latinName": "پرپل ہارٹ • Ground Cover",
     "pricePKR": 195,
     "rating": 5,
-    "reviewsCount": 109,
+    "reviewsCount": 88,
     "badge": "💜 Purple Carpet",
     "description": "Vivid dark violet-purple trailing stems and pink flowers. Popular lawn border and rockery plant. Price Range: PKR 150 - 250. Size: Ground Cover.",
     "sunlight": "Full Sun for Deep Purple",
@@ -1153,7 +1667,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1164,7 +1678,7 @@ export const PLANTS_DATA = [
     "latinName": "فیکس سپائرل • Bonsai (6-15 ft)",
     "pricePKR": 7950,
     "rating": 5,
-    "reviewsCount": 100,
+    "reviewsCount": 89,
     "badge": "🎋 Sculpted Spiral",
     "description": "Artistically braided spiral trunk Ficus topiary. Grand entrance plant for villas and halls. Price Range: PKR 6,500 - 9,500. Size: Bonsai (6-15 ft).",
     "sunlight": "Full / Partial Sun",
@@ -1180,7 +1694,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1191,7 +1705,7 @@ export const PLANTS_DATA = [
     "latinName": "فیکس گرل بونسائی • Bonsai (3-10 ft)",
     "pricePKR": 21500,
     "rating": 5,
-    "reviewsCount": 76,
+    "reviewsCount": 62,
     "badge": "🎋 Masterpiece Grill",
     "description": "Exotic lattice-woven grill trunk Ficus bonsai. Museum-grade living sculpture centerpiece. Price Range: PKR 18,500 - 25,000. Size: Bonsai (3-10 ft).",
     "sunlight": "Full Sun / Partial",
@@ -1207,7 +1721,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1218,7 +1732,7 @@ export const PLANTS_DATA = [
     "latinName": "بکائن / دھریک • 12\" Pot (4-6 ft)",
     "pricePKR": 450,
     "rating": 5,
-    "reviewsCount": 116,
+    "reviewsCount": 89,
     "badge": "🌲 Native Shade",
     "description": "Traditional native shade tree with lilac spring blossoms and natural insect-repellent wood. Price Range: PKR 350 - 550. Size: 12\" Pot (4-6 ft).",
     "sunlight": "Full Sun",
@@ -1234,7 +1748,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1245,7 +1759,7 @@ export const PLANTS_DATA = [
     "latinName": "جاڑفان • 12\" Pot (3-5 ft)",
     "pricePKR": 480,
     "rating": 5,
-    "reviewsCount": 76,
+    "reviewsCount": 49,
     "badge": "🌸 Summer Crepe Flower",
     "description": "Tissue-paper pink and purple flower clusters blooming all summer long on smooth ornamental bark. Price Range: PKR 350 - 650. Size: 12\" Pot (3-5 ft).",
     "sunlight": "Full Sun",
@@ -1261,7 +1775,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1272,7 +1786,7 @@ export const PLANTS_DATA = [
     "latinName": "پیلی گھنٹی / ٹیکوما • 12\" Pot (3-5 ft)",
     "pricePKR": 650,
     "rating": 5,
-    "reviewsCount": 56,
+    "reviewsCount": 96,
     "badge": "💛 Bright Yellow Bells",
     "description": "Vibrant golden yellow trumpet flowers covering the tree from spring to autumn. Price Range: PKR 450 - 850. Size: 12\" Pot (3-5 ft).",
     "sunlight": "Full Sun",
@@ -1288,7 +1802,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1299,7 +1813,7 @@ export const PLANTS_DATA = [
     "latinName": "گلموہر • 12\" Pot (4-6 ft)",
     "pricePKR": 1250,
     "rating": 5,
-    "reviewsCount": 84,
+    "reviewsCount": 48,
     "badge": "🔴 Fiery Red Shade",
     "description": "Pakistans famous royal flame tree. Explodes into scarlet-red flower umbrella canopy in May-June. Price Range: PKR 950 - 1,500. Size: 12\" Pot (4-6 ft).",
     "sunlight": "Full Sun",
@@ -1315,7 +1829,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1326,7 +1840,7 @@ export const PLANTS_DATA = [
     "latinName": "گلِ چین • Small Pot (2-4 ft)",
     "pricePKR": 550,
     "rating": 5,
-    "reviewsCount": 54,
+    "reviewsCount": 68,
     "badge": "🌸 Sweet Fragrance",
     "description": "Thick succulent branches bearing sweet-scented white-and-yellow tropical blooms. Price Range: PKR 450 - 650. Size: Small Pot (2-4 ft).",
     "sunlight": "Full Sun",
@@ -1342,7 +1856,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1353,7 +1867,7 @@ export const PLANTS_DATA = [
     "latinName": "ٹیبیبویا • Small Pot (3-5 ft)",
     "pricePKR": 1650,
     "rating": 5,
-    "reviewsCount": 64,
+    "reviewsCount": 55,
     "badge": "🌸 Spring Bloom Cloud",
     "description": "Spectacular flowering tree shedding leaves to cover branches in pink or yellow flower clouds. Price Range: PKR 1,250 - 2,000. Size: Small Pot (3-5 ft).",
     "sunlight": "Full Sun",
@@ -1369,7 +1883,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1380,7 +1894,7 @@ export const PLANTS_DATA = [
     "latinName": "کھجور پام • Outdoor (4 ft to 25 ft)",
     "pricePKR": 15000,
     "rating": 5,
-    "reviewsCount": 43,
+    "reviewsCount": 54,
     "badge": "🌴 Iconic Date Palm",
     "description": "Rooted transplanted Date Palms of all sizes. Bearing sweet Pakistani dates for farmhouses and estate roads. Price Range: PKR 2,500 - 30,000. Size: Outdoor (4 ft to 25 ft).",
     "sunlight": "Full Sun",
@@ -1396,7 +1910,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1407,7 +1921,7 @@ export const PLANTS_DATA = [
     "latinName": "کنگھی پام • Outdoor (1.5-3 ft)",
     "pricePKR": 1250,
     "rating": 5,
-    "reviewsCount": 59,
+    "reviewsCount": 108,
     "badge": "🌴 Stiff Feather Palm",
     "description": "Prehistoric stiff rosette palm loved for Pakistani lawn centerpieces and rockeries. Price Range: PKR 1,000 - 1,500. Size: Outdoor (1.5-3 ft).",
     "sunlight": "Full / Partial Sun",
@@ -1423,7 +1937,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1450,7 +1964,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1461,7 +1975,7 @@ export const PLANTS_DATA = [
     "latinName": "بوتل پام • Outdoor Ornamental",
     "pricePKR": 3250,
     "rating": 5,
-    "reviewsCount": 65,
+    "reviewsCount": 91,
     "badge": "🌴 Swollen Trunk",
     "description": "Unique swollen bottle-shaped trunk palm for luxury garden entrances and courtyards. Price Range: PKR 2,500 - 4,000. Size: Outdoor Ornamental.",
     "sunlight": "Full Sun",
@@ -1477,7 +1991,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1488,7 +2002,7 @@ export const PLANTS_DATA = [
     "latinName": "بس مارکیا پام • Premium Landscape",
     "pricePKR": 3500,
     "rating": 5,
-    "reviewsCount": 43,
+    "reviewsCount": 104,
     "badge": "💙 Silvery Blue Fan",
     "description": "Giant intense silvery-blue fan leaves. The most striking blue palm in Pakistani landscape architecture. Price Range: PKR 2,500 - 4,500. Size: Premium Landscape.",
     "sunlight": "Full Sun",
@@ -1504,7 +2018,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1515,7 +2029,7 @@ export const PLANTS_DATA = [
     "latinName": "لیڈی پام • Indoor / Shaded",
     "pricePKR": 3250,
     "rating": 5,
-    "reviewsCount": 119,
+    "reviewsCount": 50,
     "badge": "🌴 Multi-Stem Bamboo Palm",
     "description": "Elegant multi-stem dark green fan palm thriving in indoor shaded corridors and patios. Price Range: PKR 2,500 - 4,000. Size: Indoor / Shaded.",
     "sunlight": "Shade / Indirect",
@@ -1531,7 +2045,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1542,7 +2056,7 @@ export const PLANTS_DATA = [
     "latinName": "کوپرنیشیا پام • Rare Exotic Specimen",
     "pricePKR": 31500,
     "rating": 5,
-    "reviewsCount": 70,
+    "reviewsCount": 71,
     "badge": "⭐ Rare Collector Item",
     "description": "Ultra-rare silver wax palm for collector estates and botanical gardens. Price Range: PKR 28,000 - 35,000. Size: Rare Exotic Specimen.",
     "sunlight": "Full Sun",
@@ -1558,7 +2072,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1569,7 +2083,7 @@ export const PLANTS_DATA = [
     "latinName": "کوئین پام • Large Landscape (10-18 ft)",
     "pricePKR": 11500,
     "rating": 5,
-    "reviewsCount": 90,
+    "reviewsCount": 61,
     "badge": "👑 Graceful Feather Canopy",
     "description": "Tall elegant palm with cascading dark green feather fronds and bright orange fruit clusters. Price Range: PKR 10,500 - 13,000. Size: Large Landscape (10-18 ft).",
     "sunlight": "Full Sun",
@@ -1585,7 +2099,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1596,7 +2110,7 @@ export const PLANTS_DATA = [
     "latinName": "الیگزینڈر پام • Landscape Specimen",
     "pricePKR": 2250,
     "rating": 5,
-    "reviewsCount": 68,
+    "reviewsCount": 95,
     "badge": "🌴 Ringed Trunk",
     "description": "Smooth grey ringed trunk with lush green crownshaft. Popular for avenue lining. Price Range: PKR 2,000 - 2,500. Size: Landscape Specimen.",
     "sunlight": "Full Sun",
@@ -1612,7 +2126,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1623,7 +2137,7 @@ export const PLANTS_DATA = [
     "latinName": "واشنگٹونیا پام • Avenue Planting (6-15 ft)",
     "pricePKR": 3250,
     "rating": 5,
-    "reviewsCount": 44,
+    "reviewsCount": 41,
     "badge": "🌴 Skirt Fan Palm",
     "description": "Fast-growing towering skirt palm for commercial plazas, wedding halls, and main road avenues. Price Range: PKR 2,500 - 4,000. Size: Avenue Planting (6-15 ft).",
     "sunlight": "Full Sun",
@@ -1639,7 +2153,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1650,7 +2164,7 @@ export const PLANTS_DATA = [
     "latinName": "گولڈن بیرل کیکٹس • 6\" Pot Specimen",
     "pricePKR": 13500,
     "rating": 5,
-    "reviewsCount": 84,
+    "reviewsCount": 75,
     "badge": "🌵 Golden Globe",
     "description": "Perfect globe-shaped golden spined cactus. Luxury modern centerpiece for sunlit patios. Price Range: PKR 9,500 - 17,500. Size: 6\" Pot Specimen.",
     "sunlight": "Direct Sun",
@@ -1666,7 +2180,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1677,7 +2191,7 @@ export const PLANTS_DATA = [
     "latinName": "مدر آف ہنڈرڈز کیکٹس • 10\" Pot",
     "pricePKR": 15250,
     "rating": 5,
-    "reviewsCount": 60,
+    "reviewsCount": 63,
     "badge": "🌵 Clumping Specimen",
     "description": "Dense cluster of golden spined offset globes in decorative planter bowl. Price Range: PKR 12,500 - 18,000. Size: 10\" Pot.",
     "sunlight": "Direct Sun",
@@ -1693,7 +2207,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1704,7 +2218,7 @@ export const PLANTS_DATA = [
     "latinName": "سپائینی کیکٹس • 12\" Pot Collector",
     "pricePKR": 31500,
     "rating": 5,
-    "reviewsCount": 90,
+    "reviewsCount": 119,
     "badge": "⭐ Rare Collector Cactus",
     "description": "Massive multi-head pincushion cactus specimen for luxury rockeries and glass atriums. Price Range: PKR 28,500 - 35,000. Size: 12\" Pot Collector.",
     "sunlight": "Direct Sun",
@@ -1720,7 +2234,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1731,7 +2245,7 @@ export const PLANTS_DATA = [
     "latinName": "اینڈیز آرگن پائپ کیکٹس • 10\" Pot (3-5 ft)",
     "pricePKR": 11750,
     "rating": 5,
-    "reviewsCount": 104,
+    "reviewsCount": 85,
     "badge": "🌵 Architectural Column",
     "description": "Tall ribbed columnar green cactus stems providing dramatic desert landscape geometry. Price Range: PKR 8,500 - 15,000. Size: 10\" Pot (3-5 ft).",
     "sunlight": "Direct Sun",
@@ -1747,7 +2261,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1758,7 +2272,7 @@ export const PLANTS_DATA = [
     "latinName": "سیجوری ایگیو • 10\" Pot Specimen",
     "pricePKR": 9500,
     "rating": 5,
-    "reviewsCount": 100,
+    "reviewsCount": 52,
     "badge": "🌵 Huge Blue Rosette",
     "description": "Massive spiky blue-grey leaves forming an indestructible architectural outdoor rosette. Price Range: PKR 6,500 - 12,500. Size: 10\" Pot Specimen.",
     "sunlight": "Direct Sun",
@@ -1774,7 +2288,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1785,7 +2299,7 @@ export const PLANTS_DATA = [
     "latinName": "بٹرفلائی ایگیو • 10\" Pot",
     "pricePKR": 9950,
     "rating": 5,
-    "reviewsCount": 118,
+    "reviewsCount": 60,
     "badge": "🌵 Sculpted Rosette",
     "description": "Compact symmetrical bluish-grey rosette with dark burgundy terminal spines. Price Range: PKR 7,500 - 12,500. Size: 10\" Pot.",
     "sunlight": "Direct Sun",
@@ -1801,7 +2315,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1812,7 +2326,7 @@ export const PLANTS_DATA = [
     "latinName": "بٹرفلائی ایگیو لارج • 12\" Pot Specimen",
     "pricePKR": 25000,
     "rating": 5,
-    "reviewsCount": 41,
+    "reviewsCount": 58,
     "badge": "⭐ Master Specimen Agave",
     "description": "Large museum-grade Butterfly Agave in terracotta container for driveway entrances. Price Range: PKR 15,500 - 35,000. Size: 12\" Pot Specimen.",
     "sunlight": "Direct Sun",
@@ -1828,7 +2342,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1839,7 +2353,7 @@ export const PLANTS_DATA = [
     "latinName": "تھریڈ ایگیو • 6\" Pot",
     "pricePKR": 7950,
     "rating": 5,
-    "reviewsCount": 81,
+    "reviewsCount": 70,
     "badge": "🌵 White Thread Rosette",
     "description": "Dense dark green leaves covered in curly white ornamental threads along margins. Price Range: PKR 6,500 - 9,500. Size: 6\" Pot.",
     "sunlight": "Direct Sun",
@@ -1855,7 +2369,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1866,7 +2380,7 @@ export const PLANTS_DATA = [
     "latinName": "سانسیویریا بورنیو • Gift Plant (5\" Pot)",
     "pricePKR": 7500,
     "rating": 5,
-    "reviewsCount": 98,
+    "reviewsCount": 74,
     "badge": "🎁 Exotic Gift",
     "description": "Rare cylindrical fan-shaped collector Sansevieria in glazed ceramic pot. Price Range: PKR 5,500 - 9,500. Size: Gift Plant (5\" Pot).",
     "sunlight": "Indirect / Direct",
@@ -1882,7 +2396,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1893,7 +2407,7 @@ export const PLANTS_DATA = [
     "latinName": "کنوار گندل / ایلو ویرا • Medicinal (0.5-1 ft)",
     "pricePKR": 400,
     "rating": 5,
-    "reviewsCount": 87,
+    "reviewsCount": 51,
     "badge": "💊 Medicinal Gel",
     "description": "Fresh gel treats skin burns, hair care, and digestion. Pakistan's most useful home medicinal plant. Price Range: PKR 350 - 450. Size: Medicinal (0.5-1 ft).",
     "sunlight": "Full / Partial Sun",
@@ -1909,7 +2423,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1920,7 +2434,7 @@ export const PLANTS_DATA = [
     "latinName": "نیازبو / تلسی • Aromatic (0.8-1 ft)",
     "pricePKR": 120,
     "rating": 5,
-    "reviewsCount": 78,
+    "reviewsCount": 92,
     "badge": "🌿 Aromatic Immunity",
     "description": "Aromatic sacred leaves used in traditional herbal tea, immunity remedies, and air freshening. Price Range: PKR 35 - 200. Size: Aromatic (0.8-1 ft).",
     "sunlight": "Full Sun",
@@ -1936,7 +2450,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1947,7 +2461,7 @@ export const PLANTS_DATA = [
     "latinName": "کڑی پتہ • Culinary (1-2 ft)",
     "pricePKR": 400,
     "rating": 5,
-    "reviewsCount": 102,
+    "reviewsCount": 105,
     "badge": "🍲 Culinary Herb",
     "description": "Fresh organic Curry Leaves essential for Pakistani karahi, daal, and South Asian cooking. Price Range: PKR 350 - 450. Size: Culinary (1-2 ft).",
     "sunlight": "Full / Partial Sun",
@@ -1963,7 +2477,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -1974,7 +2488,7 @@ export const PLANTS_DATA = [
     "latinName": "میٹھا پتہ (اسٹیویا) • Culinary Deal of 2",
     "pricePKR": 1599,
     "rating": 5,
-    "reviewsCount": 108,
+    "reviewsCount": 58,
     "badge": "🍯 Natural Zero-Calorie Sweetener",
     "description": "Natural zero-calorie sweet stevia leaves. 300x sweeter than sugar for diabetic patients. Price Range: PKR 1,399 - 1,800. Size: Culinary Deal of 2.",
     "sunlight": "Full Sun",
@@ -1990,7 +2504,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -2001,7 +2515,7 @@ export const PLANTS_DATA = [
     "latinName": "لیوینڈر پھول • Aromatic Deal of 2",
     "pricePKR": 1650,
     "rating": 5,
-    "reviewsCount": 105,
+    "reviewsCount": 58,
     "badge": "💜 Calming Aroma",
     "description": "Fragrant purple lavender flowers promoting deep sleep, stress relief, and tea infusion. Price Range: PKR 1,399 - 1,900. Size: Aromatic Deal of 2.",
     "sunlight": "Full Sun",
@@ -2017,7 +2531,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -2028,7 +2542,7 @@ export const PLANTS_DATA = [
     "latinName": "شانِ خدا / سینسیشن آم • 12\" Earth Ball (3-4 ft)",
     "pricePKR": 1950,
     "rating": 5,
-    "reviewsCount": 99,
+    "reviewsCount": 54,
     "badge": "🍊 Red-Purple Mango",
     "description": "Unique deep red-purple Pakistani Sensation Mango variety bearing sweet fibre-free fruit. Price Range: PKR 1,500 - 2,500. Size: 12\" Earth Ball (3-4 ft).",
     "sunlight": "Full Sun",
@@ -2044,7 +2558,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -2055,7 +2569,7 @@ export const PLANTS_DATA = [
     "latinName": "سندھڑی آم • 18\" Grow Bag (4-6 ft)",
     "pricePKR": 5500,
     "rating": 5,
-    "reviewsCount": 102,
+    "reviewsCount": 96,
     "badge": "🍊 Export Sindhri",
     "description": "Large golden Sindhri mango tree ready for immediate orchard or garden planting. Price Range: PKR 4,500 - 6,500. Size: 18\" Grow Bag (4-6 ft).",
     "sunlight": "Full Sun",
@@ -2071,7 +2585,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -2082,7 +2596,7 @@ export const PLANTS_DATA = [
     "latinName": "ملتانی چونسہ آم • 12\" Earth Ball (4-5 ft)",
     "pricePKR": 3500,
     "rating": 5,
-    "reviewsCount": 103,
+    "reviewsCount": 91,
     "badge": "🍊 King of Mangoes",
     "description": "World-famous Multani Chaunsa. Sweetest aromatic mango fruiting within 2 years. Price Range: PKR 3,000 - 4,500. Size: 12\" Earth Ball (4-5 ft).",
     "sunlight": "Full Sun",
@@ -2098,7 +2612,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -2109,7 +2623,7 @@ export const PLANTS_DATA = [
     "latinName": "چائنا امرود • 12\" Bag (2.5-3 ft)",
     "pricePKR": 550,
     "rating": 5,
-    "reviewsCount": 57,
+    "reviewsCount": 60,
     "badge": "🍐 #1 Amrood",
     "description": "Pakistans top commercial China Guava producing large crisp sweet guavas twice a year. Price Range: PKR 450 - 650. Size: 12\" Bag (2.5-3 ft).",
     "sunlight": "Full Sun",
@@ -2125,7 +2639,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -2136,7 +2650,7 @@ export const PLANTS_DATA = [
     "latinName": "قندھاری انار • 12\" to 18\" Pot",
     "pricePKR": 2450,
     "rating": 5,
-    "reviewsCount": 42,
+    "reviewsCount": 64,
     "badge": "❤️ Ruby Red Arils",
     "description": "Deep red Kandhari Anar bearing juicy sweet-tart pomegranates. Price Range: PKR 450 - 4,500. Size: 12\" to 18\" Pot.",
     "sunlight": "Full Sun",
@@ -2152,7 +2666,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -2163,7 +2677,7 @@ export const PLANTS_DATA = [
     "latinName": "مٹھا کینو / مالٹا • 12\" Pot/Bag",
     "pricePKR": 700,
     "rating": 5,
-    "reviewsCount": 73,
+    "reviewsCount": 85,
     "badge": "🍊 Sweet Citrus",
     "description": "High-yielding sweet Kinnow and Malta orange tree for Punjab orchards. Price Range: PKR 550 - 850. Size: 12\" Pot/Bag.",
     "sunlight": "Full Sun",
@@ -2179,7 +2693,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -2190,7 +2704,7 @@ export const PLANTS_DATA = [
     "latinName": "سرگودھا کینو • 12\" Bag",
     "pricePKR": 700,
     "rating": 5,
-    "reviewsCount": 60,
+    "reviewsCount": 66,
     "badge": "🍊 Sargodha Breed",
     "description": "Famous Sargodha Kinnu citrus sapling fruiting heavily in winter months. Price Range: PKR 550 - 850. Size: 12\" Bag.",
     "sunlight": "Full Sun",
@@ -2206,7 +2720,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -2217,7 +2731,7 @@ export const PLANTS_DATA = [
     "latinName": "بلڈ اورنج • 12\" Bag",
     "pricePKR": 1750,
     "rating": 5,
-    "reviewsCount": 107,
+    "reviewsCount": 119,
     "badge": "🍊 Deep Red Juice",
     "description": "Winter blood orange tree with deep red sweet citrus juice. Price Range: PKR 1,000 - 2,500. Size: 12\" Bag.",
     "sunlight": "Full Sun",
@@ -2233,7 +2747,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -2244,7 +2758,7 @@ export const PLANTS_DATA = [
     "latinName": "کمکاٹ سنگترہ • 12\" Bag (3-3.5 ft)",
     "pricePKR": 1850,
     "rating": 5,
-    "reviewsCount": 43,
+    "reviewsCount": 118,
     "badge": "🍊 Miniature Edible Peel",
     "description": "Miniature orange tree bearing small oval fruits eaten whole with sweet peel. Price Range: PKR 1,250 - 2,500. Size: 12\" Bag (3-3.5 ft).",
     "sunlight": "Full Sun",
@@ -2260,7 +2774,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -2271,7 +2785,7 @@ export const PLANTS_DATA = [
     "latinName": "بے بیج لیموں • 12\" Bag",
     "pricePKR": 825,
     "rating": 5,
-    "reviewsCount": 76,
+    "reviewsCount": 50,
     "badge": "🍋 Seedless Lemon",
     "description": "High-yielding juicy seedless lemon tree fruiting year-round. Price Range: PKR 650 - 1,000. Size: 12\" Bag.",
     "sunlight": "Full Sun",
@@ -2287,7 +2801,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -2298,7 +2812,7 @@ export const PLANTS_DATA = [
     "latinName": "سندر خانی انگور • 10\" Bag",
     "pricePKR": 1175,
     "rating": 5,
-    "reviewsCount": 82,
+    "reviewsCount": 84,
     "badge": "🍇 Sweet Sundar Khani",
     "description": "Famous long green sweet Sundar Khani grape vine for pergolas. Price Range: PKR 850 - 1,500. Size: 10\" Bag.",
     "sunlight": "Full Sun",
@@ -2314,7 +2828,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -2325,7 +2839,7 @@ export const PLANTS_DATA = [
     "latinName": "انناس • Tropical Container",
     "pricePKR": 2950,
     "rating": 5,
-    "reviewsCount": 72,
+    "reviewsCount": 62,
     "badge": "🍍 Tropical Pineapple",
     "description": "Exotic tropical pineapple plant producing sweet home-grown pineapple fruit. Price Range: PKR 2,500 - 3,500. Size: Tropical Container.",
     "sunlight": "Full Sun",
@@ -2341,7 +2855,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -2368,7 +2882,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -2379,7 +2893,7 @@ export const PLANTS_DATA = [
     "latinName": "اسپینش زیتون • 12\" Bag (1-2 ft)",
     "pricePKR": 1250,
     "rating": 5,
-    "reviewsCount": 67,
+    "reviewsCount": 82,
     "badge": "🫒 Blessed Zaitoon",
     "description": "High oil-content Spanish olive tree acclimatized for Punjab and KPK soil. Price Range: PKR 1,000 - 1,500. Size: 12\" Bag (1-2 ft).",
     "sunlight": "Full Sun",
@@ -2395,7 +2909,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -2406,7 +2920,7 @@ export const PLANTS_DATA = [
     "latinName": "ریڈ لیڈی پپیتا • Hybrid / 12\" Bag",
     "pricePKR": 1175,
     "rating": 5,
-    "reviewsCount": 97,
+    "reviewsCount": 50,
     "badge": "🥭 8-Month Fast Fruit",
     "description": "Ultra fast Papaya fruiting within 8 months with sweet red flesh. Price Range: PKR 850 - 1,500. Size: Hybrid / 12\" Bag.",
     "sunlight": "Full Sun",
@@ -2422,7 +2936,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -2433,7 +2947,7 @@ export const PLANTS_DATA = [
     "latinName": "بادام کا درخت • 12\" Bag (2.5-3.5 ft)",
     "pricePKR": 1375,
     "rating": 5,
-    "reviewsCount": 57,
+    "reviewsCount": 112,
     "badge": "🥜 Sweet Almond",
     "description": "Pakistani almond tree bearing white spring blossoms and sweet almonds. Price Range: PKR 950 - 1,800. Size: 12\" Bag (2.5-3.5 ft).",
     "sunlight": "Full Sun",
@@ -2449,7 +2963,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -2460,7 +2974,7 @@ export const PLANTS_DATA = [
     "latinName": "جامن کا درخت • 12\" Bag (2-3 ft)",
     "pricePKR": 550,
     "rating": 5,
-    "reviewsCount": 60,
+    "reviewsCount": 69,
     "badge": "🫐 Monsoon Jamun",
     "description": "Beloved dark purple Jamun shade tree packed with antioxidant health benefits. Price Range: PKR 450 - 650. Size: 12\" Bag (2-3 ft).",
     "sunlight": "Full Sun",
@@ -2476,7 +2990,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -2487,7 +3001,7 @@ export const PLANTS_DATA = [
     "latinName": "کیلا • 12\" Bag",
     "pricePKR": 1175,
     "rating": 5,
-    "reviewsCount": 88,
+    "reviewsCount": 50,
     "badge": "🍌 Fast Banana",
     "description": "Dwarf banana tree producing sweet Pakistani banana bunches. Price Range: PKR 850 - 1,500. Size: 12\" Bag.",
     "sunlight": "Full Sun",
@@ -2503,7 +3017,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -2514,7 +3028,7 @@ export const PLANTS_DATA = [
     "latinName": "لیچی • 12\" Bag (1-1.5 ft)",
     "pricePKR": 1875,
     "rating": 5,
-    "reviewsCount": 46,
+    "reviewsCount": 89,
     "badge": "❤️ Sweet Leechi",
     "description": "Juicy translucent sweet Lychee fruit tree grafted for Punjab soil. Price Range: PKR 1,250 - 2,500. Size: 12\" Bag (1-1.5 ft).",
     "sunlight": "Full Sun",
@@ -2530,7 +3044,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -2541,7 +3055,7 @@ export const PLANTS_DATA = [
     "latinName": "آلو بخارا • 12\" Bag",
     "pricePKR": 1175,
     "rating": 5,
-    "reviewsCount": 82,
+    "reviewsCount": 40,
     "badge": "🟣 Sweet Plum",
     "description": "Pakistani Aloo Bukhara plum tree producing juicy purple-red plums. Price Range: PKR 850 - 1,500. Size: 12\" Bag.",
     "sunlight": "Full Sun",
@@ -2557,7 +3071,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   },
@@ -2568,7 +3082,7 @@ export const PLANTS_DATA = [
     "latinName": "کالا انجیر • 12\" Bag (1.5-3 ft)",
     "pricePKR": 1175,
     "rating": 5,
-    "reviewsCount": 82,
+    "reviewsCount": 49,
     "badge": "🫐 Medicinal Fig",
     "description": "Sweet honey-flavored dark black figs fruiting twice a year. Price Range: PKR 850 - 1,500. Size: 12\" Bag (1.5-3 ft).",
     "sunlight": "Full Sun",
@@ -2584,7 +3098,7 @@ export const PLANTS_DATA = [
       "3 Years": "Mature specimen."
     },
     "careGuide": [
-      "Cultivated in acclimatized Pattoki soil.",
+      "Cultivated in acclimatized soil.",
       "Requires moderate sunlight and organic compost."
     ]
   }

@@ -50,7 +50,7 @@ export const HeroOverlay = ({ onExploreClick, onOpenCatalog, onOpenAIPlanner }) 
           className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full text-xs sm:text-sm font-black text-emerald-950 border border-amber-400/80 shadow-lg bg-gradient-to-r from-amber-100 via-white to-emerald-100 mb-6"
         >
           <Award className="w-4 h-4 text-amber-600 animate-pulse" />
-          <span className="tracking-wide">50+ YEARS BOTANICAL HERITAGE • PATTOKI NURSERY HUB</span>
+          <span className="tracking-wide">50+ YEARS BOTANICAL HERITAGE • PAKISTANI PLANTS HUB</span>
         </motion.div>
 
         {/* End-Level High Impact Typography */}

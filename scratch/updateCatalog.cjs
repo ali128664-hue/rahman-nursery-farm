@@ -3,7 +3,7 @@ const fs = require('fs');
 const PLANT_CATEGORIES = [
   { id: 'all',       label: '🌿 All Plants A–Z' },
   { id: 'orchard',   label: '🏡 Bagh Lagwao — Full Orchard Planting' },
-  { id: 'fruit',     label: '🍊 Fruit Trees & Orchards (Amrood, Mango, Kinnow, Anaar)' },
+  { id: 'fruit',     label: '🍊 Fruit Trees & Orchards (Aam, Amrood, Kinnow, Anaar, Saib)' },
   { id: 'palms',     label: '🌴 Royal Palms & Date Palms (Khajoor, Foxtail, Washingtonia)' },
   { id: 'indoor',    label: '🪴 Indoor Air Purifiers & Foliage (Peace Lily, Snake Plant)' },
   { id: 'outdoor',   label: '🌲 Timber, Shade & Flowering Trees (Cassia Nodosa, Teak)' },
@@ -57,15 +57,15 @@ const ORCHARD_SERVICES = [
     yieldPerAcre: '300 – 500 Mann / Year at Maturity',
     bestFor: 'Multan, Bahawalpur, Sahiwal & Rahim Yar Khan Belt',
     color: '#FF9800',
-    description: 'Turn-key commercial Mango orchard with Multani Chaunsa, Sindhri, and Anwar Ratol grafted trees. Includes field layout, deep pit preparation, organic manure, and 2-year growth monitoring.',
+    description: 'Turn-key commercial Mango orchard with Multani Chaunsa, Sindhri, Anwar Ratol, and Alphonso grafted trees. Includes field layout, deep pit preparation, organic manure, and 2-year growth monitoring.',
     includes: [
-      '110+ Premium Grafted Chaunsa, Sindhri & Anwar Ratol saplings',
+      '110+ Premium Grafted Chaunsa, Sindhri, Anwar Ratol & Alphonso saplings',
       'Deep pit digging (3ft × 3ft) with river sand & organic manure blend',
       'Termite prevention treatment (Anti-sewank application)',
       'Fruit fly trap installation guidance & canopy pruning',
       'Free expert farm visit at 6-month interval'
     ],
-    varieties: ['Multani Chaunsa', 'Sindhri', 'Anwar Ratol', 'Dusehri']
+    varieties: ['Multani Chaunsa', 'Sindhri', 'Anwar Ratol', 'Alphonso', 'Dusehri']
   },
   {
     id: 'kinnu-citrus-orchard',
@@ -79,15 +79,15 @@ const ORCHARD_SERVICES = [
     yieldPerAcre: '500 – 800 Crates / Year',
     bestFor: 'Sargodha, Sahiwal, Toba Tek Singh & Faisalabad Belt',
     color: '#F57C00',
-    description: 'High-earning Kinnu Citrus & Blood Orange orchard service. Acclimatized grafted rootstock for maximum juice content, bright orange skin, and heavy winter yield.',
+    description: 'High-earning Kinnu Citrus, Musambi & Blood Orange orchard service. Acclimatized grafted rootstock for maximum juice content, bright orange skin, and heavy winter yield.',
     includes: [
-      '180+ Grafted Kinnu & Blood Orange saplings',
+      '180+ Grafted Kinnu, Musambi & Blood Orange saplings',
       'Professional ridge/bed planting layout for efficient irrigation',
       'Micronutrient (Zinc + Iron + Boron) initial soil application',
       'Canker & citrus psylla management plan',
       '90-day plant replacement guarantee'
     ],
-    varieties: ['Export Kinnu', 'Red Blood Orange', 'Desi Malta', 'Seedless Lemon']
+    varieties: ['Export Kinnu', 'Red Blood Orange', 'Sweet Limetta Musambi', 'Seedless Lemon']
   },
   {
     id: 'anar-pomegranate-orchard',
@@ -165,6 +165,29 @@ const FREQUENTLY_ASKED_QUESTIONS = [
 ];
 
 const RAW_PLANTS = [
+  // MANGO SPECIALTY VARIETIES (NEW ADDITIONS)
+  { id: 'anwar-ratol-mango', name: 'Anwar Ratol Mango (انوار رٹول آم)', urdu: 'انوار رٹول آم', category: 'fruit', price: 1750, range: '1,499 - 1,950', size: 'Grafted (2 - 3 ft)', sunlight: 'Full Sun', watering: 'Regular', height: '2 – 6 ft', diff: 'Easy', pet: true, badge: '🥭 Fragrant Sweet Ratol', desc: 'Famous Anwar Ratol grafted mango sapling known for extreme sweetness and intense aroma.' },
+  { id: 'chaunsa-mango-pot', name: 'Chaunsa Mango (چونسہ آم – 12" Pot)', urdu: 'چونسہ آم', category: 'fruit', price: 2700, range: '2,450 - 2,950', size: '12" Pot / Bag', sunlight: 'Full Sun', watering: 'Regular', height: '3 – 8 ft', diff: 'Easy', pet: true, badge: '🥭 Multani Chaunsa', desc: 'Classic Pakistani Chaunsa Mango tree in 12" grow bag ready for immediate garden or orchard planting.' },
+  { id: 'dussehri-mango-earthball', name: 'Dussehri Mango (دسیری آم – 12" Earth Ball)', urdu: 'دسیری آم', category: 'fruit', price: 2290, range: '1,250 - 3,330', size: '12" Earth Ball', sunlight: 'Full Sun', watering: 'Regular', height: '3 – 8 ft', diff: 'Easy', pet: true, badge: '🥭 Dussehri Sweetness', desc: 'Delicious Dussehri mango variety with fiberless sweet pulp.' },
+  { id: 'alphonso-hapus-mango', name: 'Alphonso Mango (ہاپوس آم – Premium Grafted)', urdu: 'ہاپوس آم', category: 'fruit', price: 9950, range: '8,550 - 12,600', size: 'Premium Grafted', sunlight: 'Full Sun', watering: 'Regular', height: '3 – 10 ft', diff: 'Moderate', pet: true, badge: '👑 King Alphonso', desc: 'Exotic Alphonso Hapus mango premium grafted variety prized globally for rich saffron aroma.' },
+  { id: 'dudh-pedo-thai-mango', name: 'Dudh Pedo Mango (تھائی آم / دودھ پیڑو)', urdu: 'تھائی آم / دودھ پیڑو', category: 'fruit', price: 9950, range: '9,000 - 11,700', size: 'Premium Grafted', sunlight: 'Full Sun', watering: 'Regular', height: '3 – 10 ft', diff: 'Moderate', pet: true, badge: '🥭 Thai Dudh Pedo', desc: 'Exotic Thai Dudh Pedo sweet mango grafted rootstock fruiting heavily in containers.' },
+  { id: 'pairi-asian-mango', name: 'Pairi Mango (ایشیائی آم / پیری)', urdu: 'ایشیائی آم / پیری', category: 'fruit', price: 8500, range: '7,650 - 9,900', size: 'Premium Grafted', sunlight: 'Full Sun', watering: 'Regular', height: '3 – 10 ft', diff: 'Moderate', pet: true, badge: '🥭 Asian Pairi Variety', desc: 'Aromatic Pairi mango with juicy sweet orange flesh.' },
+  { id: 'fajri-mango-tree', name: 'Fajri Mango (فجری آم – Large Fruit)', urdu: 'فجری آم', category: 'fruit', price: 3330, range: '3,330', size: 'Fruit Tree (4-6 ft)', sunlight: 'Full Sun', watering: 'Regular', height: '4 – 12 ft', diff: 'Easy', pet: true, badge: '🥭 Large Fajri Mango', desc: 'Huge-sized Fajri mango bearing colossal sweet fruits in late summer season.' },
+  { id: 'langra-mango-tree', name: 'Langra Mango (لنگڑا آم)', urdu: 'لنگڑا آم', category: 'fruit', price: 1080, range: '1,080', size: 'Fruit Tree (3-5 ft)', sunlight: 'Full Sun', watering: 'Regular', height: '3 – 10 ft', diff: 'Easy', pet: true, badge: '🥭 Tangy Sweet Langra', desc: 'Traditional green Langra mango tree with rich distinct aromatic taste.' },
+  { id: 'lal-badshah-mango', name: 'Lal Badshah Mango (لال بادشاہ آم)', urdu: 'لال بادشاہ آم', category: 'fruit', price: 3330, range: '3,330', size: 'Fruit Tree (4-6 ft)', sunlight: 'Full Sun', watering: 'Regular', height: '4 – 12 ft', diff: 'Easy', pet: true, badge: '🔴 Red Lal Badshah', desc: 'Striking red-skinned Pakistani Lal Badshah mango variety.' },
+  { id: 'desi-mango-seedling', name: 'Desi Mango Seedling (دیسی آم – 2 ft)', urdu: 'دیسی آم', category: 'fruit', price: 1800, range: '813 - 3,330', size: 'Seedling (2 ft)', sunlight: 'Full Sun', watering: 'Regular', height: '2 – 6 ft', diff: 'Easiest', pet: true, badge: '🥭 Desi Pickling Mango', desc: 'Strong native Desi mango seedling used for pickling (Achaar) and robust rootstock grafting.' },
+
+  // OTHER EXOTIC FRUITS (NEW ADDITIONS)
+  { id: 'sapodilla-cheeku', name: 'Sapodilla / Cheeku Tree (چیکو – 18" Bag)', urdu: 'چیکو', category: 'fruit', price: 6500, range: '5,500 - 7,500', size: '18" Bag (Large)', sunlight: 'Full Sun', watering: 'Moderate', height: '4 – 10 ft', diff: 'Easy', pet: true, badge: '🤎 Sweet Cheeku', desc: 'Large established Cheeku fruit tree bearing sweet brown malted-flavored fruits year-round.' },
+  { id: 'kala-kallu-apple', name: 'Kala Kallu Apple Tree (سیب کالا کلو)', urdu: 'سیب کالا کلو', category: 'fruit', price: 1500, range: '1,500', size: 'Fruit Tree (3-5 ft)', sunlight: 'Full Sun / Cold Winter', watering: 'Moderate', height: '3 – 8 ft', diff: 'Moderate', pet: true, badge: '🍎 Black Red Apple', desc: 'Deep dark red Kala Kallu apple variety acclimatized for Northern Punjab & hilly regions.' },
+  { id: 'avocado-plant-exotic', name: 'Avocado Plant (ایوکاڈو – Exotic Fruit)', urdu: 'ایوکاڈو', category: 'fruit', price: 3000, range: '3,000', size: 'Exotic Fruit Tree', sunlight: 'Partial / Full Sun', watering: 'Moderate', height: '3 – 8 ft', diff: 'Moderate', pet: true, badge: '🥑 Butter Avocado', desc: 'Exotic creamy Avocado fruit tree adapted for home gardens and shade houses.' },
+  { id: 'dragon-fruit-plant', name: 'Dragon Fruit Cactus Plant (ڈریگن فروٹ)', urdu: 'ڈریگن فروٹ', category: 'fruit', price: 2500, range: '2,500', size: 'Cactus / Fruit', sunlight: 'Full Sun', watering: 'Low', height: '3 – 6 ft vine', diff: 'Easy', pet: true, badge: '🐉 Exotic Dragon Fruit', desc: 'Fascinating fruiting cactus producing vibrant magenta dragon fruits with white/red sweet pulp.' },
+  { id: 'lisbon-lemon-12', name: 'Lisbon Lemon (لسبن لیموں – 12" Bag)', urdu: 'لسبن لیموں', category: 'fruit', price: 1850, range: '1,250 - 2,500', size: '12" Bag', sunlight: 'Full Sun', watering: 'Regular', height: '3 – 6 ft', diff: 'Easiest', pet: false, badge: '🍋 High Juice Lemon', desc: 'Lisbon high-juice commercial lemon tree fruiting heavily in containers.' },
+  { id: 'peach-aaru-tree', name: 'Peach Tree Grafted (آڑو کا درخت)', urdu: 'آڑو کا درخت', category: 'fruit', price: 1980, range: '1,760 - 2,300', size: 'Grafted Plant', sunlight: 'Full Sun', watering: 'Regular', height: '3 – 8 ft', diff: 'Moderate', pet: true, badge: '🍑 Sweet Peach', desc: 'Grafted Pakistani Aaru peach tree bearing juicy pink-blushed sweet peaches.' },
+  { id: 'sweet-limetta-musambi', name: 'Sweet Limetta / Musambi (موسمبی)', urdu: 'موسمبی', category: 'fruit', price: 1250, range: '1,199 - 1,350', size: 'Grafted Plant', sunlight: 'Full Sun', watering: 'Regular', height: '3 – 7 ft', diff: 'Easy', pet: false, badge: '🍊 Sweet Musambi', desc: 'Juicy sweet Musambi citrus tree essential for fresh winter fruit juice.' },
+  { id: 'black-grapes-narang', name: 'Black Grapes Narang Vine (کالے انگور)', urdu: 'کالے انگور', category: 'fruit', price: 1350, range: '1,299 - 1,400', size: 'Fruit Vine', sunlight: 'Full Sun', watering: 'Moderate', height: '6 – 15 ft vine', diff: 'Moderate', pet: true, badge: '🍇 Sweet Black Grapes', desc: 'Deep black sweet grape vine climbing fast over garden pergolas.' },
+  { id: 'jujube-ber-tree', name: 'Jujube / Indian Plum Tree (بیر کا درخت)', urdu: 'بیر کا درخت', category: 'fruit', price: 4250, range: '3,900 - 4,680', size: 'Fruit Tree (4-8 ft)', sunlight: 'Full Sun', watering: 'Low', height: '4 – 15 ft', diff: 'Easiest', pet: true, badge: '🟢 Desi Sweet Ber', desc: 'Large Pakistani Sufi Ber tree bearing huge crisp apple-sized sweet jujube fruits.' },
+
   // INDOOR
   { id: 'zz-plant', name: 'ZZ Plant (Zamioculcas zamiifolia)', urdu: 'زی زی پلانٹ', category: 'indoor', price: 3950, range: '3,500 - 4,500', size: 'Indoor (10" Pot)', sunlight: 'Low to Bright Light', watering: 'Every 3-4 Weeks', height: '1.5 – 3 ft', diff: 'Easiest', pet: false, badge: '🪴 Zero Maintenance', desc: 'Indestructible indoor plant with glossy dark green waxy leaves. Thrives in dark corners and requires almost zero watering.' },
   { id: 'peace-lily-10', name: 'Peace Lily (Spathiphyllum – 10" Pot)', urdu: 'پیس للی', category: 'indoor', price: 7950, range: '6,500 - 9,500', size: 'Indoor (10" Pot)', sunlight: 'Low Indirect Light', watering: 'Twice Weekly', height: '1.5 – 2.5 ft', diff: 'Easy', pet: false, badge: '🤍 Air Purifier', desc: 'Elegant white spathes blooming indoors. NASA top-rated air purifying plant for bedrooms and drawing rooms.' },
@@ -243,7 +266,7 @@ const RAW_PLANTS = [
   { id: 'stevia-deal', name: 'Stevia Organic Sugar Free Plant (Deal of 2)', urdu: 'میٹھا پتہ (اسٹیویا)', category: 'medicinal', price: 1599, range: '1,399 - 1,800', size: 'Culinary Deal of 2', sunlight: 'Full Sun', watering: 'Regular', height: '1 – 2 ft', diff: 'Easy', pet: true, badge: '🍯 Natural Zero-Calorie Sweetener', desc: 'Natural zero-calorie sweet stevia leaves. 300x sweeter than sugar for diabetic patients.' },
   { id: 'lavender-deal', name: 'Lavender Fragrant Herb (Deal of 2)', urdu: 'لیوینڈر پھول', category: 'medicinal', price: 1650, range: '1,399 - 1,900', size: 'Aromatic Deal of 2', sunlight: 'Full Sun', watering: 'Low', height: '1 – 2 ft', diff: 'Moderate', pet: true, badge: '💜 Calming Aroma', desc: 'Fragrant purple lavender flowers promoting deep sleep, stress relief, and tea infusion.' },
 
-  // FRUITS & ORCHARDS
+  // FRUITS & ORCHARDS (EXISTING CROP)
   { id: 'shan-e-khuda-mango', name: 'Shan-e-Khuda Sensation Mango (3-4 ft)', urdu: 'شانِ خدا / سینسیشن آم', category: 'fruit', price: 1950, range: '1,500 - 2,500', size: '12" Earth Ball (3-4 ft)', sunlight: 'Full Sun', watering: 'Regular', height: '3 – 8 ft', diff: 'Easy', pet: true, badge: '🍊 Red-Purple Mango', desc: 'Unique deep red-purple Pakistani Sensation Mango variety bearing sweet fibre-free fruit.' },
   { id: 'sindhri-mango-bag', name: 'Grafted Sindhri Mango (18" Grow Bag)', urdu: 'سندھڑی آم', category: 'fruit', price: 5500, range: '4,500 - 6,500', size: '18" Grow Bag (4-6 ft)', sunlight: 'Full Sun', watering: 'Regular', height: '5 – 12 ft', diff: 'Easy', pet: true, badge: '🍊 Export Sindhri', desc: 'Large golden Sindhri mango tree ready for immediate orchard or garden planting.' },
   { id: 'multani-chaunsa-grafted', name: 'Grafted Multani Chaunsa Mango', urdu: 'ملتانی چونسہ آم', category: 'fruit', price: 3500, range: '3,000 - 4,500', size: '12" Earth Ball (4-5 ft)', sunlight: 'Full Sun', watering: 'Regular', height: '5 – 15 ft', diff: 'Easy', pet: true, badge: '🍊 King of Mangoes', desc: 'World-famous Multani Chaunsa. Sweetest aromatic mango fruiting within 2 years.' },
@@ -286,7 +309,7 @@ const formattedPlants = RAW_PLANTS.map(p => ({
   origin: 'Chak Hassan Arain (Rahman Nursery Farm)',
   colorTheme: '#059669',
   growthTimeline: { '1 Year': 'Healthy growing plant.', '3 Years': 'Mature specimen.' },
-  careGuide: ['Cultivated in acclimatized Pattoki soil.', 'Requires moderate sunlight and organic compost.']
+  careGuide: ['Cultivated in acclimatized soil.', 'Requires moderate sunlight and organic compost.']
 }));
 
 const fileContent = `export const PLANT_CATEGORIES = ${JSON.stringify(PLANT_CATEGORIES, null, 2)};
@@ -303,4 +326,4 @@ export const PLANTS_DATA = ${JSON.stringify(formattedPlants, null, 2)};
 `;
 
 fs.writeFileSync('c:/Users/Hp/OneDrive/Desktop/rahman-nursery-farm/src/data/plantCatalog.js', fileContent);
-console.log('Successfully updated plantCatalog.js with ' + formattedPlants.length + ' plants and all exports!');
+console.log('Successfully updated plantCatalog.js with ' + formattedPlants.length + ' total plants!');
