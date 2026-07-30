@@ -146,7 +146,7 @@ export const CatalogModal = ({ isOpen, onClose, onSelectPlantForInspection, onAd
             return (
               <div
                 key={plant.id}
-                className="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 flex flex-col justify-between hover:shadow-xl transition-all duration-200"
+                className="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 flex flex-col justify-between"
               >
                 {/* Header strip */}
                 <div>

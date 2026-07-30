@@ -382,7 +382,7 @@ export const ShopPage = ({
                 {filteredPlants.map((plant) => (
                   <div
                     key={plant.id}
-                    className="bg-white rounded-3xl overflow-hidden shadow-lg border border-emerald-200/90 flex flex-col justify-between hover:shadow-2xl hover:border-amber-400 transition-all duration-300 hover:-translate-y-1 group"
+                    className="bg-white rounded-3xl overflow-hidden shadow-md border border-emerald-200 flex flex-col justify-between"
                   >
                     {/* Card Header Strip */}
                     <div>
@@ -415,7 +415,7 @@ export const ShopPage = ({
                           {plant.badge}
                         </span>
 
-                        <h3 className="font-serif text-lg font-black text-emerald-950 mb-0.5 leading-snug group-hover:text-emerald-700 transition-colors">
+                        <h3 className="font-serif text-lg font-black text-emerald-950 mb-0.5 leading-snug">
                           {plant.name}
                         </h3>
                         <p className="text-[11px] italic text-slate-500 font-bold mb-3">{plant.latinName}</p>
@@ -454,8 +454,7 @@ export const ShopPage = ({
                           <button
                             type="button"
                             onClick={() => setQty(plant.id, getQty(plant.id) - 1)}
-                            className="w-7 h-7 rounded-lg bg-white border border-slate-300 flex items-center justify-center text-xs font-black text-emerald-950 hover:bg-slate-200 active:scale-95 transition-all shadow-sm"
-                            title="Decrease quantity"
+                            className="w-7 h-7 rounded-lg bg-white border border-slate-300 flex items-center justify-center text-xs font-black text-emerald-950 hover:bg-slate-200 transition-colors"
                           >
                             -
                           </button>
@@ -465,8 +464,7 @@ export const ShopPage = ({
                           <button
                             type="button"
                             onClick={() => setQty(plant.id, getQty(plant.id) + 1)}
-                            className="w-7 h-7 rounded-lg bg-white border border-slate-300 flex items-center justify-center text-xs font-black text-emerald-950 hover:bg-slate-200 active:scale-95 transition-all shadow-sm"
-                            title="Increase quantity"
+                            className="w-7 h-7 rounded-lg bg-white border border-slate-300 flex items-center justify-center text-xs font-black text-emerald-950 hover:bg-slate-200 transition-colors"
                           >
                             +
                           </button>
@@ -483,7 +481,6 @@ export const ShopPage = ({
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-full py-3 rounded-xl text-xs font-black flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white hover:from-emerald-700 hover:to-emerald-800 transition-all shadow-md"
-                        title="Direct 1-Click Order via WhatsApp"
                       >
                         <MessageCircle className="w-4 h-4 fill-white/20" />
                         <span>WhatsApp Order ({getQty(plant.id)} Unit{getQty(plant.id) > 1 ? 's' : ''})</span>
@@ -501,7 +498,6 @@ export const ShopPage = ({
                         <button
                           onClick={() => onSelectPlantForInspection(plant.id)}
                           className="py-2.5 px-4 rounded-xl text-xs font-black flex items-center justify-center gap-1 text-emerald-950 bg-slate-100 hover:bg-slate-200 transition-all border border-slate-200"
-                          title="Inspect plant details"
                         >
                           <Eye className="w-3.5 h-3.5 text-emerald-700" />
                           <span>Inspect</span>
