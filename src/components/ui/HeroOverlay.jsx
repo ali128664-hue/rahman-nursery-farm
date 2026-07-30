@@ -72,7 +72,7 @@ export const HeroOverlay = ({ onExploreClick, onOpenCatalog, onOpenAIPlanner }) 
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-base sm:text-lg text-emerald-950 max-w-3xl mx-auto font-bold leading-relaxed mb-9 bg-white/95 backdrop-blur-xl p-6 rounded-3xl border border-amber-300/40 shadow-xl text-center"
         >
-          Explore 100+ acclimatized plant varieties, Cassia Nodosa trees, Guava & Mango fruit orchards, Royal Date Palms, and turn-key villa landscaping by <strong className="text-emerald-800 underline">Rahman Nursery Farm (Chak Hassan Arain, Pattoki)</strong>.
+          Explore 100+ acclimatized plant varieties, Cassia Nodosa trees, Guava & Mango fruit orchards, Royal Date Palms, and turn-key villa landscaping by <strong className="text-emerald-800 underline">Rahman Nursery Farm (Pakistan Hub)</strong>.
         </motion.p>
 
         {/* Action Buttons */}

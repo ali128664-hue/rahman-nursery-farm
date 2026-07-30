@@ -99,7 +99,7 @@ export const ShopPage = ({
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-black text-amber-300 bg-amber-950/60 border border-amber-400/40 mb-3 uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>OFFICIAL NURSERY SHOP • CHAK HASSAN ARAIN, PATTOKI HUB</span>
+              <span>OFFICIAL BOTANICAL SHOP • PAKISTAN PLANTS HUB</span>
             </div>
             <h1 className="font-serif text-3xl sm:text-5xl font-black text-white mb-2 leading-tight">
               {currentCategoryMeta.emoji} {currentCategoryMeta.title}
