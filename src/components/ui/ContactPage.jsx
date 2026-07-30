@@ -11,13 +11,15 @@ export const ContactPage = () => {
 
   const handleSubmitInquiry = (e) => {
     e.preventDefault();
-    const text = `Assalam o Alaikum Ansar Hussain Bhai (0304-0450065)!
-Main ne Rahman Nursery Farm website se inquiry submit ki hai:
-
+    const text = `*DIRECT CONSULTATION INQUIRY — RAHMAN NURSERY FARM*
+------------------------------------------------
 • *Customer Name:* ${customerName || 'Valued Visitor'}
 • *Phone Number:* ${customerPhone || 'Shared in chat'}
 • *Delivery City:* ${customerCity}
-• *Inquiry Message:* ${message || 'Plant pricing and orchard consultation query.'}`;
+• *Inquiry Message:* ${message || 'Plant pricing and orchard consultation query.'}
+------------------------------------------------
+Hello Ansar Hussain (0304-0450065)!
+I am submitting a consultation inquiry from Rahman Nursery Farm website. Please get in touch to discuss plant pricing and consultation. Thank you!`;
 
     window.open(`https://wa.me/${RAHMAN_WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
     setSubmitted(true);

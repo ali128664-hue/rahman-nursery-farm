@@ -39,10 +39,10 @@ ${itemsText}
 
 ------------------------------------------------
 *SUBTOTAL ITEM AMOUNT:* PKR ${totalPrice.toLocaleString()}
-*DELIVERY CHARGES:* Alag honge (Delivery charges k liye kripya call ya chat par rabta karein)
+*DELIVERY CHARGES:* Separate / As per destination (Please call or inquire in chat for exact cargo charges)
 ------------------------------------------------
-Assalam o Alaikum Ansar Hussain Bhai (0304-0450065)!
-Main ne Rahman Nursery Farm website se yeh order bill compose kiya hai. Kripya plant availability aur delivery charges call/chat par confirm kar dein. Shukriya!`;
+Hello Ansar Hussain (0304-0450065)!
+I have composed this multi-item order bill on Rahman Nursery Farm website. Please check plant availability and confirm billing details & dispatch schedule. Thank you!`;
 
     window.open(`https://wa.me/${RAHMAN_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
   };

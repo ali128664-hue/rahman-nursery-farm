@@ -30,6 +30,7 @@ export const ShopPage = ({
   const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
   const [plantQuantities, setPlantQuantities] = useState({});
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const getQty = (plantId) => plantQuantities[plantId] || 1;
   const setQty = (plantId, val) => {
@@ -174,28 +175,51 @@ export const ShopPage = ({
           {/* RIGHT MAIN PANEL: Search Toolbar & Product Grid */}
           <main className="lg:col-span-3 space-y-6">
 
-            {/* Search Bar & Toolbar */}
+            {/* Search Bar Toolbar & Pop-open Search Input */}
             <div className="p-4 rounded-3xl bg-white border border-emerald-200 shadow-md flex flex-col sm:flex-row items-center justify-between gap-4">
               
-              {/* Search Box */}
-              <div className="relative w-full sm:w-80">
-                <Search className="w-4 h-4 text-emerald-700 absolute left-3.5 top-1/2 -translate-y-1/2" />
-                <input
-                  type="text"
-                  placeholder="Search 100+ plants, fruit, timber, palms..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2.5 rounded-2xl text-xs bg-slate-50 border border-slate-300 text-emerald-950 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-600 font-bold shadow-inner"
-                />
-                {searchQuery && (
+              {/* Click-to-Open Search Trigger OR Input */}
+              {isSearchOpen ? (
+                <div className="relative w-full sm:w-96 flex items-center gap-2">
+                  <div className="relative flex-1">
+                    <Search className="w-4 h-4 text-emerald-700 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                    <input
+                      type="text"
+                      autoFocus
+                      placeholder="Type plant, fruit, or palm name..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-full pl-10 pr-8 py-2.5 rounded-2xl text-xs bg-slate-50 border border-emerald-500 text-emerald-950 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-600 font-bold shadow-inner"
+                    />
+                    {searchQuery && (
+                      <button
+                        onClick={() => setSearchQuery('')}
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-black text-slate-400 hover:text-slate-600"
+                      >
+                        ✕
+                      </button>
+                    )}
+                  </div>
                   <button
-                    onClick={() => setSearchQuery('')}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-black text-slate-400 hover:text-slate-600"
+                    onClick={() => {
+                      setIsSearchOpen(false);
+                      setSearchQuery('');
+                    }}
+                    className="px-3 py-2.5 rounded-2xl text-xs font-black bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-300"
                   >
-                    ✕
+                    Close
                   </button>
-                )}
-              </div>
+                </div>
+              ) : (
+                <button
+                  onClick={() => setIsSearchOpen(true)}
+                  className="w-full sm:w-auto px-4 py-2.5 rounded-2xl bg-emerald-50 text-emerald-950 hover:bg-emerald-100 border border-emerald-300 transition-all font-black text-xs flex items-center justify-center sm:justify-start gap-2 shadow-sm"
+                >
+                  <Search className="w-4 h-4 text-emerald-700" />
+                  <span>Search Plants (Click to Open)</span>
+                  {searchQuery && <span className="px-2 py-0.5 rounded-full bg-amber-400 text-emerald-950 text-[10px]">Active</span>}
+                </button>
+              )}
 
               {/* Controls: Sort, View Toggle, Mobile Filter */}
               <div className="flex items-center gap-2.5 w-full sm:w-auto justify-between sm:justify-end">

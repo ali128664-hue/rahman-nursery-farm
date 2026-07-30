@@ -29,6 +29,7 @@ export const CatalogModal = ({ isOpen, onClose, onSelectPlantForInspection, onAd
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [plantQuantities, setPlantQuantities] = useState({});
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const getQty = (plantId) => plantQuantities[plantId] || 1;
   const setQty = (plantId, val) => {
@@ -97,16 +98,39 @@ export const CatalogModal = ({ isOpen, onClose, onSelectPlantForInspection, onAd
             ))}
           </div>
 
-          <div className="relative w-full md:w-64 flex-shrink-0">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
-            <input
-              type="text"
-              placeholder="Search 100+ plants..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 rounded-full text-xs bg-white border border-slate-300 text-emerald-950 focus:outline-none focus:ring-2 focus:ring-emerald-600 font-bold shadow-sm"
-            />
-          </div>
+          {/* Click-to-Open Search Trigger OR Input */}
+          {isSearchOpen ? (
+            <div className="relative w-full md:w-64 flex-shrink-0 flex items-center gap-1.5">
+              <div className="relative flex-1">
+                <Search className="w-4 h-4 text-emerald-700 absolute left-3 top-1/2 -translate-y-1/2" />
+                <input
+                  type="text"
+                  autoFocus
+                  placeholder="Search 100+ plants..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-9 pr-3 py-1.5 rounded-full text-xs bg-white border border-emerald-500 text-emerald-950 focus:outline-none focus:ring-2 focus:ring-emerald-600 font-bold shadow-sm"
+                />
+              </div>
+              <button
+                onClick={() => {
+                  setIsSearchOpen(false);
+                  setSearchQuery('');
+                }}
+                className="px-2.5 py-1 rounded-full text-[11px] font-black bg-slate-200 text-slate-700 hover:bg-slate-300"
+              >
+                Close
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={() => setIsSearchOpen(true)}
+              className="px-3.5 py-1.5 rounded-full bg-white text-emerald-950 hover:bg-emerald-50 border border-slate-300 transition-all font-black text-xs flex items-center justify-center gap-1.5 shadow-sm flex-shrink-0"
+            >
+              <Search className="w-3.5 h-3.5 text-emerald-700" />
+              <span>Search</span>
+            </button>
+          )}
         </div>
 
         {/* Plant Cards Grid */}

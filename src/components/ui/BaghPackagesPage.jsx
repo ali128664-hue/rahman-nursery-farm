@@ -22,15 +22,15 @@ export const BaghPackagesPage = () => {
   const projectedYield = spec.yieldPerAcrePKR * landAcres;
 
   const handleWhatsAppBooking = (packageTitle, priceText) => {
-    const text = `Assalam o Alaikum Ansar Hussain Bhai (0304-0450065)!
-Main Rahman Nursery Farm website se Commercial Orchard Package ki inquiry kar raha hu:
-
+    const text = `*COMMERCIAL ORCHARD PACKAGE INQUIRY — RAHMAN NURSERY FARM*
+------------------------------------------------
 • *Package Selected:* ${packageTitle}
 • *Price Estimate:* ${priceText}
 • *Calculated Land Size:* ${landAcres} Acre(s) (${spec.name})
 • *Estimated Saplings:* ${totalPlants} Plants
-
-Kripya installation timeline aur field team visit date confirm kar dein. Shukriya!`;
+------------------------------------------------
+Hello Ansar Hussain (0304-0450065)!
+I am submitting a commercial orchard package inquiry from Rahman Nursery Farm website. Please confirm installation timeline and field team visit date. Thank you!`;
 
     window.open(`https://wa.me/${RAHMAN_WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
   };

@@ -63,12 +63,12 @@ export const ServicesPage = ({ onOpenContact }) => {
   ];
 
   const handleServiceWhatsApp = (serviceTitle) => {
-    const text = `Assalam o Alaikum Ansar Hussain Bhai (0304-0450065)!
-Main Rahman Nursery Farm website se Commercial Service inquiry kar raha hu:
-
-• *Service:* ${serviceTitle}
-
-Kripya consultation, field visit timeline aur cost quote share kar dein. Shukriya!`;
+    const text = `*COMMERCIAL SERVICE INQUIRY — RAHMAN NURSERY FARM*
+------------------------------------------------
+• *Service Selected:* ${serviceTitle}
+------------------------------------------------
+Hello Ansar Hussain (0304-0450065)!
+I am submitting a commercial service inquiry from Rahman Nursery Farm website. Please share consultation details, field visit timeline, and cost quotation. Thank you!`;
 
     window.open(`https://wa.me/${RAHMAN_WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
   };
