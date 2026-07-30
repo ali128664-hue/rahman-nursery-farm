@@ -114,12 +114,12 @@ export default function App() {
 
       {/* 2. Streamlined Floating Navbar */}
       <Navbar
-        weatherMode={weatherMode}
-        onWeatherChange={(mode) => setWeatherMode(mode)}
         onOpenCatalog={() => setIsFullShopView(true)}
         onOpenContact={() => setIsContactOpen(true)}
         cartCount={totalCartItems}
         onOpenCart={() => setIsCartOpen(true)}
+        onToggleShopPage={() => setIsFullShopView(prev => !prev)}
+        isFullShopView={isFullShopView}
       />
 
       {/* Toggle View: Full Shop Page vs Home View */}
