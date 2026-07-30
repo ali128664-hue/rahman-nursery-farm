@@ -6,97 +6,99 @@
   html {
     scroll-behavior: smooth;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: #FFFFFF;
+    background-color: #FDFBF7;
+    color: #064E3B;
   }
   
-  h1, h2, h3, .font-serif {
+  h1, h2, h3, h4, .font-serif {
     font-family: 'Playfair Display', Georgia, serif;
   }
 }
 
-/* Custom Scrollbar for Ultra-Bright Aesthetics */
+/* Custom Scrollbar for Ultra-Luxury Aesthetics */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 9px;
 }
 ::-webkit-scrollbar-track {
-  background: #FFFDF9;
+  background: #F8F4EA;
 }
 ::-webkit-scrollbar-thumb {
-  background: #66BB6A;
-  border-radius: 4px;
+  background: linear-gradient(180deg, #059669 0%, #047857 100%);
+  border-radius: 6px;
+  border: 2px solid #F8F4EA;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #388E3C;
+  background: #065F46;
 }
 
-/* Ultra-Bright Pristine White Glassmorphism Design Tokens */
+/* End-Level Luxury Glassmorphism & Card Tokens */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(235, 226, 205, 0.8);
-  box-shadow: 0 20px 50px rgba(56, 142, 60, 0.08), 0 4px 12px rgba(0, 0, 0, 0.02);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(5, 150, 105, 0.2);
+  box-shadow: 0 20px 50px rgba(6, 78, 59, 0.08), 0 4px 16px rgba(0, 0, 0, 0.03);
 }
 
 .glass-panel-bright {
-  background: rgba(255, 253, 249, 0.96);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.05);
+  background: rgba(253, 251, 247, 0.97);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(217, 119, 6, 0.3);
+  box-shadow: 0 25px 60px rgba(6, 78, 59, 0.1);
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(225, 235, 228, 0.9);
-  box-shadow: 0 10px 30px rgba(45, 90, 63, 0.06);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(5, 150, 105, 0.15);
+  box-shadow: 0 12px 32px rgba(6, 78, 59, 0.06);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-card:hover {
-  transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 20px 40px rgba(45, 90, 63, 0.12), 0 0 20px rgba(212, 175, 55, 0.25);
-  border-color: rgba(212, 175, 55, 0.6);
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 24px 48px rgba(6, 78, 59, 0.14), 0 0 24px rgba(217, 119, 6, 0.2);
+  border-color: rgba(217, 119, 6, 0.5);
 }
 
-/* Luxury Gold & Emerald Buttons */
+/* End-Level Luxury Gold & Emerald Buttons */
 .btn-luxury-primary {
-  background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
+  background: linear-gradient(135deg, #059669 0%, #047857 50%, #064E3B 100%);
   color: #FFFFFF;
-  box-shadow: 0 8px 25px rgba(46, 125, 50, 0.3);
+  box-shadow: 0 10px 30px rgba(5, 150, 105, 0.35);
   transition: all 0.3s ease;
 }
 
 .btn-luxury-primary:hover {
-  background: linear-gradient(135deg, #388E3C 0%, #2E7D32 100%);
-  box-shadow: 0 12px 35px rgba(46, 125, 50, 0.45);
+  background: linear-gradient(135deg, #10B981 0%, #059669 50%, #047857 100%);
+  box-shadow: 0 14px 40px rgba(5, 150, 105, 0.5);
   transform: translateY(-2px);
 }
 
 .btn-luxury-gold {
-  background: linear-gradient(135deg, #FFD54F 0%, #FFC107 100%);
-  color: #0F291E;
-  font-weight: 800;
-  box-shadow: 0 8px 25px rgba(255, 193, 7, 0.35);
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 50%, #B45309 100%);
+  color: #FFFFFF;
+  font-weight: 900;
+  box-shadow: 0 10px 30px rgba(217, 119, 6, 0.35);
   transition: all 0.3s ease;
 }
 
 .btn-luxury-gold:hover {
-  background: linear-gradient(135deg, #FFE082 0%, #FFCA28 100%);
-  box-shadow: 0 12px 35px rgba(255, 193, 7, 0.5);
+  background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 50%, #D97706 100%);
+  box-shadow: 0 14px 40px rgba(217, 119, 6, 0.5);
   transform: translateY(-2px);
 }
 
 /* Text Shimmer Effect */
 .text-shimmer {
-  background: linear-gradient(90deg, #1B5E20 0%, #D4AF37 50%, #1B5E20 100%);
+  background: linear-gradient(90deg, #064E3B 0%, #D97706 50%, #064E3B 100%);
   background-size: 200% auto;
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-  animation: shine 6s linear infinite;
+  animation: shine 5s linear infinite;
 }
 
 @keyframes shine {

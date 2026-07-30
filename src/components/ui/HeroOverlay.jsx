@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronDown, ArrowRight, ShieldCheck, Truck, Sparkles, Star, Compass, Leaf, PhoneCall, CheckCircle2 } from 'lucide-react';
+import { ChevronDown, ArrowRight, ShieldCheck, Truck, Sparkles, Star, Compass, Leaf, PhoneCall, CheckCircle2, Award } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export const HeroOverlay = ({ onExploreClick, onOpenCatalog, onOpenAIPlanner }) => {
@@ -39,7 +39,7 @@ export const HeroOverlay = ({ onExploreClick, onOpenCatalog, onOpenAIPlanner }) 
   ];
 
   return (
-    <section className="relative pt-24 pb-12 px-4 sm:px-6 lg:px-12 pointer-events-auto">
+    <section className="relative pt-28 pb-14 px-4 sm:px-6 lg:px-12 pointer-events-auto">
       
       {/* Top Main Hero Block */}
       <div className="max-w-6xl mx-auto text-center mt-2">
@@ -47,22 +47,22 @@ export const HeroOverlay = ({ onExploreClick, onOpenCatalog, onOpenAIPlanner }) 
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-extrabold text-emerald-950 border border-emerald-300 shadow-md bg-gradient-to-r from-emerald-100 via-white to-amber-100 mb-5"
+          className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full text-xs sm:text-sm font-black text-emerald-950 border border-amber-400/80 shadow-lg bg-gradient-to-r from-amber-100 via-white to-emerald-100 mb-6"
         >
-          <Sparkles className="w-4 h-4 text-amber-600 animate-spin-slow" />
-          <span>50+ YEARS BOTANICAL HERITAGE • PATTOKI NURSERY HUB</span>
+          <Award className="w-4 h-4 text-amber-600 animate-pulse" />
+          <span className="tracking-wide">50+ YEARS BOTANICAL HERITAGE • PATTOKI NURSERY HUB</span>
         </motion.div>
 
-        {/* Ultra High Impact Typography */}
+        {/* End-Level High Impact Typography */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-emerald-950 leading-[1.08] tracking-tight mb-5 drop-shadow-sm"
+          className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-emerald-950 leading-[1.06] tracking-tight mb-6 drop-shadow-sm"
         >
-          GREENERY THAT ELEVATES <br className="hidden sm:inline" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-700 via-teal-600 to-emerald-900 underline decoration-amber-400 decoration-wavy decoration-2">
-            YOUR HOME & LAND
+          LUXURY GREENERY <br className="hidden sm:inline" />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-800 via-emerald-600 to-amber-600 underline decoration-amber-400 decoration-wavy decoration-2">
+            FOR YOUR HOMES & LAND
           </span>
         </motion.h1>
 
@@ -70,9 +70,9 @@ export const HeroOverlay = ({ onExploreClick, onOpenCatalog, onOpenAIPlanner }) 
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-base sm:text-lg text-sage-900 max-w-3xl mx-auto font-bold leading-relaxed mb-8 bg-white/95 backdrop-blur-md p-5 rounded-2xl border border-emerald-200 shadow-lg text-center"
+          className="text-base sm:text-lg text-emerald-950 max-w-3xl mx-auto font-bold leading-relaxed mb-9 bg-white/95 backdrop-blur-xl p-6 rounded-3xl border border-amber-300/40 shadow-xl text-center"
         >
-          Discover 100+ acclimatized plant varieties, Cassia Nodosa trees, Guava & Mango fruit orchards, Royal Date Palms, and turn-key villa landscaping by <strong className="text-emerald-800 underline">Rahman Nursery Farm (Chak Hassan Arain, Pattoki)</strong>.
+          Explore 100+ acclimatized plant varieties, Cassia Nodosa trees, Guava & Mango fruit orchards, Royal Date Palms, and turn-key villa landscaping by <strong className="text-emerald-800 underline">Rahman Nursery Farm (Chak Hassan Arain, Pattoki)</strong>.
         </motion.p>
 
         {/* Action Buttons */}
@@ -80,22 +80,22 @@ export const HeroOverlay = ({ onExploreClick, onOpenCatalog, onOpenAIPlanner }) 
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-wrap items-center justify-center gap-3.5 mb-10"
+          className="flex flex-wrap items-center justify-center gap-4 mb-12"
         >
           <button
             onClick={onOpenCatalog}
-            className="px-7 py-4 rounded-full text-sm sm:text-base font-black flex items-center gap-2.5 shadow-xl bg-emerald-700 text-white hover:bg-emerald-800 hover:scale-105 transition-all border border-emerald-500"
+            className="px-8 py-4.5 rounded-full text-sm sm:text-base font-black flex items-center gap-3 shadow-2xl btn-luxury-primary border border-emerald-500 hover:scale-105 transition-all"
           >
-            <Leaf className="w-5 h-5 text-emerald-200" />
+            <Leaf className="w-5 h-5 text-amber-300" />
             <span>Explore A-Z Plant Catalog</span>
-            <ArrowRight className="w-4 h-4 text-emerald-200" />
+            <ArrowRight className="w-4 h-4 text-amber-300" />
           </button>
           
           <button
             onClick={onOpenAIPlanner}
-            className="px-7 py-4 rounded-full text-sm sm:text-base font-black flex items-center gap-2.5 shadow-xl bg-gradient-to-r from-amber-400 to-amber-500 text-sage-950 hover:from-amber-500 hover:to-amber-600 hover:scale-105 transition-all border border-amber-300"
+            className="px-8 py-4.5 rounded-full text-sm sm:text-base font-black flex items-center gap-3 shadow-2xl btn-luxury-gold hover:scale-105 transition-all"
           >
-            <Compass className="w-5 h-5 text-sage-950" />
+            <Compass className="w-5 h-5 text-white" />
             <span>AI Garden & Budget Planner</span>
           </button>
 
@@ -103,10 +103,10 @@ export const HeroOverlay = ({ onExploreClick, onOpenCatalog, onOpenAIPlanner }) 
             href="https://wa.me/923040450065?text=Assalam%20o%20Alaikum%20Ansar%20Bhai,%20mujhe%20plants%20ki%20details%20chahiye"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-4 rounded-full text-sm font-extrabold text-emerald-950 bg-white border border-emerald-300 shadow-md hover:bg-emerald-50 transition-all flex items-center gap-2"
+            className="px-7 py-4.5 rounded-full text-sm font-black text-emerald-950 bg-white border border-emerald-300 shadow-lg hover:bg-emerald-50 transition-all flex items-center gap-2.5"
           >
             <PhoneCall className="w-4 h-4 text-emerald-700" />
-            <span>Talk to Ansar Bhai (03040450065)</span>
+            <span>Ansar Bhai (03040450065)</span>
           </a>
         </motion.div>
 
@@ -115,33 +115,33 @@ export const HeroOverlay = ({ onExploreClick, onOpenCatalog, onOpenAIPlanner }) 
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto text-left mb-10"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto text-left mb-12"
         >
           {FEATURED_HIGHLIGHTS.map((item) => (
             <div
               key={item.id}
               onClick={onOpenCatalog}
-              className="group cursor-pointer rounded-2xl bg-white/95 backdrop-blur-md p-3.5 border border-emerald-100 shadow-md hover:shadow-xl hover:border-emerald-300 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
+              className="group cursor-pointer rounded-3xl bg-white/95 backdrop-blur-xl p-4 border border-emerald-200/80 shadow-lg hover:shadow-2xl hover:border-amber-400 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between"
             >
               <div>
-                <div className="relative h-44 rounded-xl overflow-hidden mb-3 bg-emerald-50">
+                <div className="relative h-48 rounded-2xl overflow-hidden mb-3.5 bg-emerald-50">
                   <img
                     src={item.img}
                     alt={item.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <span className="absolute top-2 left-2 px-2.5 py-1 rounded-full text-[10px] font-black bg-emerald-900/90 text-amber-300 backdrop-blur-sm border border-amber-400/30">
+                  <span className="absolute top-2.5 left-2.5 px-3 py-1 rounded-full text-[10px] font-black bg-emerald-950/90 text-amber-300 backdrop-blur-md border border-amber-400/40 shadow-sm">
                     {item.tag}
                   </span>
                 </div>
-                <h3 className="font-serif font-bold text-sm text-sage-950 group-hover:text-emerald-700 transition-colors line-clamp-1">
+                <h3 className="font-serif font-bold text-base text-emerald-950 group-hover:text-emerald-700 transition-colors line-clamp-1">
                   {item.name}
                 </h3>
-                <p className="text-[11px] text-sage-600 font-semibold mb-2">{item.spec}</p>
+                <p className="text-[11px] text-emerald-800 font-semibold mb-2">{item.spec}</p>
               </div>
-              <div className="flex items-center justify-between border-t border-slate-100 pt-2">
-                <span className="text-xs font-black text-emerald-800">{item.price}</span>
-                <span className="text-[10px] font-bold text-emerald-700 group-hover:underline flex items-center gap-0.5">
+              <div className="flex items-center justify-between border-t border-slate-100 pt-2.5">
+                <span className="text-xs font-black text-emerald-900">{item.price}</span>
+                <span className="text-[10px] font-black text-amber-600 group-hover:underline flex items-center gap-1">
                   Order Now <ArrowRight className="w-3 h-3" />
                 </span>
               </div>
@@ -154,38 +154,38 @@ export const HeroOverlay = ({ onExploreClick, onOpenCatalog, onOpenAIPlanner }) 
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="bg-white/95 backdrop-blur-md p-4 sm:p-6 rounded-3xl grid grid-cols-2 md:grid-cols-4 gap-4 border border-emerald-200/80 max-w-5xl mx-auto shadow-xl"
+          className="bg-white/95 backdrop-blur-xl p-5 sm:p-7 rounded-3xl grid grid-cols-2 md:grid-cols-4 gap-4 border border-emerald-300/80 max-w-5xl mx-auto shadow-2xl"
         >
           <div className="text-center border-r border-slate-200/80 last:border-0">
-            <div className="font-serif text-2xl sm:text-3xl font-black text-emerald-900">500,000+</div>
-            <div className="text-[10px] sm:text-[11px] font-extrabold text-emerald-800 uppercase tracking-wider">Plants Cultivated</div>
+            <div className="font-serif text-2xl sm:text-4xl font-black text-emerald-900">500,000+</div>
+            <div className="text-[10px] sm:text-[11px] font-black text-amber-700 uppercase tracking-widest">Plants Cultivated</div>
           </div>
           <div className="text-center border-r border-slate-200/80 last:border-0">
-            <div className="font-serif text-2xl sm:text-3xl font-black text-amber-600">50+ Years</div>
-            <div className="text-[10px] sm:text-[11px] font-extrabold text-emerald-800 uppercase tracking-wider">Botanical Heritage</div>
+            <div className="font-serif text-2xl sm:text-4xl font-black text-amber-600">50+ Years</div>
+            <div className="text-[10px] sm:text-[11px] font-black text-amber-700 uppercase tracking-widest">Botanical Heritage</div>
           </div>
           <div className="text-center border-r border-slate-200/80 last:border-0">
-            <div className="font-serif text-2xl sm:text-3xl font-black text-emerald-900">50+ Cities</div>
-            <div className="text-[10px] sm:text-[11px] font-extrabold text-emerald-800 uppercase tracking-wider">Safe Wooden Crate Express PK</div>
+            <div className="font-serif text-2xl sm:text-4xl font-black text-emerald-900">50+ Cities</div>
+            <div className="text-[10px] sm:text-[11px] font-black text-amber-700 uppercase tracking-widest">Wooden Crate Express PK</div>
           </div>
           <div className="text-center">
-            <div className="font-serif text-2xl sm:text-3xl font-black text-emerald-800 flex items-center justify-center gap-1">
-              4.9 <Star className="w-4.5 h-4.5 fill-amber-400 text-amber-400 inline" />
+            <div className="font-serif text-2xl sm:text-4xl font-black text-emerald-800 flex items-center justify-center gap-1">
+              4.9 <Star className="w-5 h-5 fill-amber-400 text-amber-400 inline" />
             </div>
-            <div className="text-[10px] sm:text-[11px] font-extrabold text-emerald-800 uppercase tracking-wider">Verified Reviews</div>
+            <div className="text-[10px] sm:text-[11px] font-black text-amber-700 uppercase tracking-widest">Verified Customer Reviews</div>
           </div>
         </motion.div>
       </div>
 
       {/* Feature Badges & Scroll Prompter */}
-      <div className="max-w-6xl mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-4 mt-8">
+      <div className="max-w-6xl mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-4 mt-10">
         <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
-          <div className="px-4 py-2 rounded-2xl flex items-center gap-2.5 text-xs font-bold text-sage-950 bg-white/90 border border-emerald-200 shadow-sm">
+          <div className="px-4 py-2.5 rounded-2xl flex items-center gap-2.5 text-xs font-black text-emerald-950 bg-white/95 border border-emerald-200 shadow-md">
             <CheckCircle2 className="w-4 h-4 text-emerald-600" />
             <span>100% Acclimatized Pattoki Soil</span>
           </div>
 
-          <div className="px-4 py-2 rounded-2xl flex items-center gap-2.5 text-xs font-bold text-sage-950 bg-white/90 border border-emerald-200 shadow-sm">
+          <div className="px-4 py-2.5 rounded-2xl flex items-center gap-2.5 text-xs font-black text-emerald-950 bg-white/95 border border-emerald-200 shadow-md">
             <Truck className="w-4 h-4 text-amber-600" />
             <span>Safe Express Delivery All Over Pakistan</span>
           </div>
@@ -194,7 +194,7 @@ export const HeroOverlay = ({ onExploreClick, onOpenCatalog, onOpenAIPlanner }) 
         {/* Scroll Prompt Button */}
         <div
           onClick={onExploreClick}
-          className="cursor-pointer flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-black text-sage-950 border border-emerald-300 hover:bg-white hover:scale-105 transition-all shadow-sm bg-white/90"
+          className="cursor-pointer flex items-center gap-2 px-6 py-3 rounded-full text-xs font-black text-emerald-950 border border-emerald-300 hover:bg-white hover:scale-105 transition-all shadow-md bg-white/95"
         >
           <span>EXPLORE FARMS & CATALOG</span>
           <ChevronDown className="w-4 h-4 animate-bounce text-emerald-700" />

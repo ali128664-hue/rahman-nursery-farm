@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShoppingCart, Leaf, MessageCircle, Sun, MapPin, Heart } from 'lucide-react';
+import { ShoppingCart, Leaf, MessageCircle, MapPin, Sparkles } from 'lucide-react';
 import { RAHMAN_WHATSAPP_NUMBER } from '../../utils/whatsappHelper';
 
 export const Navbar = ({
@@ -25,35 +25,37 @@ export const Navbar = ({
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 px-3 py-2.5 md:px-8 md:py-3 pointer-events-auto">
-      <nav className="max-w-7xl mx-auto glass-panel rounded-full px-4 py-2 md:px-6 md:py-2.5 flex items-center justify-between border border-cream-200 shadow-lg bg-white/95">
+    <header className="fixed top-0 left-0 right-0 z-40 px-3 py-3 md:px-8 md:py-4 pointer-events-auto">
+      <nav className="max-w-7xl mx-auto rounded-full px-4 py-2.5 md:px-6 md:py-3 flex items-center justify-between border border-emerald-500/25 shadow-2xl bg-white/95 backdrop-blur-xl">
 
         {/* Brand Logo & Name */}
         <div
-          className="flex items-center gap-2.5 cursor-pointer"
+          className="flex items-center gap-3 cursor-pointer group"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
-          <div className="w-9 h-9 rounded-full bg-emerald-700 text-white flex items-center justify-center font-serif font-bold text-lg shadow-md border border-emerald-500/40">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-800 via-emerald-700 to-emerald-950 text-white flex items-center justify-center font-serif font-black text-xl shadow-lg border-2 border-amber-400 group-hover:scale-105 transition-transform">
             R
           </div>
           <div>
-            <span className="font-serif text-base md:text-lg font-bold tracking-tight text-sage-900 block leading-tight">
+            <span className="font-serif text-base md:text-lg font-black tracking-tight text-emerald-950 block leading-tight">
               RAHMAN <span className="text-emerald-700">NURSERY</span>
             </span>
-            <span className="text-[10px] tracking-widest text-emerald-800 uppercase font-extrabold block">
-              50+ YEARS • PAKISTAN
+            <span className="text-[10px] tracking-widest text-amber-700 uppercase font-black block flex items-center gap-1">
+              <span>50+ YEARS</span>
+              <span className="w-1 h-1 rounded-full bg-emerald-600 inline-block" />
+              <span>PATTOKI HUB</span>
             </span>
           </div>
         </div>
 
         {/* Main Product Navigation Headings */}
-        <div className="hidden md:flex items-center gap-5 text-xs font-bold text-sage-900">
+        <div className="hidden md:flex items-center gap-6 text-xs font-black text-emerald-950">
           <button
             onClick={onOpenCatalog}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-800 hover:bg-emerald-100 transition-colors border border-emerald-200/80 font-extrabold"
+            className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-50 via-teal-50 to-emerald-100 text-emerald-900 hover:from-emerald-100 hover:to-emerald-200 transition-all border border-emerald-300 shadow-sm"
           >
-            <Leaf className="w-3.5 h-3.5" />
-            🌿 A-Z Plant Catalog
+            <Leaf className="w-4 h-4 text-emerald-700" />
+            <span>A-Z Plant Catalog</span>
           </button>
 
           <a
@@ -62,59 +64,59 @@ export const Navbar = ({
               e.preventDefault();
               document.querySelector('section')?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="hover:text-emerald-700 transition-colors font-extrabold"
+            className="hover:text-emerald-700 transition-colors font-black flex items-center gap-1"
           >
             🏡 Bagh Lagwao
           </a>
 
           <button
             onClick={onOpenContact}
-            className="hover:text-emerald-700 transition-colors font-semibold flex items-center gap-1"
+            className="hover:text-emerald-700 transition-colors font-extrabold flex items-center gap-1.5"
           >
-            <MapPin className="w-3.5 h-3.5 text-emerald-700" />
-            Farm Location
+            <MapPin className="w-4 h-4 text-amber-600" />
+            <span>Farm Location</span>
           </button>
         </div>
 
-        {/* Right Tools: Prominent Shopping Cart + Simple Weather Cycle + WhatsApp */}
-        <div className="flex items-center gap-2 md:gap-3">
+        {/* Right Tools: Shopping Cart + Weather Theme Cycle + WhatsApp */}
+        <div className="flex items-center gap-2.5 md:gap-3.5">
 
           {/* Prominent Cart Button with Count Badge */}
           <button
             onClick={onOpenCart}
-            className="relative flex items-center gap-2 px-3.5 py-2 rounded-full bg-emerald-700 text-white hover:bg-emerald-800 transition-all font-extrabold text-xs shadow-md hover:scale-105"
+            className="relative flex items-center gap-2 px-4 py-2.5 rounded-full bg-gradient-to-r from-emerald-800 to-emerald-900 text-white hover:from-emerald-700 hover:to-emerald-800 transition-all font-black text-xs shadow-lg hover:scale-105 border border-emerald-600"
             title="Open Shopping Cart"
           >
-            <ShoppingCart className="w-4 h-4" />
+            <ShoppingCart className="w-4 h-4 text-amber-300" />
             <span className="hidden sm:inline">Cart</span>
             {cartCount > 0 ? (
-              <span className="w-5 h-5 rounded-full bg-amber-400 text-sage-900 font-black text-[11px] flex items-center justify-center shadow-sm">
+              <span className="w-5 h-5 rounded-full bg-amber-400 text-emerald-950 font-black text-[11px] flex items-center justify-center shadow-md animate-bounce">
                 {cartCount}
               </span>
             ) : (
-              <span className="w-5 h-5 rounded-full bg-emerald-800 text-emerald-200 font-bold text-[10px] flex items-center justify-center">
+              <span className="w-5 h-5 rounded-full bg-emerald-950 text-emerald-300 font-bold text-[10px] flex items-center justify-center">
                 0
               </span>
             )}
           </button>
 
-          {/* Single Compact Weather Cycle Pill (No clutter) */}
+          {/* Weather Theme Cycle Pill */}
           <button
             onClick={nextWeatherMode}
-            className="px-2.5 py-1.5 rounded-full bg-cream-100 border border-cream-200 text-sage-800 hover:bg-cream-200 transition-colors text-xs font-bold flex items-center gap-1"
-            title="Click to change 3D lighting"
+            className="px-3 py-2 rounded-full bg-amber-50 border border-amber-300 text-amber-900 hover:bg-amber-100 transition-colors text-xs font-black flex items-center gap-1 shadow-sm"
+            title="Click to cycle theme lighting"
           >
             <span>{weatherLabels[weatherMode] || '☀️ Lighting'}</span>
           </button>
 
-          {/* WhatsApp Direct Order */}
+          {/* Direct WhatsApp Contact Button */}
           <a
             href={`https://wa.me/${RAHMAN_WHATSAPP_NUMBER}?text=${encodeURIComponent('Assalam o Alaikum Ansar Bhai (03040450065), I am visiting Rahman Nursery Farm website and would like to order plants!')}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:flex items-center gap-1.5 px-3 py-2 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-200 hover:bg-emerald-200 transition-colors text-xs font-extrabold"
+            className="hidden lg:flex items-center gap-2 px-3.5 py-2.5 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-300 hover:bg-emerald-200 transition-all text-xs font-black shadow-sm"
           >
-            <MessageCircle className="w-3.5 h-3.5 fill-emerald-800/20" />
+            <MessageCircle className="w-4 h-4 fill-emerald-800/20 text-emerald-700" />
             <span>03040450065</span>
           </a>
 

@@ -15,7 +15,7 @@ export const FeaturesAndWhyUs = () => {
     {
       icon: UserCheck,
       title: 'Expert Horticulturists',
-      description: 'Over 30 years of continuous agricultural experience crafting healthy root systems and leaf foliage.'
+      description: 'Over 50 years of continuous agricultural experience crafting healthy root systems and leaf foliage.'
     },
     {
       icon: Truck,
@@ -40,15 +40,15 @@ export const FeaturesAndWhyUs = () => {
   ];
 
   return (
-    <div className="relative z-10 pointer-events-auto space-y-12 py-12 px-4 md:px-12 max-w-7xl mx-auto">
+    <div className="relative z-10 pointer-events-auto space-y-16 py-16 px-4 md:px-12 max-w-7xl mx-auto">
       {/* 1. VIP Features Grid */}
       <section>
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="text-xs font-bold text-gold-600 uppercase tracking-widest block mb-1">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <span className="text-xs font-black text-amber-700 uppercase tracking-widest block mb-2">
             THE RAHMAN NURSERY DIFFERENCE
           </span>
-          <h2 className="font-serif text-3xl md:text-5xl font-bold text-sage-900 leading-tight">
-            Why Luxury Homeowners Choose Us
+          <h2 className="font-serif text-3xl md:text-5xl font-black text-emerald-950 leading-tight">
+            Why Luxury Homeowners & Growers Choose Us
           </h2>
         </div>
 
@@ -62,16 +62,16 @@ export const FeaturesAndWhyUs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className="glass-card p-6 rounded-3xl flex flex-col justify-between group hover:border-gold-500/50 bg-white"
+                className="p-6 rounded-3xl flex flex-col justify-between group hover:border-amber-400 bg-white border border-emerald-200/80 shadow-lg hover:shadow-2xl transition-all duration-300"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-emerald-800 to-emerald-600 text-cream-50 flex items-center justify-center mb-4 shadow-md group-hover:scale-105 transition-transform">
-                    <IconComp className="w-6 h-6 text-gold-400" />
+                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-900 to-emerald-800 text-white flex items-center justify-center mb-5 shadow-md group-hover:scale-110 transition-transform">
+                    <IconComp className="w-6 h-6 text-amber-300" />
                   </div>
-                  <h3 className="font-serif text-lg font-bold text-sage-900 mb-2 group-hover:text-gold-600 transition-colors">
+                  <h3 className="font-serif text-lg font-black text-emerald-950 mb-2 group-hover:text-emerald-700 transition-colors">
                     {feat.title}
                   </h3>
-                  <p className="text-xs text-sage-800 leading-relaxed font-medium">
+                  <p className="text-xs text-emerald-900 leading-relaxed font-bold">
                     {feat.description}
                   </p>
                 </div>
@@ -82,25 +82,25 @@ export const FeaturesAndWhyUs = () => {
       </section>
 
       {/* 2. Seasonal Botanical Care Masterclass */}
-      <section className="glass-panel-bright p-6 md:p-10 rounded-3xl border border-cream-200 shadow-xl bg-white/95">
-        <div className="flex items-center gap-3 text-gold-600 font-bold text-xs uppercase tracking-widest mb-1">
-          <BookOpen className="w-4 h-4" />
+      <section className="p-8 md:p-10 rounded-3xl border border-amber-300/60 shadow-2xl bg-white/95 backdrop-blur-xl">
+        <div className="flex items-center gap-3 text-amber-700 font-black text-xs uppercase tracking-widest mb-2">
+          <BookOpen className="w-4 h-4 text-emerald-700" />
           <span>HORTICULTURAL CARE MASTERCLASS</span>
         </div>
-        <h2 className="font-serif text-2xl md:text-4xl font-bold text-sage-900 mb-6">
+        <h2 className="font-serif text-2xl md:text-4xl font-black text-emerald-950 mb-8">
           Pakistani Seasonal Botanical Guides
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {BOTANICAL_CARE_GUIDES.map((guide, idx) => (
-            <div key={idx} className="glass-card p-5 rounded-2xl bg-cream-50/50 border border-cream-200">
-              <div className="text-2xl mb-2">{guide.icon}</div>
-              <div className="text-[10px] font-extrabold text-emerald-800 uppercase mb-1">{guide.season}</div>
-              <h3 className="font-serif font-bold text-sage-900 text-base mb-3">{guide.title}</h3>
-              <ul className="space-y-2 text-xs text-sage-800 font-medium">
+            <div key={idx} className="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
+              <div className="text-3xl mb-3">{guide.icon}</div>
+              <div className="text-[10px] font-black text-amber-700 uppercase mb-1 tracking-wider">{guide.season}</div>
+              <h3 className="font-serif font-black text-emerald-950 text-lg mb-3">{guide.title}</h3>
+              <ul className="space-y-2.5 text-xs text-emerald-900 font-bold">
                 {guide.tips.map((tip, tIdx) => (
                   <li key={tIdx} className="flex items-start gap-2">
-                    <span className="text-gold-600 font-bold">•</span>
+                    <span className="text-amber-600 font-black">•</span>
                     <span>{tip}</span>
                   </li>
                 ))}
@@ -112,38 +112,38 @@ export const FeaturesAndWhyUs = () => {
 
       {/* 3. Frequently Asked Questions (FAQ) Accordion */}
       <section className="max-w-4xl mx-auto">
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 text-gold-600 font-bold text-xs uppercase tracking-widest mb-1">
-            <HelpCircle className="w-4 h-4" />
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-2 text-amber-700 font-black text-xs uppercase tracking-widest mb-2">
+            <HelpCircle className="w-4 h-4 text-emerald-700" />
             <span>EXPERT ANSWERS</span>
           </div>
-          <h2 className="font-serif text-2xl md:text-4xl font-bold text-sage-900">
+          <h2 className="font-serif text-2xl md:text-4xl font-black text-emerald-950">
             Frequently Asked Questions
           </h2>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-4">
           {FREQUENTLY_ASKED_QUESTIONS.map((faq, idx) => {
             const isOpen = openFaqIndex === idx;
             return (
               <div
                 key={idx}
-                className="glass-card rounded-2xl overflow-hidden border border-cream-200 bg-white"
+                className="rounded-2xl overflow-hidden border border-emerald-200 bg-white shadow-md"
               >
                 <button
                   onClick={() => setOpenFaqIndex(isOpen ? -1 : idx)}
-                  className="w-full p-4 text-left font-serif font-bold text-sage-900 text-sm md:text-base flex items-center justify-between gap-4"
+                  className="w-full p-5 text-left font-serif font-black text-emerald-950 text-base md:text-lg flex items-center justify-between gap-4"
                 >
                   <span>{faq.question}</span>
                   {isOpen ? (
-                    <ChevronUp className="w-5 h-5 text-gold-600 flex-shrink-0" />
+                    <ChevronUp className="w-5 h-5 text-amber-600 flex-shrink-0" />
                   ) : (
-                    <ChevronDown className="w-5 h-5 text-sage-600 flex-shrink-0" />
+                    <ChevronDown className="w-5 h-5 text-emerald-700 flex-shrink-0" />
                   )}
                 </button>
 
                 {isOpen && (
-                  <div className="p-4 pt-0 text-xs md:text-sm text-sage-800 font-semibold leading-relaxed border-t border-cream-100 bg-cream-50/40">
+                  <div className="p-5 pt-0 text-xs md:text-sm text-emerald-900 font-bold leading-relaxed border-t border-slate-100 bg-slate-50/80">
                     {faq.answer}
                   </div>
                 )}
