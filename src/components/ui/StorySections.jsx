@@ -1,191 +1,106 @@
 import React from 'react';
-import { Sparkles, ArrowRight, Eye, ChevronRight, Leaf, Flower2, TreePine } from 'lucide-react';
+import { ArrowRight, Eye, Store, TreePine, Leaf, Flower2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export const StorySections = ({ onOpenCatalog, onSelectPlantById, onOpenLandscaping }) => {
+  const FEATURED_COLLECTIONS = [
+    {
+      id: 'fruit',
+      title: '🍊 Commercial Fruit Orchards',
+      subtitle: 'Chaunsa Mango, White Guava, Kinnu Citrus & Anar',
+      desc: 'Grafted fruit trees acclimatized to Punjab soil. Early fruit bearing within 12-18 months.',
+      badge: 'High Profit Yield',
+      bgGradient: 'from-orange-900 via-amber-900 to-emerald-950',
+      actionPlantId: 'anwar-ratol-mango'
+    },
+    {
+      id: 'indoor',
+      title: '🪴 Indoor Air-Purifying Sanctuary',
+      subtitle: 'Monstera Deliciosa, Snake Plant, Peace Lily & ZZ',
+      desc: 'NASA certified 99% indoor dust and chemical toxin filters for air-conditioned rooms.',
+      badge: 'NASA Air Score 99%',
+      bgGradient: 'from-emerald-950 via-teal-900 to-emerald-900',
+      actionPlantId: 'monstera-deliciosa'
+    },
+    {
+      id: 'palms',
+      title: '🌴 Royal Date Palms & Estate Trees',
+      subtitle: '25ft Transplanted Royal Date Palms & Washingtonia',
+      desc: 'Architectural estate palms for farmhouses, villas, and highway boulevard projects.',
+      badge: 'Landscaping Favorite',
+      bgGradient: 'from-amber-950 via-emerald-950 to-green-950',
+      actionPlantId: 'mature-royal-date-palm'
+    },
+    {
+      id: 'flowering',
+      title: '🌸 Fragrant Flowers & Motia Jasmine',
+      subtitle: 'Desi Gulab, Motia, Bougainvillea & Pink Cassia',
+      desc: 'Fiery flowering climbers and traditional Pakistani fragrant blooms.',
+      badge: 'Fragrant Blooms',
+      bgGradient: 'from-pink-950 via-rose-900 to-emerald-950',
+      actionPlantId: 'pink-cassia-nodosa'
+    }
+  ];
+
   return (
-    <div className="relative z-10 space-y-16 py-12 px-4 sm:px-6 lg:px-12">
-      {/* Zone 1: Greenhouse & Indoor Collection */}
-      <section className="min-h-[50vh] flex items-center justify-start max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
-          className="p-6 sm:p-8 rounded-3xl max-w-xl border border-emerald-200/90 shadow-2xl bg-white/95 backdrop-blur-md"
-        >
-          <div className="flex items-center gap-2 mb-2">
-            <div className="p-2 rounded-xl bg-emerald-100 text-emerald-800">
-              <Leaf className="w-5 h-5" />
+    <div className="relative z-10 py-12 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto">
+      <div className="text-center mb-10">
+        <h2 className="font-serif text-3xl sm:text-5xl font-black text-emerald-950 mb-3">
+          Explore Certified Botanical Collections
+        </h2>
+        <p className="text-xs sm:text-sm text-slate-600 font-bold max-w-2xl mx-auto">
+          Over 100+ acclimatized plant varieties grown and direct-dispatched from Chak Hassan Arain fields.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {FEATURED_COLLECTIONS.map((col) => (
+          <motion.div
+            key={col.id}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className={`p-8 rounded-3xl bg-gradient-to-br ${col.bgGradient} text-white shadow-2xl border border-amber-400/30 flex flex-col justify-between hover:scale-[1.01] transition-transform group`}
+          >
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <span className="px-3.5 py-1 rounded-full bg-amber-400 text-emerald-950 text-[10px] font-black uppercase tracking-wider">
+                  {col.badge}
+                </span>
+                <span className="text-xs font-black text-amber-300">Verified Field Rates</span>
+              </div>
+
+              <h3 className="font-serif text-2xl sm:text-3xl font-black text-white mb-2 leading-tight">
+                {col.title}
+              </h3>
+              <p className="text-xs font-black text-amber-200 mb-3">{col.subtitle}</p>
+              <p className="text-xs text-white/90 font-semibold leading-relaxed mb-6">
+                {col.desc}
+              </p>
             </div>
-            <span className="text-xs font-black tracking-widest text-emerald-800 uppercase">
-              ZONE 01 • BOTANICAL GREENHOUSE
-            </span>
-          </div>
 
-          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-sage-950 leading-tight mb-3">
-            Air-Purifying Indoor Sanctuary
-          </h2>
-          <p className="text-xs sm:text-sm text-sage-800 leading-relaxed mb-6 font-semibold">
-            Nurtured under micro-controlled temperature & organic humidity, our Monstera, Ficus Lyrata, and Sansevieria collections cleanse indoor air while making architectural design statements in living rooms & offices.
-          </p>
+            <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-white/10">
+              <button
+                onClick={onOpenCatalog}
+                className="px-5 py-2.5 rounded-full text-xs font-black bg-white text-emerald-950 hover:bg-amber-300 transition-all flex items-center gap-2 shadow-md"
+              >
+                <Store className="w-4 h-4 text-emerald-800" />
+                <span>Shop This Category</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
 
-          <div className="flex flex-wrap items-center gap-3">
-            <button
-              onClick={() => onSelectPlantById('monstera-deliciosa')}
-              className="px-4 py-2.5 rounded-full text-xs font-black bg-emerald-700 text-white hover:bg-emerald-800 transition-all flex items-center gap-2 shadow-md"
-            >
-              <Eye className="w-4 h-4 text-emerald-200" />
-              Inspect Monstera Deliciosa
-            </button>
-
-            <button
-              onClick={() => onSelectPlantById('snake-plant-laurentii')}
-              className="px-4 py-2.5 rounded-full text-xs font-bold text-sage-950 bg-emerald-50 hover:bg-emerald-100 transition-all flex items-center gap-1.5 border border-emerald-200"
-            >
-              Inspect Snake Plant
-              <ChevronRight className="w-4 h-4 text-emerald-700" />
-            </button>
-
-            <button
-              onClick={onOpenCatalog}
-              className="px-4 py-2.5 rounded-full text-xs font-bold text-sage-950 bg-white hover:bg-slate-50 transition-all flex items-center gap-1.5 border border-slate-200"
-            >
-              Browse Indoor Catalog
-              <ChevronRight className="w-4 h-4 text-emerald-700" />
-            </button>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Zone 2: Tropical Palms & Fruit Orchard */}
-      <section className="min-h-[50vh] flex items-center justify-end max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
-          className="p-6 sm:p-8 rounded-3xl max-w-xl border border-emerald-200/90 shadow-2xl bg-white/95 backdrop-blur-md"
-        >
-          <div className="flex items-center gap-2 mb-2">
-            <div className="p-2 rounded-xl bg-amber-100 text-amber-800">
-              <TreePine className="w-5 h-5" />
+              <button
+                onClick={() => onSelectPlantById(col.actionPlantId)}
+                className="px-4 py-2.5 rounded-full text-xs font-black text-white bg-white/10 hover:bg-white/20 transition-all border border-white/20 flex items-center gap-1.5"
+              >
+                <Eye className="w-3.5 h-3.5 text-amber-300" />
+                <span>Inspect Specimen</span>
+              </button>
             </div>
-            <span className="text-xs font-black tracking-widest text-emerald-800 uppercase">
-              ZONE 02 • PALM AVENUE & ORCHARD
-            </span>
-          </div>
-
-          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-sage-950 leading-tight mb-3">
-            Royal Palms & Pakistani Fruit Orchard
-          </h2>
-          <p className="text-xs sm:text-sm text-sage-800 leading-relaxed mb-6 font-semibold">
-            From 25-foot Royal Date Palms for grand estate entrances to sweet Multani Chaunsa Mangoes and Kinnu Orange trees acclimatized for Punjab & Sindh climates.
-          </p>
-
-          <div className="flex flex-wrap items-center gap-3">
-            <button
-              onClick={() => onSelectPlantById('mature-royal-date-palm')}
-              className="px-4 py-2.5 rounded-full text-xs font-black bg-emerald-700 text-white hover:bg-emerald-800 transition-all flex items-center gap-2 shadow-md"
-            >
-              <Eye className="w-4 h-4 text-emerald-200" />
-              Inspect Royal Date Palm
-            </button>
-
-            <button
-              onClick={() => onSelectPlantById('mango-chaunsa-tree')}
-              className="px-4 py-2.5 rounded-full text-xs font-bold text-sage-950 bg-amber-50 hover:bg-amber-100 transition-all flex items-center gap-1.5 border border-amber-200"
-            >
-              Inspect Chaunsa Mango
-              <ChevronRight className="w-4 h-4 text-amber-700" />
-            </button>
-
-            <button
-              onClick={onOpenCatalog}
-              className="px-4 py-2.5 rounded-full text-xs font-bold text-sage-950 bg-white hover:bg-slate-50 transition-all flex items-center gap-1.5 border border-slate-200"
-            >
-              View Fruit Orchard
-              <ChevronRight className="w-4 h-4 text-emerald-700" />
-            </button>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Zone 3: Exotic Bonsai & Heritage Pavilion */}
-      <section className="min-h-[50vh] flex items-center justify-start max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
-          className="p-6 sm:p-8 rounded-3xl max-w-xl border border-emerald-200/90 shadow-2xl bg-white/95 backdrop-blur-md"
-        >
-          <div className="flex items-center gap-2 mb-2">
-            <div className="p-2 rounded-xl bg-purple-100 text-purple-800">
-              <Flower2 className="w-5 h-5" />
-            </div>
-            <span className="text-xs font-black tracking-widest text-emerald-800 uppercase">
-              ZONE 03 • EXOTIC BONSAI PAVILION
-            </span>
-          </div>
-
-          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-sage-950 leading-tight mb-3">
-            Living Sculpture & Heritage Motia
-          </h2>
-          <p className="text-xs sm:text-sm text-sage-800 leading-relaxed mb-6 font-semibold">
-            Hand-shaped 15-year-old Juniper Bonsai masterworks, fragrant Pakistani Motia Jasmine, and fiery magenta Bougainvillea climbers that turn verandas into floral tapestries.
-          </p>
-
-          <div className="flex flex-wrap items-center gap-3">
-            <button
-              onClick={() => onSelectPlantById('master-japanese-bonsai-juniper')}
-              className="px-4 py-2.5 rounded-full text-xs font-black bg-amber-400 text-sage-950 hover:bg-amber-500 transition-all flex items-center gap-2 shadow-md border border-amber-300"
-            >
-              <Sparkles className="w-4 h-4 text-sage-950" />
-              Inspect Bonsai Masterpiece
-            </button>
-
-            <button
-              onClick={() => onSelectPlantById('ancient-italian-olive')}
-              className="px-4 py-2.5 rounded-full text-xs font-bold text-sage-950 bg-purple-50 hover:bg-purple-100 transition-all flex items-center gap-1.5 border border-purple-200"
-            >
-              PKR 45,000 Italian Olive
-              <ChevronRight className="w-4 h-4 text-purple-700" />
-            </button>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Zone 4: Villa Landscaping & Architecture */}
-      <section className="min-h-[50vh] flex items-center justify-end max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
-          className="p-6 sm:p-8 rounded-3xl max-w-xl border border-emerald-200/90 shadow-2xl bg-white/95 backdrop-blur-md"
-        >
-          <span className="text-xs font-black tracking-widest text-emerald-800 uppercase mb-2 block">
-            ZONE 04 • LANDSCAPE ARCHITECTURE
-          </span>
-          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-sage-950 leading-tight mb-3">
-            Luxury Villa & Farmhouse Architecture
-          </h2>
-          <p className="text-xs sm:text-sm text-sage-800 leading-relaxed mb-6 font-semibold">
-            Complete turn-key landscape design, automated drip irrigation, stone waterfalls, and living lawn installations across DHA Lahore, Bahria Town Islamabad & Emaar Karachi.
-          </p>
-
-          <div className="flex flex-wrap items-center gap-3">
-            <button
-              onClick={onOpenLandscaping}
-              className="px-5 py-3 rounded-full text-xs sm:text-sm font-black bg-emerald-700 text-white hover:bg-emerald-800 transition-all flex items-center gap-2 shadow-lg"
-            >
-              <span>Explore Landscaping Showcase</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
-        </motion.div>
-      </section>
+          </motion.div>
+        ))}
+      </div>
     </div>
   );
 };

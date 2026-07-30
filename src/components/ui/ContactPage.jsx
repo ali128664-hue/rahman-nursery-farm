@@ -1,0 +1,195 @@
+import React, { useState } from 'react';
+import { MapPin, Phone, MessageCircle, Clock, Building2, Send, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { RAHMAN_WHATSAPP_NUMBER } from '../../utils/whatsappHelper';
+
+export const ContactPage = () => {
+  const [customerName, setCustomerName] = useState('');
+  const [customerPhone, setCustomerPhone] = useState('');
+  const [customerCity, setCustomerCity] = useState('Lahore');
+  const [message, setMessage] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmitInquiry = (e) => {
+    e.preventDefault();
+    const text = `Assalam o Alaikum Ansar Hussain Bhai (0304-0450065)!
+Main ne Rahman Nursery Farm website se inquiry submit ki hai:
+
+• *Customer Name:* ${customerName || 'Valued Visitor'}
+• *Phone Number:* ${customerPhone || 'Shared in chat'}
+• *Delivery City:* ${customerCity}
+• *Inquiry Message:* ${message || 'Plant pricing and orchard consultation query.'}`;
+
+    window.open(`https://wa.me/${RAHMAN_WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
+    setSubmitted(true);
+  };
+
+  return (
+    <div className="min-h-screen bg-[#FDFBF7] text-emerald-950 pt-28 pb-20 px-4 sm:px-6 lg:px-12 pointer-events-auto">
+      <div className="max-w-6xl mx-auto space-y-10">
+
+        {/* Header */}
+        <div className="p-8 rounded-3xl bg-gradient-to-r from-emerald-950 via-emerald-900 to-emerald-950 text-white shadow-2xl border border-amber-400/30">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-black text-amber-300 bg-amber-950/80 border border-amber-400/40 mb-3 uppercase tracking-wider">
+            <MapPin className="w-4 h-4 text-amber-400" />
+            <span>OFFICIAL FARM LOCATIONS & DIRECT HELPLINE</span>
+          </div>
+          <h1 className="font-serif text-3xl sm:text-5xl font-black text-white mb-2 leading-tight">
+            Contact & Farm Locations
+          </h1>
+          <p className="text-xs sm:text-sm text-emerald-200 font-bold max-w-2xl leading-relaxed">
+            Visit our 100+ acre nursery fields in Chak Hassan Arain or contact horticulturist Ansar Hussain directly.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          
+          {/* Farm Location Cards */}
+          <div className="space-y-6">
+            
+            {/* Primary Farm Hub */}
+            <div className="p-6 rounded-3xl bg-white border border-emerald-200 shadow-xl space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-black">
+                  <Building2 className="w-6 h-6" />
+                </div>
+                <div>
+                  <span className="text-[10px] uppercase tracking-widest text-amber-700 font-black">MAIN HEADQUARTERS</span>
+                  <h3 className="font-serif text-xl font-black text-emerald-950">Rahman Nursery Farm</h3>
+                </div>
+              </div>
+
+              <div className="space-y-2 text-xs font-bold text-slate-700">
+                <div className="flex items-start gap-2">
+                  <MapPin className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                  <span>Chak Hassan Arain, Tehsil Arifwala, District Pakpattan, Punjab, Pakistan</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-emerald-700 flex-shrink-0" />
+                  <span>Ansar Hussain: <strong>0304-0450065</strong></span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                  <span>Open 7 Days a Week: 7:00 AM – 7:00 PM</span>
+                </div>
+              </div>
+
+              <a
+                href={`https://wa.me/${RAHMAN_WHATSAPP_NUMBER}?text=${encodeURIComponent('Assalam o Alaikum Ansar Bhai (03040450065)! Main Rahman Nursery Farm location and plant availability info lena chahta hu.')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3 rounded-2xl text-xs font-black flex items-center justify-center gap-2 bg-emerald-700 text-white hover:bg-emerald-800 transition-all shadow-md"
+              >
+                <MessageCircle className="w-4 h-4 fill-white/20" />
+                <span>Chat Direct on WhatsApp (03040450065)</span>
+              </a>
+            </div>
+
+            {/* Regional Dispatch Hubs */}
+            <div className="p-6 rounded-3xl bg-white border border-emerald-200 shadow-xl space-y-4">
+              <h4 className="font-serif text-base font-black text-emerald-950">Regional Dispatch Hubs</h4>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-bold">
+                <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
+                  <div className="font-black text-emerald-950 mb-1">📍 Arifwala & Pakpattan Hub</div>
+                  <p className="text-[11px] text-slate-500">Commercial Fruit Trees & Shade Timber Trees</p>
+                </div>
+                <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
+                  <div className="font-black text-emerald-950 mb-1">📍 Lahore & Sahiwal Cargo</div>
+                  <p className="text-[11px] text-slate-500">Express Cargo Delivery across Punjab & Sindh</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Contact Inquiry Form */}
+          <div className="p-8 rounded-3xl bg-white border border-emerald-200 shadow-xl space-y-6">
+            <div>
+              <h3 className="font-serif text-2xl font-black text-emerald-950 mb-1">
+                Direct Nursery Consultation Form
+              </h3>
+              <p className="text-xs text-slate-500 font-bold">
+                Fill out your requirements below and our lead horticulturist will contact you on WhatsApp.
+              </p>
+            </div>
+
+            {submitted ? (
+              <div className="p-6 rounded-2xl bg-emerald-50 border border-emerald-300 text-emerald-950 text-center space-y-2">
+                <CheckCircle2 className="w-10 h-10 text-emerald-600 mx-auto" />
+                <h4 className="font-serif text-lg font-black">Inquiry Composed Successfully!</h4>
+                <p className="text-xs font-bold text-slate-600">WhatsApp window has been opened to connect directly with Ansar Hussain.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmitInquiry} className="space-y-4">
+                <div>
+                  <label className="text-xs font-black text-emerald-950 block mb-1">Your Full Name:</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Chaudhry Tariq"
+                    value={customerName}
+                    onChange={(e) => setCustomerName(e.target.value)}
+                    className="w-full px-4 py-3 rounded-2xl text-xs bg-slate-50 border border-slate-300 text-emerald-950 focus:outline-none focus:ring-2 focus:ring-emerald-600 font-bold"
+                  />
+                </div>
+
+                <div>
+                  <label className="text-xs font-black text-emerald-950 block mb-1">Phone / WhatsApp Number:</label>
+                  <input
+                    type="tel"
+                    required
+                    placeholder="0300-1234567"
+                    value={customerPhone}
+                    onChange={(e) => setCustomerPhone(e.target.value)}
+                    className="w-full px-4 py-3 rounded-2xl text-xs bg-slate-50 border border-slate-300 text-emerald-950 focus:outline-none focus:ring-2 focus:ring-emerald-600 font-bold"
+                  />
+                </div>
+
+                <div>
+                  <label className="text-xs font-black text-emerald-950 block mb-1">Delivery City:</label>
+                  <select
+                    value={customerCity}
+                    onChange={(e) => setCustomerCity(e.target.value)}
+                    className="w-full px-4 py-3 rounded-2xl text-xs bg-slate-50 border border-slate-300 text-emerald-950 focus:outline-none focus:ring-2 focus:ring-emerald-600 font-bold"
+                  >
+                    <option value="Lahore">📍 Lahore</option>
+                    <option value="Arifwala">📍 Arifwala</option>
+                    <option value="Sahiwal">📍 Sahiwal</option>
+                    <option value="Pakpattan">📍 Pakpattan</option>
+                    <option value="Okara">📍 Okara</option>
+                    <option value="Multan">📍 Multan</option>
+                    <option value="Islamabad">📍 Islamabad / Rawalpindi</option>
+                    <option value="Faisalabad">📍 Faisalabad</option>
+                    <option value="Karachi">📍 Karachi</option>
+                    <option value="Peshawar">📍 Peshawar</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="text-xs font-black text-emerald-950 block mb-1">Your Requirements / Message:</label>
+                  <textarea
+                    rows={4}
+                    placeholder="E.g. I need 20 Grafted Chaunsa Mango saplings and 5 Royal Date Palms for my farmhouse."
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    className="w-full px-4 py-3 rounded-2xl text-xs bg-slate-50 border border-slate-300 text-emerald-950 focus:outline-none focus:ring-2 focus:ring-emerald-600 font-bold"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full py-4 rounded-2xl text-xs font-black flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-800 to-emerald-950 text-white hover:from-emerald-700 hover:to-emerald-900 transition-all shadow-xl"
+                >
+                  <Send className="w-4 h-4 text-amber-300" />
+                  <span>Send Inquiry to Ansar Hussain (03040450065)</span>
+                </button>
+              </form>
+            )}
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  );
+};

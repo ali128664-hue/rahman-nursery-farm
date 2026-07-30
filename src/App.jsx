@@ -4,6 +4,8 @@ import { Navbar } from './components/ui/Navbar';
 import { HeroOverlay } from './components/ui/HeroOverlay';
 import { StorySections } from './components/ui/StorySections';
 import { ShopPage } from './components/ui/ShopPage';
+import { BlogPage } from './components/ui/BlogPage';
+import { ContactPage } from './components/ui/ContactPage';
 import { CatalogModal } from './components/ui/CatalogModal';
 import { PlantInspectorModal } from './components/ui/PlantInspectorModal';
 import { AIGardenPlannerModal } from './components/ui/AIGardenPlannerModal';
@@ -23,7 +25,7 @@ export default function App() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [selectedPlant, setSelectedPlant] = useState(null);
   const [activePotType, setActivePotType] = useState('terracotta');
-  const [activeTab, setActiveTab] = useState('home'); // 'home', 'shop', 'orchard', 'about', 'contact'
+  const [activeTab, setActiveTab] = useState('home'); // 'home', 'shop', 'orchard', 'blog', 'about', 'contact'
 
   // Modals & Drawers
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
@@ -103,11 +105,7 @@ export default function App() {
       <Navbar
         activeTab={activeTab}
         onTabChange={(tab) => {
-          if (tab === 'contact') {
-            setIsContactOpen(true);
-          } else {
-            setActiveTab(tab);
-          }
+          setActiveTab(tab);
         }}
         cartCount={totalCartItems}
         onOpenCart={() => setIsCartOpen(true)}
@@ -121,6 +119,10 @@ export default function App() {
           initialCategory="all"
           onCloseShopView={() => setActiveTab('home')}
         />
+      ) : activeTab === 'blog' ? (
+        <BlogPage onOpenStore={() => setActiveTab('shop')} />
+      ) : activeTab === 'contact' ? (
+        <ContactPage />
       ) : activeTab === 'orchard' ? (
         <div className="pt-24 min-h-screen">
           <OrchardBaghSection />
@@ -128,7 +130,7 @@ export default function App() {
         </div>
       ) : activeTab === 'about' ? (
         <div className="pt-24 min-h-screen">
-          <FamilyHeritagSection onOpenContact={() => setIsContactOpen(true)} />
+          <FamilyHeritagSection onOpenContact={() => setActiveTab('contact')} />
           <ReviewsSection />
         </div>
       ) : (
@@ -155,7 +157,7 @@ export default function App() {
           <FeaturesAndWhyUs />
 
           {/* 50+ Years Family Heritage Section */}
-          <FamilyHeritagSection onOpenContact={() => setIsContactOpen(true)} />
+          <FamilyHeritagSection onOpenContact={() => setActiveTab('contact')} />
 
           {/* Customer Reviews Section */}
           <ReviewsSection />
@@ -166,7 +168,7 @@ export default function App() {
       <Footer
         onOpenCatalog={() => setActiveTab('shop')}
         onOpenAIPlanner={() => setIsAIPlannerOpen(true)}
-        onOpenContact={() => setIsContactOpen(true)}
+        onOpenContact={() => setActiveTab('contact')}
       />
 
       {/* Floating Bottom Quick Action Bar (Mobile & Desktop) */}
@@ -181,7 +183,7 @@ export default function App() {
           className="flex items-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-emerald-800 to-emerald-950 text-white font-black text-xs shadow-2xl hover:scale-105 transition-all border border-emerald-500"
         >
           {activeTab === 'shop' ? <Home className="w-4 h-4 text-amber-300" /> : <Store className="w-4 h-4 text-amber-300" />}
-          <span>{activeTab === 'shop' ? 'Home Page' : 'Store (125+)'}</span>
+          <span>{activeTab === 'shop' ? 'Home Page' : 'Store (100+)'}</span>
         </button>
 
         {/* WhatsApp Helpline Button */}
