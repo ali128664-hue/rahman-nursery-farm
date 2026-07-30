@@ -100,9 +100,9 @@ export default function App() {
   const totalCartItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <div className="relative min-h-screen bg-[#FDFBF7] text-emerald-950 overflow-x-hidden selection:bg-emerald-200 selection:text-emerald-900 font-sans">
-      {/* 1. Ambient Botanical Background Layer */}
-      <NurseryCanvas scrollProgress={scrollProgress} />
+    <div className="relative min-h-screen bg-[#F7F8F5] text-gray-900 overflow-x-hidden font-sans">
+      {/* Background canvas removed — clean white Shopify theme */}
+
 
       {/* 2. Top Navigation Bar */}
       <Navbar
