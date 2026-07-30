@@ -6,6 +6,7 @@ import { StorySections } from './components/ui/StorySections';
 import { ShopPage } from './components/ui/ShopPage';
 import { BlogPage } from './components/ui/BlogPage';
 import { ContactPage } from './components/ui/ContactPage';
+import { BaghPackagesPage } from './components/ui/BaghPackagesPage';
 import { CatalogModal } from './components/ui/CatalogModal';
 import { PlantInspectorModal } from './components/ui/PlantInspectorModal';
 import { AIGardenPlannerModal } from './components/ui/AIGardenPlannerModal';
@@ -124,10 +125,7 @@ export default function App() {
       ) : activeTab === 'contact' ? (
         <ContactPage />
       ) : activeTab === 'orchard' ? (
-        <div className="pt-24 min-h-screen">
-          <OrchardBaghSection />
-          <FeaturesAndWhyUs />
-        </div>
+        <BaghPackagesPage />
       ) : activeTab === 'about' ? (
         <div className="pt-24 min-h-screen">
           <FamilyHeritagSection onOpenContact={() => setActiveTab('contact')} />
