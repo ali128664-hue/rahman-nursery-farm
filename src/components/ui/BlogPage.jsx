@@ -49,7 +49,7 @@ export const BlogPage = ({ onOpenStore }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FDFBF7] text-emerald-950 pt-28 pb-20 px-4 sm:px-6 lg:px-12 pointer-events-auto">
+    <div className="min-h-screen bg-[#FDFBF7] text-emerald-950 pt-36 pb-20 px-4 sm:px-6 lg:px-12 pointer-events-auto">
       <div className="max-w-6xl mx-auto space-y-10">
 
         {/* Header */}

@@ -28,6 +28,7 @@ export default function App() {
   const [selectedPlant, setSelectedPlant] = useState(null);
   const [activePotType, setActivePotType] = useState('terracotta');
   const [activeTab, setActiveTab] = useState('home'); // 'home', 'shop', 'orchard', 'services', 'blog', 'about', 'contact'
+  const [globalSearch, setGlobalSearch] = useState('');
 
   // Modals & Drawers
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
@@ -111,6 +112,11 @@ export default function App() {
         }}
         cartCount={totalCartItems}
         onOpenCart={() => setIsCartOpen(true)}
+        searchQuery={globalSearch}
+        onSearchChange={(q) => {
+          setGlobalSearch(q);
+          if (activeTab !== 'shop') setActiveTab('shop');
+        }}
       />
 
       {/* 3. MULTI-PAGE VIEW ROUTING */}
@@ -120,6 +126,8 @@ export default function App() {
           onAddToCart={handleAddToCart}
           initialCategory="all"
           onCloseShopView={() => setActiveTab('home')}
+          externalSearch={globalSearch}
+          onClearExternalSearch={() => setGlobalSearch('')}
         />
       ) : activeTab === 'blog' ? (
         <BlogPage onOpenStore={() => setActiveTab('shop')} />
@@ -130,7 +138,7 @@ export default function App() {
       ) : activeTab === 'services' ? (
         <ServicesPage onOpenContact={() => setActiveTab('contact')} />
       ) : activeTab === 'about' ? (
-        <div className="pt-24 min-h-screen">
+        <div className="pt-36 min-h-screen">
           <FamilyHeritagSection onOpenContact={() => setActiveTab('contact')} />
           <ReviewsSection />
         </div>
