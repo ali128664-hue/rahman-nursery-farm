@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Search, Eye, MessageCircle, Star, ShoppingCart, Leaf, Filter, X, Grid, SlidersHorizontal, Check, ShieldCheck } from 'lucide-react';
+import { Search, Eye, MessageCircle, Star, ShoppingCart, Filter, X, SlidersHorizontal, ShieldCheck, Grid, List } from 'lucide-react';
 import { PLANTS_DATA, PLANT_CATEGORIES } from '../../data/plantCatalog';
 import { generatePlantWhatsAppLink } from '../../utils/whatsappHelper';
 
@@ -27,6 +27,7 @@ export const ShopPage = ({
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedDifficulty, setSelectedDifficulty] = useState('all');
   const [sortBy, setSortBy] = useState('featured');
+  const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
   const [plantQuantities, setPlantQuantities] = useState({});
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
 
@@ -63,26 +64,26 @@ export const ShopPage = ({
       if (sortBy === 'price-high') return b.pricePKR - a.pricePKR;
       if (sortBy === 'rating') return b.rating - a.rating;
       if (sortBy === 'name') return a.name.localeCompare(b.name);
-      return 0; // featured
+      return 0;
     });
   }, [activeCategory, searchQuery, selectedDifficulty, sortBy]);
 
   return (
-    <div className="min-h-screen bg-[#FDFBF7] text-emerald-950 pt-28 pb-20 px-3 sm:px-6 lg:px-12 pointer-events-auto">
+    <div className="min-h-screen bg-[#FDFBF7] text-emerald-950 pt-24 pb-20 px-3 sm:px-6 lg:px-12 pointer-events-auto">
       <div className="max-w-7xl mx-auto">
 
-        {/* Top Professional Store Banner Header */}
-        <div className="mb-8 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-emerald-950 via-emerald-900 to-emerald-950 text-white shadow-2xl border border-amber-400/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        {/* Top Shopify-Style Banner Header */}
+        <div className="mb-6 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-emerald-950 via-emerald-900 to-emerald-950 text-white shadow-2xl border border-amber-400/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-black text-amber-300 bg-amber-950/70 border border-amber-400/40 mb-3 uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-black text-amber-300 bg-amber-950/80 border border-amber-400/40 mb-3 uppercase tracking-wider">
               <ShieldCheck className="w-4 h-4 text-amber-400" />
-              <span>CERTIFIED BOTANICAL INVENTORY • PAKISTAN HUB</span>
+              <span>SHOPIFY BOTANICAL STOREFRONT • PAKISTAN HUB</span>
             </div>
             <h1 className="font-serif text-3xl sm:text-5xl font-black text-white mb-2 leading-tight">
               Official Nursery Store
             </h1>
             <p className="text-xs sm:text-sm text-emerald-200 font-bold max-w-2xl leading-relaxed">
-              Explore 125+ certified Pakistani plant varieties, grafted mango saplings, China Guava, Royal Date Palms, and indoor air purifiers directly from our fields.
+              Browse 100+ certified Pakistani plant varieties, Chaunsa Mango, China Guava, Royal Date Palms, and indoor foliage directly from our fields.
             </p>
           </div>
 
@@ -100,8 +101,8 @@ export const ShopPage = ({
         {/* E-COMMERCE LAYOUT: Left Category Sidebar + Right Product Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
 
-          {/* LEFT SIDEBAR: Professional Category List & Filters */}
-          <aside className="hidden lg:block lg:col-span-1 bg-white rounded-3xl p-6 border border-emerald-200 shadow-xl sticky top-28 space-y-6">
+          {/* LEFT SIDEBAR: Professional Category List */}
+          <aside className="hidden lg:block lg:col-span-1 bg-white rounded-3xl p-6 border border-emerald-200 shadow-xl sticky top-24 space-y-6">
             
             {/* Header */}
             <div className="flex items-center justify-between pb-4 border-b border-slate-100">
@@ -109,13 +110,13 @@ export const ShopPage = ({
                 <SlidersHorizontal className="w-4 h-4 text-emerald-700" />
                 <span>Categories</span>
               </h3>
-              <span className="text-[11px] font-black text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">
-                125+ Stock
+              <span className="text-[11px] font-black text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200">
+                {PLANTS_DATA.length} Items
               </span>
             </div>
 
             {/* Category Navigation List */}
-            <div className="space-y-1.5">
+            <div className="space-y-1.5 max-h-[60vh] overflow-y-auto pr-1">
               {PLANT_CATEGORIES.map((cat) => {
                 const count = categoryCounts[cat.id] || 0;
                 const isActive = activeCategory === cat.id;
@@ -132,7 +133,7 @@ export const ShopPage = ({
                   >
                     <span className="flex items-center gap-2">
                       <span className="text-base">{CATEGORY_ICONS[cat.id] || '🌿'}</span>
-                      <span className="truncate max-w-[140px]">{cat.label.replace(/^.+?\s—\s/, '').replace(/^.+?\s/, '')}</span>
+                      <span className="truncate max-w-[130px]">{cat.label.replace(/^.+?\s—\s/, '').replace(/^.+?\s/, '')}</span>
                     </span>
                     <span className={`px-2 py-0.5 rounded-full text-[10px] font-black ${
                       isActive ? 'bg-amber-400 text-emerald-950' : 'bg-slate-200 text-emerald-900'
@@ -163,10 +164,9 @@ export const ShopPage = ({
               </select>
             </div>
 
-            {/* Store Guarantee Badge */}
             <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-950 text-[11px] leading-relaxed font-bold">
-              <span className="font-black block text-emerald-900 mb-1">🌿 100% Acclimatized Stock</span>
-              All nursery plants are grown directly in Chak Hassan Arain fields for maximum survival rate across Pakistan.
+              <span className="font-black block text-emerald-900 mb-1">🌿 Fast Direct Order</span>
+              Select quantity on any product card and click WhatsApp Order to chat directly with Ansar Hussain (03040450065)!
             </div>
 
           </aside>
@@ -174,15 +174,15 @@ export const ShopPage = ({
           {/* RIGHT MAIN PANEL: Search Toolbar & Product Grid */}
           <main className="lg:col-span-3 space-y-6">
 
-            {/* Search Bar & Mobile Filter Trigger */}
+            {/* Search Bar & Toolbar */}
             <div className="p-4 rounded-3xl bg-white border border-emerald-200 shadow-md flex flex-col sm:flex-row items-center justify-between gap-4">
               
               {/* Search Box */}
-              <div className="relative w-full sm:w-96">
+              <div className="relative w-full sm:w-80">
                 <Search className="w-4 h-4 text-emerald-700 absolute left-3.5 top-1/2 -translate-y-1/2" />
                 <input
                   type="text"
-                  placeholder="Search plants, fruit, timber, palms, roses..."
+                  placeholder="Search 100+ plants, fruit, timber, palms..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-10 pr-4 py-2.5 rounded-2xl text-xs bg-slate-50 border border-slate-300 text-emerald-950 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-600 font-bold shadow-inner"
@@ -197,25 +197,47 @@ export const ShopPage = ({
                 )}
               </div>
 
-              {/* Controls: Sort Dropdown & Mobile Filter Button */}
-              <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
+              {/* Controls: Sort, View Toggle, Mobile Filter */}
+              <div className="flex items-center gap-2.5 w-full sm:w-auto justify-between sm:justify-end">
                 <button
                   onClick={() => setIsMobileFilterOpen(!isMobileFilterOpen)}
-                  className="lg:hidden px-4 py-2.5 rounded-2xl bg-emerald-800 text-white text-xs font-black flex items-center gap-2 shadow-sm"
+                  className="lg:hidden px-3.5 py-2.5 rounded-2xl bg-emerald-800 text-white text-xs font-black flex items-center gap-1.5 shadow-sm"
                 >
                   <Filter className="w-4 h-4" />
-                  <span>Categories ({PLANT_CATEGORIES.length})</span>
+                  <span>Categories</span>
                 </button>
+
+                {/* View Mode Toggle (Grid vs List) */}
+                <div className="flex items-center bg-slate-100 p-1 rounded-2xl border border-slate-200">
+                  <button
+                    onClick={() => setViewMode('grid')}
+                    className={`p-2 rounded-xl text-xs font-black transition-all ${
+                      viewMode === 'grid' ? 'bg-white text-emerald-950 shadow-sm' : 'text-slate-500 hover:text-slate-800'
+                    }`}
+                    title="Grid View"
+                  >
+                    <Grid className="w-4 h-4" />
+                  </button>
+                  <button
+                    onClick={() => setViewMode('list')}
+                    className={`p-2 rounded-xl text-xs font-black transition-all ${
+                      viewMode === 'list' ? 'bg-white text-emerald-950 shadow-sm' : 'text-slate-500 hover:text-slate-800'
+                    }`}
+                    title="List/Table View"
+                  >
+                    <List className="w-4 h-4" />
+                  </button>
+                </div>
 
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
                   className="px-3.5 py-2.5 rounded-2xl text-xs bg-slate-50 border border-slate-300 text-emerald-950 font-bold focus:outline-none focus:ring-2 focus:ring-emerald-600 shadow-sm"
                 >
-                  <option value="featured">Sort: Nursery Bestsellers</option>
+                  <option value="featured">Sort: Bestsellers</option>
                   <option value="price-low">Price: Low to High</option>
                   <option value="price-high">Price: High to Low</option>
-                  <option value="rating">Highest Customer Rating</option>
+                  <option value="rating">Highest Rating</option>
                   <option value="name">Name: A to Z</option>
                 </select>
               </div>
@@ -249,9 +271,9 @@ export const ShopPage = ({
               </div>
             )}
 
-            {/* Product Count & Clear Filters */}
+            {/* Results Counter */}
             <div className="flex items-center justify-between text-xs font-black text-emerald-900 px-1">
-              <span>Showing <strong>{filteredPlants.length}</strong> certified plant varieties</span>
+              <span>Showing <strong>{filteredPlants.length}</strong> products</span>
               {(searchQuery || activeCategory !== 'all' || selectedDifficulty !== 'all') && (
                 <button
                   onClick={() => { setSearchQuery(''); setActiveCategory('all'); setSelectedDifficulty('all'); }}
@@ -262,7 +284,7 @@ export const ShopPage = ({
               )}
             </div>
 
-            {/* Product Cards Grid */}
+            {/* Product Cards Grid OR List View */}
             {filteredPlants.length === 0 ? (
               <div className="bg-white rounded-3xl p-12 text-center border border-slate-200 shadow-md">
                 <div className="text-5xl mb-3">🌱</div>
@@ -272,10 +294,66 @@ export const ShopPage = ({
                   onClick={() => { setSearchQuery(''); setActiveCategory('all'); setSelectedDifficulty('all'); }}
                   className="px-6 py-2.5 rounded-full text-xs font-black bg-emerald-800 text-white hover:bg-emerald-900 transition-all shadow-md"
                 >
-                  Show All 125+ Products
+                  Show All Products
                 </button>
               </div>
+            ) : viewMode === 'list' ? (
+              /* COMPACT TABLE/LIST VIEW FOR SUPER FAST BROWSING */
+              <div className="bg-white rounded-3xl overflow-hidden border border-emerald-200 shadow-lg divide-y divide-slate-100">
+                {filteredPlants.map((plant) => (
+                  <div key={plant.id} className="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-50/80 transition-colors">
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl">{CATEGORY_ICONS[plant.category] || '🌱'}</span>
+                      <div>
+                        <span className="inline-block px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-900 text-[10px] font-black uppercase border border-emerald-200 mb-1">
+                          {plant.badge}
+                        </span>
+                        <h4 className="font-serif text-base font-black text-emerald-950 leading-tight">
+                          {plant.name}
+                        </h4>
+                        <p className="text-[11px] italic text-slate-500 font-bold">{plant.latinName}</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-4 justify-between sm:justify-end">
+                      <div className="text-right">
+                        <div className="font-serif text-lg font-black text-emerald-900">
+                          PKR {plant.pricePKR.toLocaleString()}
+                        </div>
+                        <div className="text-[10px] text-slate-500 font-bold">Care: {plant.difficulty}</div>
+                      </div>
+
+                      {/* Quantity + Buttons */}
+                      <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200">
+                          <button onClick={() => setQty(plant.id, getQty(plant.id) - 1)} className="w-6 h-6 rounded bg-white font-black text-xs">-</button>
+                          <span className="w-5 text-center text-xs font-black">{getQty(plant.id)}</span>
+                          <button onClick={() => setQty(plant.id, getQty(plant.id) + 1)} className="w-6 h-6 rounded bg-white font-black text-xs">+</button>
+                        </div>
+
+                        <button
+                          onClick={() => onAddToCart && onAddToCart(plant, getQty(plant.id))}
+                          className="px-3 py-2 rounded-xl text-xs font-black bg-slate-100 text-emerald-950 hover:bg-emerald-50 border border-slate-300"
+                          title="Add to Cart"
+                        >
+                          <ShoppingCart className="w-3.5 h-3.5 text-amber-600" />
+                        </button>
+
+                        <a
+                          href={generatePlantWhatsAppLink({ plantName: plant.name, plantPrice: plant.pricePKR, quantity: getQty(plant.id) })}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-3 py-2 rounded-xl text-xs font-black bg-emerald-700 text-white hover:bg-emerald-800 shadow-sm"
+                        >
+                          <MessageCircle className="w-3.5 h-3.5 fill-white/20" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             ) : (
+              /* GRID VIEW */
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredPlants.map((plant) => (
                   <div
