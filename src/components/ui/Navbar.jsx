@@ -1,14 +1,12 @@
 import React from 'react';
-import { ShoppingCart, Leaf, MessageCircle, MapPin, Store, TreePine } from 'lucide-react';
+import { ShoppingCart, MessageCircle, MapPin, Store, TreePine, Home, Users } from 'lucide-react';
 import { RAHMAN_WHATSAPP_NUMBER } from '../../utils/whatsappHelper';
 
 export const Navbar = ({
-  onOpenCatalog,
-  onOpenContact,
+  activeTab = 'home',
+  onTabChange,
   cartCount = 0,
   onOpenCart,
-  onToggleShopPage,
-  isFullShopView = false,
 }) => {
   return (
     <header className="fixed top-0 left-0 right-0 z-40 px-3 py-3 md:px-8 md:py-4 pointer-events-auto">
@@ -18,7 +16,7 @@ export const Navbar = ({
         <div
           className="flex items-center gap-3 cursor-pointer group"
           onClick={() => {
-            if (isFullShopView && onToggleShopPage) onToggleShopPage();
+            if (onTabChange) onTabChange('home');
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
         >
@@ -37,57 +35,100 @@ export const Navbar = ({
           </div>
         </div>
 
-        {/* Main Product Navigation Headings */}
-        <div className="hidden lg:flex items-center gap-5 text-xs font-black text-emerald-950">
+        {/* Main Multi-Page Navigation Headings */}
+        <div className="hidden lg:flex items-center gap-2 text-xs font-black text-emerald-950">
+          
           <button
             onClick={() => {
-              if (onToggleShopPage) onToggleShopPage();
+              if (onTabChange) onTabChange('home');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all border shadow-sm ${
-              isFullShopView
-                ? 'bg-emerald-800 text-white border-emerald-900 shadow-md'
+            className={`flex items-center gap-1.5 px-4 py-2 rounded-full transition-all border ${
+              activeTab === 'home'
+                ? 'bg-emerald-900 text-white border-emerald-900 shadow-md font-black'
+                : 'bg-transparent text-emerald-950 border-transparent hover:bg-emerald-50'
+            }`}
+          >
+            <Home className="w-4 h-4 text-amber-500" />
+            <span>Home</span>
+          </button>
+
+          <button
+            onClick={() => {
+              if (onTabChange) onTabChange('shop');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className={`flex items-center gap-1.5 px-4 py-2 rounded-full transition-all border ${
+              activeTab === 'shop'
+                ? 'bg-emerald-900 text-white border-emerald-900 shadow-md font-black'
                 : 'bg-emerald-50 text-emerald-950 border-emerald-300 hover:bg-emerald-100'
             }`}
           >
             <Store className="w-4 h-4 text-amber-500" />
-            <span>Dedicated Shop</span>
+            <span>Nursery Store (125+)</span>
           </button>
 
           <button
-            onClick={onOpenCatalog}
-            className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-emerald-950 hover:bg-slate-200 transition-all border border-slate-200"
-          >
-            <Leaf className="w-4 h-4 text-emerald-700" />
-            <span>A-Z Plant Catalog</span>
-          </button>
-
-          <a
-            href="#orchard"
-            onClick={(e) => {
-              e.preventDefault();
-              if (isFullShopView && onToggleShopPage) onToggleShopPage();
-              setTimeout(() => {
-                document.querySelector('#orchard')?.scrollIntoView({ behavior: 'smooth' });
-              }, 100);
+            onClick={() => {
+              if (onTabChange) onTabChange('orchard');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className="hover:text-emerald-700 transition-colors font-black flex items-center gap-1 px-3 py-2"
+            className={`flex items-center gap-1.5 px-4 py-2 rounded-full transition-all border ${
+              activeTab === 'orchard'
+                ? 'bg-emerald-900 text-white border-emerald-900 shadow-md font-black'
+                : 'bg-transparent text-emerald-950 border-transparent hover:bg-emerald-50'
+            }`}
           >
             <TreePine className="w-4 h-4 text-emerald-700" />
             <span>Bagh Lagwao</span>
-          </a>
+          </button>
 
           <button
-            onClick={onOpenContact}
-            className="hover:text-emerald-700 transition-colors font-extrabold flex items-center gap-1.5 px-3 py-2"
+            onClick={() => {
+              if (onTabChange) onTabChange('about');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className={`flex items-center gap-1.5 px-4 py-2 rounded-full transition-all border ${
+              activeTab === 'about'
+                ? 'bg-emerald-900 text-white border-emerald-900 shadow-md font-black'
+                : 'bg-transparent text-emerald-950 border-transparent hover:bg-emerald-50'
+            }`}
+          >
+            <Users className="w-4 h-4 text-emerald-700" />
+            <span>50+ Yrs Heritage</span>
+          </button>
+
+          <button
+            onClick={() => {
+              if (onTabChange) onTabChange('contact');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className={`flex items-center gap-1.5 px-4 py-2 rounded-full transition-all border ${
+              activeTab === 'contact'
+                ? 'bg-emerald-900 text-white border-emerald-900 shadow-md font-black'
+                : 'bg-transparent text-emerald-950 border-transparent hover:bg-emerald-50'
+            }`}
           >
             <MapPin className="w-4 h-4 text-amber-600" />
-            <span>Farm Location</span>
+            <span>Contact & Location</span>
           </button>
+
         </div>
 
         {/* Right Tools: Shopping Cart + WhatsApp */}
         <div className="flex items-center gap-2.5 md:gap-3.5">
+
+          {/* Mobile Store Button */}
+          <button
+            onClick={() => {
+              if (onTabChange) onTabChange('shop');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="lg:hidden p-2.5 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-950"
+            title="Open Store"
+          >
+            <Store className="w-4 h-4 text-emerald-800" />
+          </button>
 
           {/* Prominent Cart Button with Count Badge */}
           <button

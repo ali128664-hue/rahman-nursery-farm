@@ -14,17 +14,16 @@ import { FamilyHeritagSection } from './components/ui/FamilyHeritagSection';
 import { ReviewsSection } from './components/ui/ReviewsSection';
 import { ContactModal } from './components/ui/ContactModal';
 import { CartDrawer } from './components/ui/CartDrawer';
+import { Footer } from './components/ui/Footer';
 import { PLANTS_DATA } from './data/plantCatalog';
-import { MessageCircle, ShoppingCart, Check, LayoutGrid, Home } from 'lucide-react';
+import { MessageCircle, ShoppingCart, Store, Home } from 'lucide-react';
 import { RAHMAN_WHATSAPP_NUMBER } from './utils/whatsappHelper';
 
 export default function App() {
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [weatherMode, setWeatherMode] = useState('sunrise');
   const [selectedPlant, setSelectedPlant] = useState(null);
   const [activePotType, setActivePotType] = useState('terracotta');
-  const [isFullShopView, setIsFullShopView] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [activeTab, setActiveTab] = useState('home'); // 'home', 'shop', 'orchard', 'about', 'contact'
 
   // Modals & Drawers
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
@@ -86,20 +85,10 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleSelectPlantById = (id, overridePosition = null) => {
+  const handleSelectPlantById = (id) => {
     const plant = PLANTS_DATA.find((p) => p.id === id);
     if (plant) {
       setSelectedPlant(plant);
-    }
-  };
-
-  const handleScrollToShop = () => {
-    const shopElement = document.getElementById('shop-section');
-    if (shopElement) {
-      shopElement.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      setIsFullShopView(true);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
@@ -108,78 +97,113 @@ export default function App() {
   return (
     <div className="relative min-h-screen bg-[#FDFBF7] text-emerald-950 overflow-x-hidden selection:bg-emerald-200 selection:text-emerald-900 font-sans">
       {/* 1. Ambient Botanical Background Layer */}
-      <NurseryCanvas
-        scrollProgress={scrollProgress}
-        weatherMode={weatherMode}
-      />
+      <NurseryCanvas scrollProgress={scrollProgress} />
 
-      {/* 2. Streamlined Floating Navbar */}
+      {/* 2. Top Navigation Bar */}
       <Navbar
-        onOpenCatalog={() => setIsFullShopView(true)}
-        onOpenContact={() => setIsContactOpen(true)}
+        activeTab={activeTab}
+        onTabChange={(tab) => {
+          if (tab === 'contact') {
+            setIsContactOpen(true);
+          } else {
+            setActiveTab(tab);
+          }
+        }}
         cartCount={totalCartItems}
         onOpenCart={() => setIsCartOpen(true)}
-        onToggleShopPage={() => setIsFullShopView(prev => !prev)}
-        isFullShopView={isFullShopView}
       />
 
-      {/* Toggle View: Full Shop Page vs Home View */}
-      {isFullShopView ? (
+      {/* 3. MULTI-PAGE VIEW ROUTING */}
+      {activeTab === 'shop' ? (
         <ShopPage
           onSelectPlantForInspection={(id) => handleSelectPlantById(id)}
           onAddToCart={handleAddToCart}
-          initialCategory={selectedCategory}
-          onCloseShopView={() => setIsFullShopView(false)}
+          initialCategory="all"
+          onCloseShopView={() => setActiveTab('home')}
         />
+      ) : activeTab === 'orchard' ? (
+        <div className="pt-24 min-h-screen">
+          <OrchardBaghSection />
+          <FeaturesAndWhyUs />
+        </div>
+      ) : activeTab === 'about' ? (
+        <div className="pt-24 min-h-screen">
+          <FamilyHeritagSection onOpenContact={() => setIsContactOpen(true)} />
+          <ReviewsSection />
+        </div>
       ) : (
+        /* HOME TAB (DEFAULT) */
         <>
-          {/* 3. Hero Banner Overlay */}
+          {/* Hero Banner Overlay */}
           <HeroOverlay
-            onExploreClick={handleScrollToShop}
-            onOpenCatalog={() => setIsFullShopView(true)}
+            onExploreClick={() => setActiveTab('shop')}
+            onOpenCatalog={() => setActiveTab('shop')}
             onOpenAIPlanner={() => setIsAIPlannerOpen(true)}
           />
 
-          {/* 4. DEDICATED FULL SHOP SECTION ON HOME PAGE */}
-          <section id="shop-section" className="relative z-10">
-            <ShopPage
-              onSelectPlantForInspection={(id) => handleSelectPlantById(id)}
-              onAddToCart={handleAddToCart}
-              initialCategory="all"
-            />
-          </section>
-
-          {/* 5. Storytelling Zones */}
+          {/* Featured Storytelling & Categories */}
           <StorySections
-            onOpenCatalog={() => setIsFullShopView(true)}
+            onOpenCatalog={() => setActiveTab('shop')}
             onSelectPlantById={(id) => handleSelectPlantById(id)}
             onOpenLandscaping={() => setIsLandscapingOpen(true)}
           />
 
-          {/* 6. Orchard / Bagh Lagwao Section */}
+          {/* Orchard / Bagh Lagwao Section */}
           <OrchardBaghSection />
 
-          {/* 7. Features, Care Masterclasses & FAQs */}
+          {/* Features, Masterclasses & FAQs */}
           <FeaturesAndWhyUs />
 
-          {/* 8. Family Heritage — About Us Section (50+ Years) */}
+          {/* 50+ Years Family Heritage Section */}
           <FamilyHeritagSection onOpenContact={() => setIsContactOpen(true)} />
 
-          {/* 9. Customer Testimonials Section */}
+          {/* Customer Reviews Section */}
           <ReviewsSection />
-
-          {/* 10. Footer Section */}
-          <Footer
-            onOpenCatalog={() => setIsFullShopView(true)}
-            onOpenAIPlanner={() => setIsAIPlannerOpen(true)}
-            onOpenContact={() => setIsContactOpen(true)}
-          />
         </>
       )}
 
-      {/* --- MODALS & DRAWERS LAYER --- */}
+      {/* Footer Section */}
+      <Footer
+        onOpenCatalog={() => setActiveTab('shop')}
+        onOpenAIPlanner={() => setIsAIPlannerOpen(true)}
+        onOpenContact={() => setIsContactOpen(true)}
+      />
 
-      {/* Full Catalog Modal */}
+      {/* Floating Bottom Quick Action Bar (Mobile & Desktop) */}
+      <div className="fixed bottom-5 right-5 z-40 flex items-center gap-3 pointer-events-auto">
+        
+        {/* Toggle to Full Store */}
+        <button
+          onClick={() => {
+            setActiveTab(activeTab === 'shop' ? 'home' : 'shop');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          className="flex items-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-emerald-800 to-emerald-950 text-white font-black text-xs shadow-2xl hover:scale-105 transition-all border border-emerald-500"
+        >
+          {activeTab === 'shop' ? <Home className="w-4 h-4 text-amber-300" /> : <Store className="w-4 h-4 text-amber-300" />}
+          <span>{activeTab === 'shop' ? 'Home Page' : 'Store (125+)'}</span>
+        </button>
+
+        {/* WhatsApp Helpline Button */}
+        <a
+          href={`https://wa.me/${RAHMAN_WHATSAPP_NUMBER}?text=${encodeURIComponent('Assalam o Alaikum Ansar Bhai (03040450065), I am visiting Rahman Nursery Farm website and would like to order plants!')}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-3.5 rounded-full bg-emerald-600 text-white hover:bg-emerald-700 transition-all shadow-2xl border border-emerald-400 hover:scale-105"
+          title="Direct WhatsApp Helpline 03040450065"
+        >
+          <MessageCircle className="w-5 h-5 fill-white/20" />
+        </a>
+      </div>
+
+      {/* Toast Notification */}
+      {cartToast && (
+        <div className="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-full bg-emerald-950 text-white border border-amber-400 text-xs font-black shadow-2xl flex items-center gap-2 animate-bounce">
+          <span>{cartToast}</span>
+        </div>
+      )}
+
+      {/* MODALS */}
       <CatalogModal
         isOpen={isCatalogOpen}
         onClose={() => setIsCatalogOpen(false)}
@@ -187,7 +211,6 @@ export default function App() {
         onAddToCart={handleAddToCart}
       />
 
-      {/* Cart Slide-Over Drawer */}
       <CartDrawer
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}
@@ -197,7 +220,6 @@ export default function App() {
         onClearCart={handleClearCart}
       />
 
-      {/* Selected Plant Inspector Drawer */}
       {selectedPlant && (
         <PlantInspectorModal
           plant={selectedPlant}
@@ -208,76 +230,21 @@ export default function App() {
         />
       )}
 
-      {/* AI Garden Planner & Estimator Modal */}
       <AIGardenPlannerModal
         isOpen={isAIPlannerOpen}
         onClose={() => setIsAIPlannerOpen(false)}
         onSelectPlantForInspection={(id) => handleSelectPlantById(id)}
       />
 
-      {/* Landscaping Before/After Showcase Modal */}
       <LandscapingShowcase
         isOpen={isLandscapingOpen}
         onClose={() => setIsLandscapingOpen(false)}
       />
 
-      {/* Farm Locations & Contact Modal */}
       <ContactModal
         isOpen={isContactOpen}
         onClose={() => setIsContactOpen(false)}
       />
-
-      {/* Cart Quick Toast Notification */}
-      {cartToast && (
-        <div
-          className="fixed bottom-24 right-6 z-50 px-5 py-3.5 rounded-2xl bg-emerald-900 text-white font-black text-xs shadow-2xl flex items-center gap-2 border border-amber-400 pointer-events-auto"
-          style={{ animation: 'fadeIn 0.2s ease' }}
-        >
-          <Check className="w-4 h-4 text-amber-300" />
-          <span>{cartToast}</span>
-          <button
-            onClick={() => setIsCartOpen(true)}
-            className="ml-2 underline text-amber-300 hover:text-amber-200"
-          >
-            View Cart
-          </button>
-        </div>
-      )}
-
-      {/* Floating Sticky Navigation Bar */}
-      <div className="fixed bottom-6 right-6 z-40 flex items-center gap-2.5 pointer-events-auto">
-        <button
-          onClick={() => setIsFullShopView(!isFullShopView)}
-          className="px-4 py-3 rounded-2xl bg-amber-500 text-emerald-950 shadow-2xl hover:bg-amber-400 hover:scale-105 transition-all flex items-center gap-2 border-2 border-amber-300 font-black text-xs"
-          title="Toggle Full Shop Page"
-        >
-          {isFullShopView ? <Home className="w-4 h-4" /> : <LayoutGrid className="w-4 h-4" />}
-          <span className="hidden sm:inline">{isFullShopView ? 'Home View' : 'Full Shop'}</span>
-        </button>
-
-        <button
-          onClick={() => setIsCartOpen(true)}
-          className="px-4 py-3 rounded-2xl bg-emerald-800 text-white shadow-2xl hover:bg-emerald-700 hover:scale-105 transition-all flex items-center gap-2 border-2 border-emerald-600 font-black text-xs"
-          title="Open Cart"
-        >
-          <ShoppingCart className="w-5 h-5 text-amber-300" />
-          <span className="hidden sm:inline">Cart</span>
-          <span className="w-5 h-5 rounded-full bg-amber-400 text-emerald-950 font-black text-[11px] flex items-center justify-center">
-            {totalCartItems}
-          </span>
-        </button>
-
-        <a
-          href={`https://wa.me/${RAHMAN_WHATSAPP_NUMBER}?text=${encodeURIComponent('Assalam o Alaikum Ansar Bhai (03040450065), Main aapki website visit kar raha hun aur plants order karna chahta hun!')}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-4 py-3 rounded-2xl bg-emerald-600 text-white shadow-2xl hover:bg-emerald-700 hover:scale-105 transition-all flex items-center gap-2 border-2 border-white"
-          title="Quick WhatsApp Order: 03040450065 Ansar Hussain"
-        >
-          <MessageCircle className="w-5 h-5 fill-white/20" />
-          <span className="text-xs font-black hidden sm:inline">03040450065</span>
-        </a>
-      </div>
     </div>
   );
 }
