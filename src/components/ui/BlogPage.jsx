@@ -49,7 +49,7 @@ export const BlogPage = ({ onOpenStore }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FDFBF7] text-emerald-950 pt-36 pb-20 px-4 sm:px-6 lg:px-12 pointer-events-auto">
+    <div className="min-h-screen bg-[#F7F8F5] text-gray-900 pt-36 pb-20 px-4 sm:px-6 lg:px-12 pointer-events-auto">
       <div className="max-w-6xl mx-auto space-y-10">
 
         {/* Header */}
@@ -79,7 +79,7 @@ export const BlogPage = ({ onOpenStore }) => {
                   <span>{post.readTime}</span>
                 </div>
 
-                <h3 className="font-serif text-xl font-black text-emerald-950 mb-2 leading-snug">
+                <h3 className="font-serif text-xl font-black text-gray-900 mb-2 leading-snug">
                   {post.title}
                 </h3>
                 <p className="text-xs text-slate-600 font-semibold leading-relaxed mb-4">
@@ -102,7 +102,7 @@ export const BlogPage = ({ onOpenStore }) => {
                 {onOpenStore && (
                   <button
                     onClick={onOpenStore}
-                    className="text-emerald-800 hover:text-emerald-950 flex items-center gap-1 font-black"
+                    className="text-emerald-800 hover:text-gray-900 flex items-center gap-1 font-black"
                   >
                     <span>Browse Plants</span>
                     <ChevronRight className="w-4 h-4" />
@@ -115,13 +115,13 @@ export const BlogPage = ({ onOpenStore }) => {
 
         {/* Quick Reference Care Guides Table */}
         <div className="p-8 rounded-3xl bg-white border border-emerald-200 shadow-xl space-y-6">
-          <h2 className="font-serif text-2xl font-black text-emerald-950">
+          <h2 className="font-serif text-2xl font-black text-gray-900">
             Botanical Care & Irrigation Reference Table
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {BOTANICAL_CARE_GUIDES.map((guide, index) => (
               <div key={index} className="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
-                <h4 className="font-serif text-sm font-black text-emerald-950">{guide.title}</h4>
+                <h4 className="font-serif text-sm font-black text-gray-900">{guide.title}</h4>
                 <div className="text-[11px] font-bold text-emerald-800">☀️ Light: {guide.sunlight}</div>
                 <div className="text-[11px] font-bold text-blue-700">💧 Water: {guide.watering}</div>
                 <p className="text-[11px] text-slate-600 font-semibold leading-relaxed pt-1 border-t border-slate-200">
@@ -136,3 +136,4 @@ export const BlogPage = ({ onOpenStore }) => {
     </div>
   );
 };
+

@@ -26,7 +26,7 @@ I am submitting a consultation inquiry from Rahman Nursery Farm website. Please 
   };
 
   return (
-    <div className="min-h-screen bg-[#FDFBF7] text-emerald-950 pt-36 pb-20 px-4 sm:px-6 lg:px-12 pointer-events-auto">
+    <div className="min-h-screen bg-[#F7F8F5] text-gray-900 pt-36 pb-20 px-4 sm:px-6 lg:px-12 pointer-events-auto">
       <div className="max-w-6xl mx-auto space-y-10">
 
         {/* Header */}
@@ -56,7 +56,7 @@ I am submitting a consultation inquiry from Rahman Nursery Farm website. Please 
                 </div>
                 <div>
                   <span className="text-[10px] uppercase tracking-widest text-amber-700 font-black">MAIN HEADQUARTERS</span>
-                  <h3 className="font-serif text-xl font-black text-emerald-950">Rahman Nursery Farm</h3>
+                  <h3 className="font-serif text-xl font-black text-gray-900">Rahman Nursery Farm</h3>
                 </div>
               </div>
 
@@ -88,15 +88,15 @@ I am submitting a consultation inquiry from Rahman Nursery Farm website. Please 
 
             {/* Regional Dispatch Hubs */}
             <div className="p-6 rounded-3xl bg-white border border-emerald-200 shadow-xl space-y-4">
-              <h4 className="font-serif text-base font-black text-emerald-950">Regional Dispatch Hubs</h4>
+              <h4 className="font-serif text-base font-black text-gray-900">Regional Dispatch Hubs</h4>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-bold">
                 <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
-                  <div className="font-black text-emerald-950 mb-1">📍 Arifwala & Pakpattan Hub</div>
+                  <div className="font-black text-gray-900 mb-1">📍 Arifwala & Pakpattan Hub</div>
                   <p className="text-[11px] text-slate-500">Commercial Fruit Trees & Shade Timber Trees</p>
                 </div>
                 <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
-                  <div className="font-black text-emerald-950 mb-1">📍 Lahore & Sahiwal Cargo</div>
+                  <div className="font-black text-gray-900 mb-1">📍 Lahore & Sahiwal Cargo</div>
                   <p className="text-[11px] text-slate-500">Express Cargo Delivery across Punjab & Sindh</p>
                 </div>
               </div>
@@ -107,7 +107,7 @@ I am submitting a consultation inquiry from Rahman Nursery Farm website. Please 
           {/* Contact Inquiry Form */}
           <div className="p-8 rounded-3xl bg-white border border-emerald-200 shadow-xl space-y-6">
             <div>
-              <h3 className="font-serif text-2xl font-black text-emerald-950 mb-1">
+              <h3 className="font-serif text-2xl font-black text-gray-900 mb-1">
                 Direct Nursery Consultation Form
               </h3>
               <p className="text-xs text-slate-500 font-bold">
@@ -116,7 +116,7 @@ I am submitting a consultation inquiry from Rahman Nursery Farm website. Please 
             </div>
 
             {submitted ? (
-              <div className="p-6 rounded-2xl bg-emerald-50 border border-emerald-300 text-emerald-950 text-center space-y-2">
+              <div className="p-6 rounded-2xl bg-emerald-50 border border-emerald-300 text-gray-900 text-center space-y-2">
                 <CheckCircle2 className="w-10 h-10 text-emerald-600 mx-auto" />
                 <h4 className="font-serif text-lg font-black">Inquiry Composed Successfully!</h4>
                 <p className="text-xs font-bold text-slate-600">WhatsApp window has been opened to connect directly with Ansar Hussain.</p>
@@ -124,35 +124,35 @@ I am submitting a consultation inquiry from Rahman Nursery Farm website. Please 
             ) : (
               <form onSubmit={handleSubmitInquiry} className="space-y-4">
                 <div>
-                  <label className="text-xs font-black text-emerald-950 block mb-1">Your Full Name:</label>
+                  <label className="text-xs font-black text-gray-900 block mb-1">Your Full Name:</label>
                   <input
                     type="text"
                     required
                     placeholder="Chaudhry Tariq"
                     value={customerName}
                     onChange={(e) => setCustomerName(e.target.value)}
-                    className="w-full px-4 py-3 rounded-2xl text-xs bg-slate-50 border border-slate-300 text-emerald-950 focus:outline-none focus:ring-2 focus:ring-emerald-600 font-bold"
+                    className="w-full px-4 py-3 rounded-2xl text-xs bg-slate-50 border border-slate-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-emerald-600 font-bold"
                   />
                 </div>
 
                 <div>
-                  <label className="text-xs font-black text-emerald-950 block mb-1">Phone / WhatsApp Number:</label>
+                  <label className="text-xs font-black text-gray-900 block mb-1">Phone / WhatsApp Number:</label>
                   <input
                     type="tel"
                     required
                     placeholder="0300-1234567"
                     value={customerPhone}
                     onChange={(e) => setCustomerPhone(e.target.value)}
-                    className="w-full px-4 py-3 rounded-2xl text-xs bg-slate-50 border border-slate-300 text-emerald-950 focus:outline-none focus:ring-2 focus:ring-emerald-600 font-bold"
+                    className="w-full px-4 py-3 rounded-2xl text-xs bg-slate-50 border border-slate-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-emerald-600 font-bold"
                   />
                 </div>
 
                 <div>
-                  <label className="text-xs font-black text-emerald-950 block mb-1">Delivery City:</label>
+                  <label className="text-xs font-black text-gray-900 block mb-1">Delivery City:</label>
                   <select
                     value={customerCity}
                     onChange={(e) => setCustomerCity(e.target.value)}
-                    className="w-full px-4 py-3 rounded-2xl text-xs bg-slate-50 border border-slate-300 text-emerald-950 focus:outline-none focus:ring-2 focus:ring-emerald-600 font-bold"
+                    className="w-full px-4 py-3 rounded-2xl text-xs bg-slate-50 border border-slate-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-emerald-600 font-bold"
                   >
                     <option value="Lahore">📍 Lahore</option>
                     <option value="Arifwala">📍 Arifwala</option>
@@ -168,13 +168,13 @@ I am submitting a consultation inquiry from Rahman Nursery Farm website. Please 
                 </div>
 
                 <div>
-                  <label className="text-xs font-black text-emerald-950 block mb-1">Your Requirements / Message:</label>
+                  <label className="text-xs font-black text-gray-900 block mb-1">Your Requirements / Message:</label>
                   <textarea
                     rows={4}
                     placeholder="E.g. I need 20 Grafted Chaunsa Mango saplings and 5 Royal Date Palms for my farmhouse."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    className="w-full px-4 py-3 rounded-2xl text-xs bg-slate-50 border border-slate-300 text-emerald-950 focus:outline-none focus:ring-2 focus:ring-emerald-600 font-bold"
+                    className="w-full px-4 py-3 rounded-2xl text-xs bg-slate-50 border border-slate-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-emerald-600 font-bold"
                   />
                 </div>
 
@@ -195,3 +195,4 @@ I am submitting a consultation inquiry from Rahman Nursery Farm website. Please 
     </div>
   );
 };
+

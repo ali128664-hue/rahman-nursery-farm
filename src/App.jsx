@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { NurseryCanvas } from './components/canvas/NurseryCanvas';
+import React, { useState } from 'react';
+
 import { Navbar } from './components/ui/Navbar';
 import { HeroOverlay } from './components/ui/HeroOverlay';
 import { StorySections } from './components/ui/StorySections';
@@ -24,10 +24,9 @@ import { MessageCircle, ShoppingCart, Store, Home } from 'lucide-react';
 import { RAHMAN_WHATSAPP_NUMBER } from './utils/whatsappHelper';
 
 export default function App() {
-  const [scrollProgress, setScrollProgress] = useState(0);
   const [selectedPlant, setSelectedPlant] = useState(null);
   const [activePotType, setActivePotType] = useState('terracotta');
-  const [activeTab, setActiveTab] = useState('home'); // 'home', 'shop', 'orchard', 'services', 'blog', 'about', 'contact'
+  const [activeTab, setActiveTab] = useState('home');
   const [globalSearch, setGlobalSearch] = useState('');
 
   // Modals & Drawers
@@ -77,18 +76,7 @@ export default function App() {
     setCart([]);
   };
 
-  // Scroll listener driving progress
-  useEffect(() => {
-    const handleScroll = () => {
-      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
-      if (totalScroll > 0) {
-        setScrollProgress(window.scrollY / totalScroll);
-      }
-    };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const handleSelectPlantById = (id) => {
     const plant = PLANTS_DATA.find((p) => p.id === id);

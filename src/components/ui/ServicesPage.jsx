@@ -74,7 +74,7 @@ I am submitting a commercial service inquiry from Rahman Nursery Farm website. P
   };
 
   return (
-    <div className="min-h-screen bg-[#FDFBF7] text-emerald-950 pt-36 pb-20 px-4 sm:px-6 lg:px-12 pointer-events-auto">
+    <div className="min-h-screen bg-[#F7F8F5] text-gray-900 pt-36 pb-20 px-4 sm:px-6 lg:px-12 pointer-events-auto">
       <div className="max-w-6xl mx-auto space-y-12">
 
         {/* Top Header Banner */}
@@ -100,13 +100,13 @@ I am submitting a commercial service inquiry from Rahman Nursery Farm website. P
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <span className="px-3 py-1 rounded-full bg-amber-400 text-emerald-950 text-[10px] font-black uppercase">
+                  <span className="px-3 py-1 rounded-full bg-amber-400 text-gray-900 text-[10px] font-black uppercase">
                     {srv.badge}
                   </span>
                   <span className="text-xs font-black text-amber-700">{srv.urdu}</span>
                 </div>
 
-                <h3 className="font-serif text-2xl font-black text-emerald-950 mb-2">
+                <h3 className="font-serif text-2xl font-black text-gray-900 mb-2">
                   {srv.title}
                 </h3>
                 <p className="text-xs text-slate-600 font-bold leading-relaxed mb-6">
@@ -146,3 +146,4 @@ I am submitting a commercial service inquiry from Rahman Nursery Farm website. P
     </div>
   );
 };
+

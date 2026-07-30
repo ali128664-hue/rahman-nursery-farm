@@ -36,7 +36,7 @@ I am submitting a commercial orchard package inquiry from Rahman Nursery Farm we
   };
 
   return (
-    <div className="min-h-screen bg-[#FDFBF7] text-emerald-950 pt-36 pb-20 px-4 sm:px-6 lg:px-12 pointer-events-auto">
+    <div className="min-h-screen bg-[#F7F8F5] text-gray-900 pt-36 pb-20 px-4 sm:px-6 lg:px-12 pointer-events-auto">
       <div className="max-w-6xl mx-auto space-y-12">
 
         {/* Top Header Banner */}
@@ -56,12 +56,12 @@ I am submitting a commercial orchard package inquiry from Rahman Nursery Farm we
         {/* 🧮 INTERACTIVE BAGH INVESTMENT & YIELD CALCULATOR */}
         <div className="p-8 rounded-3xl bg-white border border-emerald-200 shadow-2xl space-y-6">
           <div className="flex items-center gap-3 pb-4 border-b border-slate-100">
-            <div className="w-12 h-12 rounded-2xl bg-amber-400 text-emerald-950 flex items-center justify-center font-black shadow-md">
+            <div className="w-12 h-12 rounded-2xl bg-amber-400 text-gray-900 flex items-center justify-center font-black shadow-md">
               <Calculator className="w-6 h-6" />
             </div>
             <div>
               <span className="text-[10px] font-black text-amber-700 uppercase tracking-widest block">INTERACTIVE CALCULATOR</span>
-              <h3 className="font-serif text-2xl font-black text-emerald-950">Orchard Cost & Yield Estimator</h3>
+              <h3 className="font-serif text-2xl font-black text-gray-900">Orchard Cost & Yield Estimator</h3>
             </div>
           </div>
 
@@ -69,7 +69,7 @@ I am submitting a commercial orchard package inquiry from Rahman Nursery Farm we
             {/* Input Controls */}
             <div className="space-y-5">
               <div>
-                <label className="text-xs font-black text-emerald-950 block mb-2 uppercase tracking-wide">
+                <label className="text-xs font-black text-gray-900 block mb-2 uppercase tracking-wide">
                   1. Select Land Size (in Acres):
                 </label>
                 <div className="flex items-center gap-3">
@@ -88,7 +88,7 @@ I am submitting a commercial orchard package inquiry from Rahman Nursery Farm we
               </div>
 
               <div>
-                <label className="text-xs font-black text-emerald-950 block mb-2 uppercase tracking-wide">
+                <label className="text-xs font-black text-gray-900 block mb-2 uppercase tracking-wide">
                   2. Select Fruit Variety Package:
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -112,16 +112,16 @@ I am submitting a commercial orchard package inquiry from Rahman Nursery Farm we
 
             {/* Calculated Output Box */}
             <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200 space-y-4 flex flex-col justify-between">
-              <h4 className="font-serif text-base font-black text-emerald-950">Package Breakdown & Yield Projection</h4>
+              <h4 className="font-serif text-base font-black text-gray-900">Package Breakdown & Yield Projection</h4>
               
               <div className="grid grid-cols-2 gap-3 text-xs">
                 <div className="bg-white p-3.5 rounded-2xl border border-slate-200">
                   <div className="text-[10px] text-slate-400 uppercase font-black">Total Saplings</div>
-                  <div className="text-lg font-black text-emerald-950">{totalPlants} Plants</div>
+                  <div className="text-lg font-black text-gray-900">{totalPlants} Plants</div>
                 </div>
                 <div className="bg-white p-3.5 rounded-2xl border border-slate-200">
                   <div className="text-[10px] text-slate-400 uppercase font-black">Harvest Starts In</div>
-                  <div className="text-lg font-black text-emerald-950">{spec.startYear} Years</div>
+                  <div className="text-lg font-black text-gray-900">{spec.startYear} Years</div>
                 </div>
                 <div className="bg-white p-3.5 rounded-2xl border border-slate-200">
                   <div className="text-[10px] text-slate-400 uppercase font-black">Total Installation Cost</div>
@@ -146,7 +146,7 @@ I am submitting a commercial orchard package inquiry from Rahman Nursery Farm we
 
         {/* 📦 OFFICIAL COMMERCIAL ORCHARD PACKAGES GRID */}
         <div className="space-y-6">
-          <h2 className="font-serif text-3xl font-black text-emerald-950 text-center">
+          <h2 className="font-serif text-3xl font-black text-gray-900 text-center">
             Standard Commercial Orchard Installation Packages
           </h2>
 
@@ -177,7 +177,7 @@ I am submitting a commercial orchard package inquiry from Rahman Nursery Farm we
                     <div className="space-y-2">
                       <span className="text-[10px] font-black text-emerald-900 uppercase tracking-wide block">Package Features Included:</span>
                       {pkg.features.map((feat, i) => (
-                        <div key={i} className="text-xs font-bold text-emerald-950 flex items-center gap-2">
+                        <div key={i} className="text-xs font-bold text-gray-900 flex items-center gap-2">
                           <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                           <span>{feat}</span>
                         </div>
@@ -204,3 +204,4 @@ I am submitting a commercial orchard package inquiry from Rahman Nursery Farm we
     </div>
   );
 };
+
