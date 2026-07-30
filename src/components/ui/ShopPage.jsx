@@ -265,12 +265,16 @@ export const ShopPage = ({
             )}
 
             {/* Results Counter */}
-            <div className="flex items-center justify-between text-xs font-black text-emerald-900 px-1">
-              <span>Showing <strong>{filteredPlants.length}</strong> products</span>
-              {(searchQuery || activeCategory !== 'all' || selectedDifficulty !== 'all') && (
+            <div className="flex items-center justify-between text-xs font-bold text-gray-600 px-1">
+              <span>Showing <strong className="text-gray-900">{filteredPlants.length}</strong> products</span>
+              {(externalSearch || activeCategory !== 'all' || selectedDifficulty !== 'all') && (
                 <button
-                  onClick={() => { setSearchQuery(''); setActiveCategory('all'); setSelectedDifficulty('all'); }}
-                  className="text-amber-700 hover:underline font-extrabold"
+                  onClick={() => {
+                    if (onClearExternalSearch) onClearExternalSearch();
+                    setActiveCategory('all');
+                    setSelectedDifficulty('all');
+                  }}
+                  className="text-amber-700 hover:underline font-black"
                 >
                   Reset All Filters
                 </button>
@@ -279,13 +283,17 @@ export const ShopPage = ({
 
             {/* Product Cards Grid OR List View */}
             {filteredPlants.length === 0 ? (
-              <div className="bg-white rounded-3xl p-12 text-center border border-slate-200 shadow-md">
+              <div className="bg-white rounded-2xl p-12 text-center border border-gray-200 shadow-sm">
                 <div className="text-5xl mb-3">🌱</div>
-                <h3 className="font-serif text-xl font-black text-emerald-950 mb-1">No matching plants found</h3>
-                <p className="text-xs text-slate-500 font-bold mb-4">Try adjusting your search query or reset category filters.</p>
+                <h3 className="font-serif text-xl font-black text-gray-900 mb-1">No matching plants found</h3>
+                <p className="text-xs text-gray-500 font-medium mb-4">Try adjusting your search or reset category filters.</p>
                 <button
-                  onClick={() => { setSearchQuery(''); setActiveCategory('all'); setSelectedDifficulty('all'); }}
-                  className="px-6 py-2.5 rounded-full text-xs font-black bg-emerald-800 text-white hover:bg-emerald-900 transition-all shadow-md"
+                  onClick={() => {
+                    if (onClearExternalSearch) onClearExternalSearch();
+                    setActiveCategory('all');
+                    setSelectedDifficulty('all');
+                  }}
+                  className="px-6 py-2.5 rounded-full text-xs font-black bg-gray-900 text-white hover:bg-gray-800 transition shadow-sm"
                 >
                   Show All Products
                 </button>
