@@ -27,6 +27,13 @@ const DIFFICULTY_COLOR = {
 export const CatalogModal = ({ isOpen, onClose, onSelectPlantForInspection, onAddToCart }) => {
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const [plantQuantities, setPlantQuantities] = useState({});
+
+  const getQty = (plantId) => plantQuantities[plantId] || 1;
+  const setQty = (plantId, val) => {
+    const newQty = Math.max(1, Math.min(999, val));
+    setPlantQuantities((prev) => ({ ...prev, [plantId]: newQty }));
+  };
 
   if (!isOpen) return null;
 
@@ -178,10 +185,38 @@ export const CatalogModal = ({ isOpen, onClose, onSelectPlantForInspection, onAd
 
                   {/* Action buttons */}
                   <div className="flex flex-col gap-2 pt-2 border-t border-slate-100">
+
+                    {/* Quantity Selector Control */}
+                    <div className="flex items-center justify-between bg-slate-50 border border-slate-200 px-2.5 py-1.5 rounded-xl">
+                      <span className="text-[10px] font-black text-emerald-950 uppercase tracking-wide">
+                        Qty:
+                      </span>
+                      <div className="flex items-center gap-1.5">
+                        <button
+                          type="button"
+                          onClick={() => setQty(plant.id, getQty(plant.id) - 1)}
+                          className="w-6 h-6 rounded-md bg-white border border-slate-300 flex items-center justify-center text-xs font-black text-emerald-950 hover:bg-slate-200"
+                        >
+                          -
+                        </button>
+                        <span className="w-6 text-center text-xs font-black text-emerald-950">
+                          {getQty(plant.id)}
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => setQty(plant.id, getQty(plant.id) + 1)}
+                          className="w-6 h-6 rounded-md bg-white border border-slate-300 flex items-center justify-center text-xs font-black text-emerald-950 hover:bg-slate-200"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+
                     <a
                       href={generatePlantWhatsAppLink({
                         plantName: plant.name,
                         plantPrice: plant.pricePKR,
+                        quantity: getQty(plant.id),
                       })}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -189,15 +224,15 @@ export const CatalogModal = ({ isOpen, onClose, onSelectPlantForInspection, onAd
                       title="Direct 1-Click Order on WhatsApp"
                     >
                       <MessageCircle className="w-4 h-4 fill-white/20" />
-                      <span>Direct WhatsApp (03040450065)</span>
+                      <span>WhatsApp ({getQty(plant.id)} Unit{getQty(plant.id) > 1 ? 's' : ''})</span>
                     </a>
 
                     <div className="flex items-center gap-1.5">
                       <button
-                        onClick={() => onAddToCart && onAddToCart(plant)}
+                        onClick={() => onAddToCart && onAddToCart(plant, getQty(plant.id))}
                         className="flex-1 py-2.5 rounded-xl text-xs font-black flex items-center justify-center gap-1 bg-slate-100 text-emerald-950 hover:bg-emerald-50 border border-slate-200 transition-colors"
                       >
-                        🛒 Add to Cart
+                        🛒 Add {getQty(plant.id)} to Cart
                       </button>
 
                       <button

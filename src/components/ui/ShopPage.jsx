@@ -47,6 +47,13 @@ export const ShopPage = ({
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedDifficulty, setSelectedDifficulty] = useState('all');
   const [sortBy, setSortBy] = useState('featured');
+  const [plantQuantities, setPlantQuantities] = useState({});
+
+  const getQty = (plantId) => plantQuantities[plantId] || 1;
+  const setQty = (plantId, val) => {
+    const newQty = Math.max(1, Math.min(999, val));
+    setPlantQuantities((prev) => ({ ...prev, [plantId]: newQty }));
+  };
 
   // Category items count mapping
   const categoryCounts = useMemo(() => {
@@ -304,12 +311,42 @@ export const ShopPage = ({
                   </div>
 
                   {/* Action Buttons Footer */}
-                  <div className="p-5 pt-0 border-t border-slate-100 flex flex-col gap-2">
-                    {/* Direct 1-Click WhatsApp Order Button */}
+                  <div className="p-5 pt-0 border-t border-slate-100 flex flex-col gap-2.5">
+
+                    {/* Quantity Selector Control */}
+                    <div className="flex items-center justify-between bg-slate-50 border border-slate-200 px-3 py-2 rounded-xl">
+                      <span className="text-[11px] font-black text-emerald-950 uppercase tracking-wide">
+                        Select Quantity:
+                      </span>
+                      <div className="flex items-center gap-2">
+                        <button
+                          type="button"
+                          onClick={() => setQty(plant.id, getQty(plant.id) - 1)}
+                          className="w-7 h-7 rounded-lg bg-white border border-slate-300 flex items-center justify-center text-xs font-black text-emerald-950 hover:bg-slate-200 active:scale-95 transition-all shadow-sm"
+                          title="Decrease quantity"
+                        >
+                          -
+                        </button>
+                        <span className="w-8 text-center text-xs font-black text-emerald-950">
+                          {getQty(plant.id)}
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => setQty(plant.id, getQty(plant.id) + 1)}
+                          className="w-7 h-7 rounded-lg bg-white border border-slate-300 flex items-center justify-center text-xs font-black text-emerald-950 hover:bg-slate-200 active:scale-95 transition-all shadow-sm"
+                          title="Increase quantity"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Direct 1-Click WhatsApp Order Button with Quantity */}
                     <a
                       href={generatePlantWhatsAppLink({
                         plantName: plant.name,
                         plantPrice: plant.pricePKR,
+                        quantity: getQty(plant.id),
                       })}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -317,16 +354,16 @@ export const ShopPage = ({
                       title="Direct 1-Click Order via WhatsApp"
                     >
                       <MessageCircle className="w-4 h-4 fill-white/20" />
-                      <span>Direct WhatsApp Order (03040450065)</span>
+                      <span>WhatsApp Order ({getQty(plant.id)} Unit{getQty(plant.id) > 1 ? 's' : ''})</span>
                     </a>
 
                     <div className="flex items-center gap-2">
                       <button
-                        onClick={() => onAddToCart && onAddToCart(plant)}
+                        onClick={() => onAddToCart && onAddToCart(plant, getQty(plant.id))}
                         className="flex-1 py-2.5 rounded-xl text-xs font-black flex items-center justify-center gap-1.5 bg-slate-100 text-emerald-950 hover:bg-emerald-50 hover:border-emerald-300 border border-slate-200 transition-colors"
                       >
                         <ShoppingCart className="w-3.5 h-3.5 text-amber-600" />
-                        <span>Add to Cart</span>
+                        <span>Add {getQty(plant.id)} to Cart</span>
                       </button>
 
                       <button

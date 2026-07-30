@@ -38,19 +38,20 @@ export default function App() {
   const [cartToast, setCartToast] = useState(null);
 
   // Cart Handlers
-  const handleAddToCart = (plant) => {
+  const handleAddToCart = (plant, addQty = 1) => {
+    const qty = Math.max(1, parseInt(addQty) || 1);
     setCart((prev) => {
       const existing = prev.find((item) => item.plant.id === plant.id);
       if (existing) {
         return prev.map((item) =>
-          item.plant.id === plant.id ? { ...item, quantity: item.quantity + 1 } : item
+          item.plant.id === plant.id ? { ...item, quantity: item.quantity + qty } : item
         );
       }
-      return [...prev, { plant, quantity: 1 }];
+      return [...prev, { plant, quantity: qty }];
     });
 
     // Show quick toast notification
-    setCartToast(`Added ${plant.name} to cart! 🛒`);
+    setCartToast(`Added ${qty} × ${plant.name} to cart! 🛒`);
     setTimeout(() => setCartToast(null), 3000);
   };
 
