@@ -3,6 +3,7 @@ import { NurseryCanvas } from './components/canvas/NurseryCanvas';
 import { Navbar } from './components/ui/Navbar';
 import { HeroOverlay } from './components/ui/HeroOverlay';
 import { StorySections } from './components/ui/StorySections';
+import { ShopPage } from './components/ui/ShopPage';
 import { CatalogModal } from './components/ui/CatalogModal';
 import { PlantInspectorModal } from './components/ui/PlantInspectorModal';
 import { AIGardenPlannerModal } from './components/ui/AIGardenPlannerModal';
@@ -13,9 +14,8 @@ import { FamilyHeritagSection } from './components/ui/FamilyHeritagSection';
 import { ReviewsSection } from './components/ui/ReviewsSection';
 import { ContactModal } from './components/ui/ContactModal';
 import { CartDrawer } from './components/ui/CartDrawer';
-import { Footer } from './components/ui/Footer';
 import { PLANTS_DATA } from './data/plantCatalog';
-import { MessageCircle, ShoppingCart, Check } from 'lucide-react';
+import { MessageCircle, ShoppingCart, Check, LayoutGrid, Home } from 'lucide-react';
 import { RAHMAN_WHATSAPP_NUMBER } from './utils/whatsappHelper';
 
 export default function App() {
@@ -23,6 +23,8 @@ export default function App() {
   const [weatherMode, setWeatherMode] = useState('sunrise');
   const [selectedPlant, setSelectedPlant] = useState(null);
   const [activePotType, setActivePotType] = useState('terracotta');
+  const [isFullShopView, setIsFullShopView] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState('all');
 
   // Modals & Drawers
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
@@ -70,7 +72,7 @@ export default function App() {
     setCart([]);
   };
 
-  // Scroll listener driving 3D camera
+  // Scroll listener driving progress
   useEffect(() => {
     const handleScroll = () => {
       const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
@@ -86,100 +88,97 @@ export default function App() {
   const handleSelectPlantById = (id, overridePosition = null) => {
     const plant = PLANTS_DATA.find((p) => p.id === id);
     if (plant) {
-      const posMap = {
-        'monstera-deliciosa':             [-3.2, 0, -2],
-        'ficus-lyrata':                   [2.5, 0, 7],
-        'mature-royal-date-palm':         [-4.5, 0, 3],
-        'ancient-italian-olive':          [3.5, 0, -1],
-        'pakistani-citrus-kinnu':         [4.5, 0, -6],
-        'kinnu-orange-grafted':           [4.5, 0, -6],
-        'bougainvillea-glabra':           [-3.5, 0, -7],
-        'master-japanese-bonsai-juniper': [-4.5, 0, -9],
-        'chaunsa-mango-grafted':          [4.5, 0, -13],
-        'mango-chaunsa-tree':             [4.5, 0, -13],
-        'anwar-ratol-mango':              [4.5, 0, -13],
-        'teak-wood-sagaun':               [-4.5, 0, -14],
-        'sheesham-tree':                  [-4.5, 0, -14],
-        'guava-surahi-grafted':           [0.5, 0, -16],
-        'snake-plant-laurentii':          [-2.2, 0, 8],
-        'areca-palm-golden':              [2.5, 0, 7],
-        'money-plant-neon':               [-1.5, 0, 6],
-        'motia-jasmine':                  [-2.8, 0, -7],
-        'foxtail-palm':                   [6.5, 0, -9],
-        'washingtonia-palm-tall':         [-7.0, 0, -16],
-        'pomegranate-anar-grafted':       [0.5, 0, -16],
-        'neem-tree':                      [-6.5, 0, -20],
-        'cassia-nodosa-sapling':          [-3.5, 0, -8],
-        'cassia-nodosa-medium':           [-3.5, 0, -8],
-      };
-      plant.position = overridePosition || posMap[id] || [0, 0, 0];
       setSelectedPlant(plant);
     }
   };
 
-  const handleScrollToFirstSection = () => {
-    window.scrollTo({ top: window.innerHeight * 0.85, behavior: 'smooth' });
+  const handleScrollToShop = () => {
+    const shopElement = document.getElementById('shop-section');
+    if (shopElement) {
+      shopElement.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      setIsFullShopView(true);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   const totalCartItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <div className="relative min-h-screen bg-white text-sage-900 overflow-x-hidden selection:bg-emerald-200 selection:text-emerald-900">
-      {/* 1. 3D WebGL Canvas Layer */}
+    <div className="relative min-h-screen bg-[#FDFBF7] text-emerald-950 overflow-x-hidden selection:bg-emerald-200 selection:text-emerald-900 font-sans">
+      {/* 1. Ambient Botanical Background Layer */}
       <NurseryCanvas
         scrollProgress={scrollProgress}
         weatherMode={weatherMode}
-        selectedPlant={selectedPlant}
-        activePotType={activePotType}
-        onSelectPlant={(id, pos) => handleSelectPlantById(id, pos)}
       />
 
       {/* 2. Streamlined Floating Navbar */}
       <Navbar
         weatherMode={weatherMode}
         onWeatherChange={(mode) => setWeatherMode(mode)}
-        onOpenCatalog={() => setIsCatalogOpen(true)}
+        onOpenCatalog={() => setIsFullShopView(true)}
         onOpenContact={() => setIsContactOpen(true)}
         cartCount={totalCartItems}
         onOpenCart={() => setIsCartOpen(true)}
       />
 
-      {/* 3. Hero Overlay */}
-      <HeroOverlay
-        onExploreClick={handleScrollToFirstSection}
-        onOpenCatalog={() => setIsCatalogOpen(true)}
-        onOpenAIPlanner={() => setIsAIPlannerOpen(true)}
-      />
+      {/* Toggle View: Full Shop Page vs Home View */}
+      {isFullShopView ? (
+        <ShopPage
+          onSelectPlantForInspection={(id) => handleSelectPlantById(id)}
+          onAddToCart={handleAddToCart}
+          initialCategory={selectedCategory}
+          onCloseShopView={() => setIsFullShopView(false)}
+        />
+      ) : (
+        <>
+          {/* 3. Hero Banner Overlay */}
+          <HeroOverlay
+            onExploreClick={handleScrollToShop}
+            onOpenCatalog={() => setIsFullShopView(true)}
+            onOpenAIPlanner={() => setIsAIPlannerOpen(true)}
+          />
 
-      {/* 4. Storytelling Sections (Scroll Controlled) */}
-      <StorySections
-        onOpenCatalog={() => setIsCatalogOpen(true)}
-        onSelectPlantById={(id) => handleSelectPlantById(id)}
-        onOpenLandscaping={() => setIsLandscapingOpen(true)}
-      />
+          {/* 4. DEDICATED FULL SHOP SECTION ON HOME PAGE */}
+          <section id="shop-section" className="relative z-10">
+            <ShopPage
+              onSelectPlantForInspection={(id) => handleSelectPlantById(id)}
+              onAddToCart={handleAddToCart}
+              initialCategory="all"
+            />
+          </section>
 
-      {/* 5. Orchard / Bagh Lagwao Section */}
-      <OrchardBaghSection />
+          {/* 5. Storytelling Zones */}
+          <StorySections
+            onOpenCatalog={() => setIsFullShopView(true)}
+            onSelectPlantById={(id) => handleSelectPlantById(id)}
+            onOpenLandscaping={() => setIsLandscapingOpen(true)}
+          />
 
-      {/* 6. Features, Care Masterclasses & FAQs */}
-      <FeaturesAndWhyUs />
+          {/* 6. Orchard / Bagh Lagwao Section */}
+          <OrchardBaghSection />
 
-      {/* 7. Family Heritage — About Us Section (50+ Years) */}
-      <FamilyHeritagSection onOpenContact={() => setIsContactOpen(true)} />
+          {/* 7. Features, Care Masterclasses & FAQs */}
+          <FeaturesAndWhyUs />
 
-      {/* 8. Customer Testimonials Section */}
-      <ReviewsSection />
+          {/* 8. Family Heritage — About Us Section (50+ Years) */}
+          <FamilyHeritagSection onOpenContact={() => setIsContactOpen(true)} />
 
-      {/* 9. Footer Section */}
-      <Footer
-        onOpenCatalog={() => setIsCatalogOpen(true)}
-        onOpenAIPlanner={() => setIsAIPlannerOpen(true)}
-        onOpenContact={() => setIsContactOpen(true)}
-      />
+          {/* 9. Customer Testimonials Section */}
+          <ReviewsSection />
+
+          {/* 10. Footer Section */}
+          <Footer
+            onOpenCatalog={() => setIsFullShopView(true)}
+            onOpenAIPlanner={() => setIsAIPlannerOpen(true)}
+            onOpenContact={() => setIsContactOpen(true)}
+          />
+        </>
+      )}
 
       {/* --- MODALS & DRAWERS LAYER --- */}
 
-      {/* 3D Catalog Grid Modal */}
+      {/* Full Catalog Modal */}
       <CatalogModal
         isOpen={isCatalogOpen}
         onClose={() => setIsCatalogOpen(false)}
@@ -197,7 +196,7 @@ export default function App() {
         onClearCart={handleClearCart}
       />
 
-      {/* Selected 3D Plant Inspector Drawer */}
+      {/* Selected Plant Inspector Drawer */}
       {selectedPlant && (
         <PlantInspectorModal
           plant={selectedPlant}
@@ -230,10 +229,10 @@ export default function App() {
       {/* Cart Quick Toast Notification */}
       {cartToast && (
         <div
-          className="fixed bottom-24 right-6 z-50 px-4 py-3 rounded-2xl bg-emerald-800 text-white font-extrabold text-xs shadow-2xl flex items-center gap-2 border border-emerald-600 pointer-events-auto"
+          className="fixed bottom-24 right-6 z-50 px-5 py-3.5 rounded-2xl bg-emerald-900 text-white font-black text-xs shadow-2xl flex items-center gap-2 border border-amber-400 pointer-events-auto"
           style={{ animation: 'fadeIn 0.2s ease' }}
         >
-          <Check className="w-4 h-4 text-emerald-300" />
+          <Check className="w-4 h-4 text-amber-300" />
           <span>{cartToast}</span>
           <button
             onClick={() => setIsCartOpen(true)}
@@ -244,16 +243,25 @@ export default function App() {
         </div>
       )}
 
-      {/* Floating Sticky Buttons: Cart & WhatsApp */}
+      {/* Floating Sticky Navigation Bar */}
       <div className="fixed bottom-6 right-6 z-40 flex items-center gap-2.5 pointer-events-auto">
         <button
+          onClick={() => setIsFullShopView(!isFullShopView)}
+          className="px-4 py-3 rounded-2xl bg-amber-500 text-emerald-950 shadow-2xl hover:bg-amber-400 hover:scale-105 transition-all flex items-center gap-2 border-2 border-amber-300 font-black text-xs"
+          title="Toggle Full Shop Page"
+        >
+          {isFullShopView ? <Home className="w-4 h-4" /> : <LayoutGrid className="w-4 h-4" />}
+          <span className="hidden sm:inline">{isFullShopView ? 'Home View' : 'Full Shop'}</span>
+        </button>
+
+        <button
           onClick={() => setIsCartOpen(true)}
-          className="px-4 py-3 rounded-2xl bg-emerald-700 text-white shadow-2xl hover:bg-emerald-800 hover:scale-105 transition-all flex items-center gap-2 border-2 border-white font-extrabold text-xs"
+          className="px-4 py-3 rounded-2xl bg-emerald-800 text-white shadow-2xl hover:bg-emerald-700 hover:scale-105 transition-all flex items-center gap-2 border-2 border-emerald-600 font-black text-xs"
           title="Open Cart"
         >
           <ShoppingCart className="w-5 h-5 text-amber-300" />
           <span className="hidden sm:inline">Cart</span>
-          <span className="w-5 h-5 rounded-full bg-amber-400 text-sage-900 font-black text-[11px] flex items-center justify-center">
+          <span className="w-5 h-5 rounded-full bg-amber-400 text-emerald-950 font-black text-[11px] flex items-center justify-center">
             {totalCartItems}
           </span>
         </button>
@@ -266,7 +274,7 @@ export default function App() {
           title="Quick WhatsApp Order: 03040450065 Ansar Hussain"
         >
           <MessageCircle className="w-5 h-5 fill-white/20" />
-          <span className="text-xs font-extrabold hidden sm:inline">03040450065</span>
+          <span className="text-xs font-black hidden sm:inline">03040450065</span>
         </a>
       </div>
     </div>
