@@ -134,32 +134,23 @@ export default function App() {
           <ReviewsSection />
         </div>
       ) : (
-        /* HOME TAB (DEFAULT) */
+        /* ELEGANT & MINIMAL HOME TAB */
         <>
           {/* Hero Banner Overlay */}
           <HeroOverlay
-            onExploreClick={() => setActiveTab('shop')}
+            onExploreClick={() => setActiveTab('orchard')}
             onOpenCatalog={() => setActiveTab('shop')}
             onOpenAIPlanner={() => setIsAIPlannerOpen(true)}
           />
 
-          {/* Featured Storytelling & Categories */}
+          {/* Clean Botanical Collections */}
           <StorySections
             onOpenCatalog={() => setActiveTab('shop')}
             onSelectPlantById={(id) => handleSelectPlantById(id)}
             onOpenLandscaping={() => setIsLandscapingOpen(true)}
           />
 
-          {/* Orchard / Bagh Lagwao Section */}
-          <OrchardBaghSection />
-
-          {/* Features, Masterclasses & FAQs */}
-          <FeaturesAndWhyUs />
-
-          {/* 50+ Years Family Heritage Section */}
-          <FamilyHeritagSection onOpenContact={() => setActiveTab('contact')} />
-
-          {/* Customer Reviews Section */}
+          {/* Clean Verified Reviews */}
           <ReviewsSection />
         </>
       )}
