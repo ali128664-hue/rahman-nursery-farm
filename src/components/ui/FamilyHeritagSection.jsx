@@ -68,8 +68,8 @@ export const FamilyHeritagSection = ({ onOpenContact }) => {
       linkedin: 'https://www.linkedin.com/in/muhammad-kashif-a3a6a0144/',
       icon: '💻',
       isTech: true,
-      address: 'Software Engineering & IT Architecture Lead',
-      note: 'Son of Muhammad Saleem, brother of Bashart Saleem & Kashir Saleem (grandson of Baba Shareef Late). Senior Software Engineer working at a leading software house; designs and architects Rahman Nursery Farm\'s e-commerce web platform, digital infrastructure, and smart farm technology.',
+      address: 'Adaxiom / Adsells Group — Software Engineering Lead',
+      note: 'Senior Software Engineer working at Adaxiom / Adsells Software Group; designs, powers, and architects Rahman Nursery Farm\'s digital web platform, e-commerce infrastructure, and smart farm technology.',
     },
   ];
 

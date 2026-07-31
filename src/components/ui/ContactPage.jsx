@@ -132,7 +132,7 @@ I am submitting a consultation inquiry from Rahman Nursery Farm website. Please 
                     </a>
                   </div>
                   <p className="text-[11px] text-slate-300 font-medium leading-relaxed">
-                    Son of Muhammad Saleem, brother of Bashart Saleem & Kashir Saleem (grandson of Baba Shareef Late). Senior Software Engineer working at a software house; heads IT architecture, e-commerce web platform, and farm digital systems.
+                    Senior Software Engineer working at Adaxiom / Adsells Software Group; heads IT architecture, e-commerce web platform, and digital systems for Rahman Nursery Farm.
                   </p>
                 </div>
 
