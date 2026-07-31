@@ -361,11 +361,14 @@ export const ShopPage = ({
                     key={plant.id}
                     className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-md hover:border-gray-300 transition-all flex flex-col justify-between"
                   >
-                    {/* Card Top: Category + Price */}
-                    <div>
-                      <div className="px-4 py-3 flex items-center justify-between bg-gray-900 text-white">
+                    {/* Card Top & Body — Clickable to open full mobile product page */}
+                    <div
+                      onClick={() => onSelectPlantForInspection(plant.id)}
+                      className="cursor-pointer group/card"
+                    >
+                      <div className="px-4 py-3 flex items-center justify-between bg-gray-900 text-white group-hover/card:bg-emerald-950 transition-colors">
                         <div className="flex items-center gap-2">
-                          <span className="text-xl">{CATEGORY_ICONS[plant.category] || '🌱'}</span>
+                          <span className="text-xl sm:text-2xl">{CATEGORY_ICONS[plant.category] || '🌱'}</span>
                           <div>
                             <div className="text-[9px] uppercase tracking-widest text-amber-400 font-black">
                               {plant.category.toUpperCase()}
@@ -377,10 +380,10 @@ export const ShopPage = ({
                           </div>
                         </div>
                         <div className="text-right">
-                          <div className="font-serif text-lg font-black text-white leading-tight">
+                          <div className="font-serif text-lg sm:text-xl font-black text-amber-300 leading-tight">
                             PKR {plant.pricePKR.toLocaleString()}
                           </div>
-                          <div className="text-[9px] text-amber-300 font-bold">
+                          <div className="text-[9px] text-emerald-300 font-bold">
                             {plant.pricePKR >= 30000 ? 'SPECIMEN' : plant.pricePKR >= 5000 ? 'PREMIUM' : 'CERTIFIED'}
                           </div>
                         </div>
@@ -388,16 +391,21 @@ export const ShopPage = ({
 
                       {/* Card Body */}
                       <div className="p-4">
-                        <span className="inline-block px-2.5 py-0.5 rounded-full bg-green-50 text-green-800 text-[10px] font-black uppercase tracking-wide border border-green-200 mb-2">
-                          {plant.badge}
-                        </span>
+                        <div className="flex items-center justify-between gap-2 mb-2">
+                          <span className="inline-block px-2.5 py-0.5 rounded-full bg-green-50 text-green-800 text-[10px] font-black uppercase tracking-wide border border-green-200">
+                            {plant.badge}
+                          </span>
+                          <span className="text-[10px] text-emerald-700 font-black flex items-center gap-1">
+                            <Eye className="w-3 h-3" /> Tap for Details
+                          </span>
+                        </div>
 
-                        <h3 className="font-serif text-base font-black text-gray-900 mb-0.5 leading-snug">
+                        <h3 className="font-serif text-base sm:text-lg font-black text-gray-900 mb-0.5 leading-snug group-hover/card:text-green-700 transition-colors">
                           {plant.name}
                         </h3>
                         <p className="text-[11px] italic text-gray-400 font-medium mb-2">{plant.latinName}</p>
 
-                        <p className="text-xs text-gray-600 line-clamp-3 mb-3 leading-relaxed font-medium">
+                        <p className="text-xs text-gray-600 line-clamp-2 mb-3 leading-relaxed font-medium">
                           {plant.description}
                         </p>
 
@@ -425,7 +433,7 @@ export const ShopPage = ({
                       {/* Quantity Selector */}
                       <div className="flex items-center justify-between bg-gray-50 border border-gray-200 px-3 py-2 rounded-xl">
                         <span className="text-[11px] font-black text-gray-700 uppercase tracking-wide">
-                          Quantity:
+                          Qty:
                         </span>
                         <div className="flex items-center gap-2">
                           <button
@@ -466,17 +474,17 @@ export const ShopPage = ({
                       <div className="flex items-center gap-2">
                         <button
                           onClick={() => onAddToCart && onAddToCart(plant, getQty(plant.id))}
-                          className="flex-1 py-2 rounded-xl text-xs font-black flex items-center justify-center gap-1.5 bg-gray-100 text-gray-800 hover:bg-gray-200 border border-gray-200 transition"
+                          className="flex-1 py-2.5 rounded-xl text-xs font-black flex items-center justify-center gap-1.5 bg-gray-100 text-gray-800 hover:bg-gray-200 border border-gray-200 transition"
                         >
                           <ShoppingCart className="w-3.5 h-3.5 text-amber-600" />
-                          <span>Add {getQty(plant.id)} to Cart</span>
+                          <span>Add to Cart</span>
                         </button>
 
                         <button
                           onClick={() => onSelectPlantForInspection(plant.id)}
-                          className="py-2 px-3.5 rounded-xl text-xs font-black flex items-center justify-center gap-1 text-gray-700 bg-gray-100 hover:bg-gray-200 transition border border-gray-200"
+                          className="py-2.5 px-3.5 rounded-xl text-xs font-black flex items-center justify-center gap-1 text-emerald-950 bg-emerald-100 hover:bg-emerald-200 transition border border-emerald-300"
                         >
-                          <Eye className="w-3.5 h-3.5 text-green-700" />
+                          <Eye className="w-3.5 h-3.5 text-emerald-800" />
                           <span>Details</span>
                         </button>
                       </div>
