@@ -132,7 +132,7 @@ I am submitting a consultation inquiry from Rahman Nursery Farm website. Please 
                     </a>
                   </div>
                   <p className="text-[11px] text-slate-300 font-medium leading-relaxed">
-                    Brother of Bashart Saleem & Kashir Saleem (sons of Baba Shareef family). Senior Software Engineer working at a software house; heads IT architecture, e-commerce web platform, and farm digital systems.
+                    Son of Muhammad Saleem, brother of Bashart Saleem & Kashir Saleem (grandson of Baba Shareef Late). Senior Software Engineer working at a software house; heads IT architecture, e-commerce web platform, and farm digital systems.
                   </p>
                 </div>
 

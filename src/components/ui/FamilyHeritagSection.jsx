@@ -69,7 +69,7 @@ export const FamilyHeritagSection = ({ onOpenContact }) => {
       icon: '💻',
       isTech: true,
       address: 'Software Engineering & IT Architecture Lead',
-      note: 'Brother of Bashart Saleem & Kashir Saleem (sons of Baba Shareef family). Senior Software Engineer working at a leading software house; designs and architects Rahman Nursery Farm\'s e-commerce web platform, digital infrastructure, and smart farm technology.',
+      note: 'Son of Muhammad Saleem, brother of Bashart Saleem & Kashir Saleem (grandson of Baba Shareef Late). Senior Software Engineer working at a leading software house; designs and architects Rahman Nursery Farm\'s e-commerce web platform, digital infrastructure, and smart farm technology.',
     },
   ];
 
