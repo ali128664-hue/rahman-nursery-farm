@@ -70,7 +70,7 @@ export const ShopPage = ({
   }, [activeCategory, externalSearch, selectedDifficulty, sortBy]);
 
   return (
-    <div className="min-h-screen bg-[#F7F8F5] text-gray-900 pt-36 pb-20 px-3 sm:px-6 lg:px-12 pointer-events-auto">
+    <div className="min-h-screen bg-[#F7F8F5] text-gray-900 pt-28 sm:pt-36 pb-24 px-3 sm:px-6 lg:px-12 pointer-events-auto">
       <div className="max-w-7xl mx-auto">
 
         {/* Page Header */}
@@ -197,10 +197,10 @@ export const ShopPage = ({
               </div>
 
               {/* Right Controls */}
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <button
                   onClick={() => setIsMobileFilterOpen(!isMobileFilterOpen)}
-                  className="lg:hidden px-3.5 py-2 rounded-xl bg-emerald-800 text-white text-xs font-black flex items-center gap-1.5"
+                  className="lg:hidden px-3.5 py-2.5 rounded-xl bg-emerald-800 text-white text-xs font-black flex items-center gap-1.5 min-h-[40px]"
                 >
                   <Filter className="w-3.5 h-3.5" />
                   <span>Categories</span>
@@ -210,13 +210,13 @@ export const ShopPage = ({
                 <div className="flex items-center bg-slate-100 p-1 rounded-xl border border-slate-200">
                   <button
                     onClick={() => setViewMode('grid')}
-                    className={`p-1.5 rounded-lg transition-all ${viewMode === 'grid' ? 'bg-white text-emerald-950 shadow-sm' : 'text-slate-400'}`}
+                    className={`p-2 rounded-lg transition-all ${viewMode === 'grid' ? 'bg-white text-emerald-950 shadow-sm' : 'text-slate-400'}`}
                   >
                     <Grid className="w-4 h-4" />
                   </button>
                   <button
                     onClick={() => setViewMode('list')}
-                    className={`p-1.5 rounded-lg transition-all ${viewMode === 'list' ? 'bg-white text-emerald-950 shadow-sm' : 'text-slate-400'}`}
+                    className={`p-2 rounded-lg transition-all ${viewMode === 'list' ? 'bg-white text-emerald-950 shadow-sm' : 'text-slate-400'}`}
                   >
                     <List className="w-4 h-4" />
                   </button>
@@ -225,7 +225,7 @@ export const ShopPage = ({
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="px-3 py-2 rounded-xl text-xs bg-slate-50 border border-slate-300 text-emerald-950 font-bold focus:outline-none focus:ring-2 focus:ring-emerald-600"
+                  className="flex-1 sm:flex-none px-3 py-2 rounded-xl text-xs bg-slate-50 border border-slate-300 text-emerald-950 font-bold focus:outline-none focus:ring-2 focus:ring-emerald-600 min-h-[40px]"
                 >
                   <option value="featured">Bestsellers</option>
                   <option value="price-low">Price: Low to High</option>
@@ -243,7 +243,7 @@ export const ShopPage = ({
                   <h4 className="font-serif text-sm font-black text-emerald-950">Select Category</h4>
                   <button onClick={() => setIsMobileFilterOpen(false)} className="text-xs font-black text-slate-400">✕ Close</button>
                 </div>
-                <div className="grid grid-cols-2 gap-2 max-h-60 overflow-y-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-60 overflow-y-auto">
                   {PLANT_CATEGORIES.map((cat) => (
                     <button
                       key={cat.id}

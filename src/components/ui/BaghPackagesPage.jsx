@@ -36,11 +36,11 @@ I am submitting a commercial orchard package inquiry from Rahman Nursery Farm we
   };
 
   return (
-    <div className="min-h-screen bg-[#F7F8F5] text-gray-900 pt-36 pb-20 px-4 sm:px-6 lg:px-12 pointer-events-auto">
+    <div className="min-h-screen bg-[#F7F8F5] text-gray-900 pt-28 sm:pt-36 pb-20 px-4 sm:px-6 lg:px-12 pointer-events-auto">
       <div className="max-w-6xl mx-auto space-y-12">
 
         {/* Top Header Banner */}
-        <div className="p-8 rounded-3xl bg-gradient-to-r from-emerald-950 via-emerald-900 to-emerald-950 text-white shadow-2xl border border-amber-400/30">
+        <div className="p-5 sm:p-8 rounded-3xl bg-gradient-to-r from-emerald-950 via-emerald-900 to-emerald-950 text-white shadow-2xl border border-amber-400/30">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-black text-amber-300 bg-amber-950/80 border border-amber-400/40 mb-3 uppercase tracking-wider">
             <TreePine className="w-4 h-4 text-amber-400" />
             <span>BAGH LAGWAO • TURN-KEY ORCHARD INSTALLATION PACKAGES</span>
@@ -54,7 +54,7 @@ I am submitting a commercial orchard package inquiry from Rahman Nursery Farm we
         </div>
 
         {/* 🧮 INTERACTIVE BAGH INVESTMENT & YIELD CALCULATOR */}
-        <div className="p-8 rounded-3xl bg-white border border-emerald-200 shadow-2xl space-y-6">
+        <div className="p-5 sm:p-8 rounded-3xl bg-white border border-emerald-200 shadow-2xl space-y-6">
           <div className="flex items-center gap-3 pb-4 border-b border-slate-100">
             <div className="w-12 h-12 rounded-2xl bg-amber-400 text-gray-900 flex items-center justify-center font-black shadow-md">
               <Calculator className="w-6 h-6" />
@@ -72,16 +72,16 @@ I am submitting a commercial orchard package inquiry from Rahman Nursery Farm we
                 <label className="text-xs font-black text-gray-900 block mb-2 uppercase tracking-wide">
                   1. Select Land Size (in Acres):
                 </label>
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3">
                   <input
                     type="range"
                     min="1"
                     max="20"
                     value={landAcres}
                     onChange={(e) => setLandAcres(parseInt(e.target.value))}
-                    className="w-full accent-emerald-800"
+                    className="flex-1 min-w-[140px] accent-emerald-800"
                   />
-                  <span className="px-4 py-2 rounded-xl bg-emerald-900 text-white font-black text-sm whitespace-nowrap">
+                  <span className="px-3 py-2 rounded-xl bg-emerald-900 text-white font-black text-sm flex-shrink-0">
                     {landAcres} Acre{landAcres > 1 ? 's' : ''} ({landAcres * 8} Kanals)
                   </span>
                 </div>
@@ -114,7 +114,7 @@ I am submitting a commercial orchard package inquiry from Rahman Nursery Farm we
             <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200 space-y-4 flex flex-col justify-between">
               <h4 className="font-serif text-base font-black text-gray-900">Package Breakdown & Yield Projection</h4>
               
-              <div className="grid grid-cols-2 gap-3 text-xs">
+              <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 gap-3 text-xs">
                 <div className="bg-white p-3.5 rounded-2xl border border-slate-200">
                   <div className="text-[10px] text-slate-400 uppercase font-black">Total Saplings</div>
                   <div className="text-lg font-black text-gray-900">{totalPlants} Plants</div>
@@ -135,7 +135,7 @@ I am submitting a commercial orchard package inquiry from Rahman Nursery Farm we
 
               <button
                 onClick={() => handleWhatsAppBooking(`Calculator Estimate for ${landAcres} Acres ${spec.name}`, `PKR ${totalPackageCost.toLocaleString()}`)}
-                className="w-full py-3.5 rounded-2xl text-xs font-black flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-800 to-emerald-950 text-white hover:from-emerald-700 hover:to-emerald-900 transition-all shadow-xl"
+                className="w-full py-4 rounded-2xl text-sm font-black flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-800 to-emerald-950 text-white hover:from-emerald-700 hover:to-emerald-900 transition-all shadow-xl min-h-[52px]"
               >
                 <MessageCircle className="w-4 h-4 fill-white/20" />
                 <span>Book This Package on WhatsApp (03040450065)</span>
@@ -218,7 +218,7 @@ I am submitting a commercial orchard package inquiry from Rahman Nursery Farm we
                 <div className="p-6 pt-0 border-t border-slate-100 mt-4">
                   <button
                     onClick={() => handleWhatsAppBooking(pkg.title, `PKR ${pkg.pricePerAcre.toLocaleString()} / Acre`)}
-                    className="w-full py-3.5 rounded-2xl text-xs font-black flex items-center justify-center gap-2 bg-emerald-800 text-white hover:bg-emerald-900 transition-all shadow-md"
+                    className="w-full py-4 rounded-2xl text-sm font-black flex items-center justify-center gap-2 bg-emerald-800 text-white hover:bg-emerald-900 transition-all shadow-md min-h-[52px]"
                   >
                     <MessageCircle className="w-4 h-4 fill-white/20" />
                     <span>Inquire About {pkg.title}</span>

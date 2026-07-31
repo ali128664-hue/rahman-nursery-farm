@@ -172,19 +172,21 @@ export default function App() {
         onOpenWhatsAppModal={triggerWhatsApp}
       />
 
-      {/* Floating Bottom Quick Action Bar (Mobile & Desktop) */}
-      <div className="fixed bottom-5 right-5 z-30 flex items-center gap-3 pointer-events-auto">
-        
+      {/* Floating Bottom Quick Action Bar */}
+      <div className="fixed bottom-4 sm:bottom-5 right-4 sm:right-5 z-30 flex items-center gap-2 sm:gap-3 pointer-events-auto"
+        style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
+      >
         {/* Toggle to Full Store */}
         <button
           onClick={() => {
             setActiveTab(activeTab === 'shop' ? 'home' : 'shop');
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
-          className="flex items-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-emerald-800 to-emerald-950 text-white font-black text-xs shadow-2xl hover:scale-105 transition-all border border-emerald-500"
+          className="flex items-center gap-2 px-4 py-3.5 rounded-full bg-gradient-to-r from-emerald-800 to-emerald-950 text-white font-black text-xs shadow-2xl hover:scale-105 transition-all border border-emerald-500 min-h-[48px]"
         >
           {activeTab === 'shop' ? <Home className="w-4 h-4 text-amber-300" /> : <Store className="w-4 h-4 text-amber-300" />}
-          <span>{activeTab === 'shop' ? 'Home Page' : 'Store (100+)'}</span>
+          <span className="hidden sm:inline">{activeTab === 'shop' ? 'Home Page' : 'Store (100+)'}</span>
+          <span className="sm:hidden">{activeTab === 'shop' ? 'Home' : 'Store'}</span>
         </button>
 
         {/* WhatsApp Helpline Button */}
@@ -193,7 +195,7 @@ export default function App() {
             setWhatsAppMessageText('Assalam o Alaikum, I am visiting Rahman Nursery Farm website and would like to inquire/order plants!');
             setIsWhatsAppSelectorOpen(true);
           }}
-          className="p-3.5 rounded-full bg-emerald-600 text-white hover:bg-emerald-700 transition-all shadow-2xl border border-emerald-400 hover:scale-105"
+          className="p-3.5 rounded-full bg-emerald-600 text-white hover:bg-emerald-700 transition-all shadow-2xl border border-emerald-400 hover:scale-105 min-h-[48px] min-w-[48px] flex items-center justify-center"
           title="Choose WhatsApp Representative"
         >
           <MessageCircle className="w-5 h-5 fill-white/20" />

@@ -74,11 +74,11 @@ I am submitting a commercial service inquiry from Rahman Nursery Farm website. P
   };
 
   return (
-    <div className="min-h-screen bg-[#F7F8F5] text-gray-900 pt-36 pb-20 px-4 sm:px-6 lg:px-12 pointer-events-auto">
+    <div className="min-h-screen bg-[#F7F8F5] text-gray-900 pt-28 sm:pt-36 pb-20 px-4 sm:px-6 lg:px-12 pointer-events-auto">
       <div className="max-w-6xl mx-auto space-y-12">
 
         {/* Top Header Banner */}
-        <div className="p-8 rounded-3xl bg-gradient-to-r from-emerald-950 via-emerald-900 to-emerald-950 text-white shadow-2xl border border-amber-400/30">
+        <div className="p-5 sm:p-8 rounded-3xl bg-gradient-to-r from-emerald-950 via-emerald-900 to-emerald-950 text-white shadow-2xl border border-amber-400/30">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-black text-amber-300 bg-amber-950/80 border border-amber-400/40 mb-3 uppercase tracking-wider">
             <Wrench className="w-4 h-4 text-amber-400" />
             <span>50+ YEARS EXPERT SERVICES • PAKISTAN HUB</span>
@@ -92,21 +92,21 @@ I am submitting a commercial service inquiry from Rahman Nursery Farm website. P
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
           {SERVICES.map((srv) => (
             <div
               key={srv.id}
-              className="bg-white rounded-3xl p-8 border border-emerald-200 shadow-xl flex flex-col justify-between hover:shadow-2xl transition-all"
+              className="bg-white rounded-3xl p-5 sm:p-8 border border-emerald-200 shadow-xl flex flex-col justify-between hover:shadow-2xl transition-all"
             >
               <div>
-                <div className="flex items-center justify-between mb-3">
+                <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
                   <span className="px-3 py-1 rounded-full bg-amber-400 text-gray-900 text-[10px] font-black uppercase">
                     {srv.badge}
                   </span>
-                  <span className="text-xs font-black text-amber-700">{srv.urdu}</span>
+                  <span className="text-xs font-black text-amber-700 text-right">{srv.urdu}</span>
                 </div>
 
-                <h3 className="font-serif text-2xl font-black text-gray-900 mb-2">
+                <h3 className="font-serif text-xl sm:text-2xl font-black text-gray-900 mb-2">
                   {srv.title}
                 </h3>
                 <p className="text-xs text-slate-600 font-bold leading-relaxed mb-6">
@@ -132,7 +132,7 @@ I am submitting a commercial service inquiry from Rahman Nursery Farm website. P
 
                 <button
                   onClick={() => handleServiceWhatsApp(srv.title)}
-                  className="px-5 py-3 rounded-2xl text-xs font-black bg-emerald-800 text-white hover:bg-emerald-900 transition-all flex items-center justify-center gap-2 shadow-md"
+                  className="px-5 py-4 rounded-2xl text-sm font-black bg-emerald-800 text-white hover:bg-emerald-900 transition-all flex items-center justify-center gap-2 shadow-md min-h-[52px]"
                 >
                   <MessageCircle className="w-4 h-4 fill-white/20" />
                   <span>Book Service Consultation</span>

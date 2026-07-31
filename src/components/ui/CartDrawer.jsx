@@ -157,7 +157,7 @@ I have composed this multi-item order bill on Rahman Nursery Farm website. Pleas
           <div className="p-5 border-t border-emerald-200 bg-white space-y-4 shadow-xl">
             {/* Customer Inputs */}
             <div className="space-y-2.5 text-xs">
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 <div>
                   <label className="block font-black text-emerald-950 mb-1">Your Name</label>
                   <input
@@ -224,7 +224,7 @@ I have composed this multi-item order bill on Rahman Nursery Farm website. Pleas
             {/* WhatsApp Checkout Button */}
             <button
               onClick={handleCheckout}
-              className="btn-luxury-primary w-full py-4 rounded-2xl text-sm font-black flex items-center justify-center gap-2 shadow-xl hover:scale-105 transition-all"
+              className="w-full py-4 rounded-2xl text-sm font-black flex items-center justify-center gap-2 shadow-xl bg-green-700 hover:bg-green-800 text-white transition-all min-h-[52px]"
             >
               <MessageCircle className="w-5 h-5 fill-white/20" />
               <span>Order via WhatsApp — 03040450065</span>

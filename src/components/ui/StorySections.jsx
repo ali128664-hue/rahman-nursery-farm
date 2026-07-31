@@ -53,7 +53,7 @@ export const StorySections = ({ onOpenCatalog, onSelectPlantById, onOpenLandscap
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         {FEATURED_COLLECTIONS.map((col) => (
           <motion.div
             key={col.id}
@@ -61,7 +61,7 @@ export const StorySections = ({ onOpenCatalog, onSelectPlantById, onOpenLandscap
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className={`p-8 rounded-3xl bg-gradient-to-br ${col.bgGradient} text-white shadow-2xl border border-amber-400/30 flex flex-col justify-between hover:scale-[1.01] transition-transform group`}
+            className={`p-5 sm:p-8 rounded-3xl bg-gradient-to-br ${col.bgGradient} text-white shadow-2xl border border-amber-400/30 flex flex-col justify-between hover:scale-[1.01] transition-transform group`}
           >
             <div>
               <div className="flex items-center justify-between mb-4">
@@ -83,7 +83,7 @@ export const StorySections = ({ onOpenCatalog, onSelectPlantById, onOpenLandscap
             <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-white/10">
               <button
                 onClick={onOpenCatalog}
-                className="px-5 py-2.5 rounded-full text-xs font-black bg-white text-emerald-950 hover:bg-amber-300 transition-all flex items-center gap-2 shadow-md"
+                className="px-5 py-3 rounded-full text-xs font-black bg-white text-emerald-950 hover:bg-amber-300 transition-all flex items-center gap-2 shadow-md min-h-[44px]"
               >
                 <Store className="w-4 h-4 text-emerald-800" />
                 <span>Shop This Category</span>
@@ -92,7 +92,7 @@ export const StorySections = ({ onOpenCatalog, onSelectPlantById, onOpenLandscap
 
               <button
                 onClick={() => onSelectPlantById(col.actionPlantId)}
-                className="px-4 py-2.5 rounded-full text-xs font-black text-white bg-white/10 hover:bg-white/20 transition-all border border-white/20 flex items-center gap-1.5"
+                className="px-4 py-3 rounded-full text-xs font-black text-white bg-white/10 hover:bg-white/20 transition-all border border-white/20 flex items-center gap-1.5 min-h-[44px]"
               >
                 <Eye className="w-3.5 h-3.5 text-amber-300" />
                 <span>Inspect Specimen</span>
