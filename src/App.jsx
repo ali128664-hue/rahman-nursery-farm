@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Navbar }                from './components/ui/Navbar';
 import { MobileTopBar }          from './components/ui/MobileTopBar';
@@ -23,7 +23,7 @@ import { CartDrawer }            from './components/ui/CartDrawer';
 import { Footer }                from './components/ui/Footer';
 import { WhatsAppSelectorModal } from './components/ui/WhatsAppSelectorModal';
 import { PLANTS_DATA }           from './data/plantCatalog';
-import { MessageCircle, ShoppingCart, Store, Home } from 'lucide-react';
+import { MessageCircle, ShoppingCart, Store, Home, Download } from 'lucide-react';
 import { RAHMAN_WHATSAPP_NUMBER } from './utils/whatsappHelper';
 
 export default function App() {
@@ -31,6 +31,30 @@ export default function App() {
   const [activePotType, setActivePotType]   = useState('terracotta');
   const [activeTab, setActiveTab]           = useState('home');
   const [globalSearch, setGlobalSearch]     = useState('');
+
+  // PWA Install Prompt State
+  const [deferredPrompt, setDeferredPrompt] = useState(null);
+  const [showInstallBanner, setShowInstallBanner] = useState(false);
+
+  useEffect(() => {
+    const handler = (e) => {
+      e.preventDefault();
+      setDeferredPrompt(e);
+      setShowInstallBanner(true);
+    };
+    window.addEventListener('beforeinstallprompt', handler);
+    return () => window.removeEventListener('beforeinstallprompt', handler);
+  }, []);
+
+  const handleInstallApp = async () => {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    if (outcome === 'accepted') {
+      setShowInstallBanner(false);
+    }
+    setDeferredPrompt(null);
+  };
 
   // Modals & Drawers
   const [isCatalogOpen, setIsCatalogOpen]           = useState(false);
@@ -89,6 +113,31 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen bg-[#F7F8F5] text-gray-900 overflow-x-hidden font-sans">
+
+      {/* 📲 PWA App Install Banner (Shows when Chrome/Android detects installable app) */}
+      {showInstallBanner && (
+        <div className="bg-emerald-950 text-white px-4 py-2.5 text-xs font-bold flex items-center justify-between z-50 fixed top-0 left-0 right-0 shadow-2xl border-b border-amber-400 animate-bounce">
+          <div className="flex items-center gap-2.5 min-w-0">
+            <img src="/logo.png" alt="Logo" className="w-7 h-7 object-contain rounded-xl bg-white p-0.5 border border-emerald-300 flex-shrink-0" />
+            <span className="truncate">Install <strong>Rahman Nursery App</strong> on your phone!</span>
+          </div>
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <button
+              onClick={handleInstallApp}
+              className="px-3.5 py-1.5 bg-gradient-to-r from-amber-400 to-amber-500 text-gray-950 rounded-full font-black text-xs shadow hover:scale-105 transition-all flex items-center gap-1"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>Install App</span>
+            </button>
+            <button
+              onClick={() => setShowInstallBanner(false)}
+              className="text-gray-400 hover:text-white p-1 font-black"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* ── DESKTOP NAVBAR (hidden on mobile) ── */}
       <Navbar

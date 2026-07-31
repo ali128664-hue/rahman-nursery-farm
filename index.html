@@ -3,26 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     
+    <!-- PWA & Mobile Web App Meta Tags -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#14532d" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Rahman Nursery" />
+    <meta name="application-name" content="Rahman Nursery" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/logo.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/logo.png" />
+
     <!-- Primary Meta Tags -->
     <title>Rahman Nursery Farm | Premium Plants & Landscape Architecture Pakistan</title>
     <meta name="title" content="Rahman Nursery Farm | Premium Plants & Landscape Architecture Pakistan" />
-    <meta name="description" content="Experience Pakistan's premier luxury 3D plant nursery. Explore indoor plants, exotic palms, fruit orchards, and luxury villa landscaping delivered nationwide across Lahore, Islamabad, Karachi & Rawalpindi." />
+    <meta name="description" content="Experience Pakistan's premier luxury plant nursery. Explore indoor plants, exotic palms, fruit orchards, and luxury villa landscaping delivered nationwide across Lahore, Islamabad, Karachi & Rawalpindi." />
     <meta name="keywords" content="Rahman Nursery Farm, Plants Pakistan, Nursery Lahore, Nursery Islamabad, Plant Delivery Pakistan, Landscape Architecture Villa, Fruit Trees Pakistan, Exotic Palms, Bougainvillea, Monstera Lahore, WhatsApp Plant Order" />
     <meta name="author" content="Rahman Nursery Farm" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://rahmannurseryfarm.pk/" />
-    <meta property="og:title" content="Rahman Nursery Farm | Luxury Immersive 3D Experience" />
-    <meta property="og:description" content="Walk inside Pakistan's finest luxury nursery farm. Explore plants in 3D, customize pots, estimate landscape costs & order directly via WhatsApp." />
-    <meta property="og:image" content="https://rahmannurseryfarm.pk/og-banner.jpg" />
+    <meta property="og:title" content="Rahman Nursery Farm | Luxury Plant Store & Farm" />
+    <meta property="og:description" content="Explore plants, customize pots, estimate landscape costs & order directly via WhatsApp." />
+    <meta property="og:image" content="/logo.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content="Rahman Nursery Farm Pakistan" />
-    <meta property="twitter:description" content="Immersive 3D Nursery Walkthrough, Custom Landscaping & WhatsApp Order." />
+    <meta property="twitter:description" content="100+ Certified Plants, Custom Landscaping & WhatsApp Order." />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,45 +50,32 @@
       "image": "https://rahmannurseryfarm.pk/logo.png",
       "@id": "https://rahmannurseryfarm.pk",
       "url": "https://rahmannurseryfarm.pk",
-      "telephone": "+923001234567",
+      "telephone": "+923040450065",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Main Canal Bank Road, Near Bahria Town Entrance",
-        "addressLocality": "Lahore",
+        "streetAddress": "Chak Hassan Arain",
+        "addressLocality": "Arifwala",
         "addressRegion": "Punjab",
-        "postalCode": "54000",
+        "postalCode": "57450",
         "addressCountry": "PK"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 31.3685,
-        "longitude": 74.1802
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "07:00",
-        "closes": "19:00"
-      },
-      "sameAs": [
-        "https://facebook.com/rahmannurseryfarm",
-        "https://instagram.com/rahmannurseryfarm",
-        "https://wa.me/923001234567"
-      ]
+      }
     }
     </script>
   </head>
-  <body class="bg-[#FDFBF7] text-[#1E3A2B] font-sans antialiased overflow-x-hidden selection:bg-[#2D5A3F] selection:text-white">
+  <body class="bg-[#F7F8F5] text-[#111827] font-sans antialiased overflow-x-hidden selection:bg-[#166534] selection:text-white">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- PWA Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((reg) => console.log('Rahman Nursery PWA Service Worker registered:', reg.scope))
+            .catch((err) => console.error('PWA Service Worker registration failed:', err));
+        });
+      }
+    </script>
   </body>
 </html>
