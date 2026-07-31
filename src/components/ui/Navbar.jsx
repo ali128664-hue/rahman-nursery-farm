@@ -59,11 +59,11 @@ export const Navbar = ({
           {/* Brand */}
           {/* Brand Logo */}
           <div
-            className="flex items-center gap-2.5 cursor-pointer flex-shrink-0"
+            className="flex items-center gap-3 cursor-pointer flex-shrink-0"
             onClick={() => handleNav('home')}
           >
-            <div className="w-11 h-11 rounded-xl bg-white p-1 shadow border border-gray-200 flex items-center justify-center overflow-hidden">
-              <img src="/logo.png" alt="Rahman Nursery Farm Logo" className="w-full h-full object-contain" />
+            <div className="h-11 sm:h-12 bg-white px-1.5 py-1 rounded-xl shadow-sm border border-gray-200 flex items-center justify-center">
+              <img src="/logo.png" alt="Rahman Nursery Farm Logo" className="h-full w-auto object-contain" />
             </div>
             <div className="hidden sm:block leading-tight">
               <div className="text-sm font-black text-gray-900 tracking-tight flex items-center gap-1">

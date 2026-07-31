@@ -86,18 +86,52 @@ I am submitting a consultation inquiry from Rahman Nursery Farm website. Please 
               </a>
             </div>
 
-            {/* Regional Dispatch Hubs */}
+            {/* Regional Dispatch Hubs & Leadership Contacts */}
             <div className="p-6 rounded-3xl bg-white border border-emerald-200 shadow-xl space-y-4">
-              <h4 className="font-serif text-base font-black text-gray-900">Regional Dispatch Hubs</h4>
+              <h4 className="font-serif text-base font-black text-gray-900">Key Management & Digital Leadership</h4>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-bold">
-                <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
-                  <div className="font-black text-gray-900 mb-1">📍 Arifwala & Pakpattan Hub</div>
-                  <p className="text-[11px] text-slate-500">Commercial Fruit Trees & Shade Timber Trees</p>
+              <div className="space-y-3 text-xs font-bold">
+                <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-2">
+                  <div>
+                    <div className="font-black text-gray-900">📱 Ansar Hussain</div>
+                    <div className="text-[11px] text-slate-500">Online Sales & Digital Dispatch • 0304-0450065</div>
+                  </div>
+                  <a
+                    href="https://www.linkedin.com/in/chansarhussain/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1.5 rounded-xl bg-[#0A66C2] text-white text-[10px] font-black flex items-center gap-1 hover:bg-[#004182] transition"
+                  >
+                    <span>LinkedIn</span>
+                  </a>
                 </div>
-                <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
-                  <div className="font-black text-gray-900 mb-1">📍 Lahore & Sahiwal Cargo</div>
-                  <p className="text-[11px] text-slate-500">Express Cargo Delivery across Punjab & Sindh</p>
+
+                <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-2">
+                  <div>
+                    <div className="font-black text-gray-900">💻 Muhammad Kashif</div>
+                    <div className="text-[11px] text-slate-500">Software Engineer & Tech Lead (Software House)</div>
+                  </div>
+                  <a
+                    href="https://www.linkedin.com/in/muhammad-kashif-a3a6a0144/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1.5 rounded-xl bg-[#0A66C2] text-white text-[10px] font-black flex items-center gap-1 hover:bg-[#004182] transition"
+                  >
+                    <span>LinkedIn</span>
+                  </a>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+                  <div className="p-3 rounded-2xl bg-emerald-50 border border-emerald-200">
+                    <div className="font-black text-emerald-900">🏡 Bashart Saleem</div>
+                    <div className="text-[10px] text-emerald-700">Qaboola Branch Manager</div>
+                    <div className="text-[11px] font-black text-emerald-950 mt-0.5">📞 0344-5155160</div>
+                  </div>
+                  <div className="p-3 rounded-2xl bg-emerald-50 border border-emerald-200">
+                    <div className="font-black text-emerald-900">🏡 Kashir Saleem</div>
+                    <div className="text-[10px] text-emerald-700">Pakpattan Rd Branch Manager</div>
+                    <div className="text-[11px] font-black text-emerald-950 mt-0.5">📞 0304-1001600</div>
+                  </div>
                 </div>
               </div>
             </div>

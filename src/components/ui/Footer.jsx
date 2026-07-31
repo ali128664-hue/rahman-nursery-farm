@@ -89,26 +89,42 @@ export const Footer = ({ onNavigateTab }) => {
 
           {/* Helplines & Location */}
           <div>
-            <h4 className="text-xs font-black text-amber-400 uppercase tracking-widest mb-4">Direct Helplines</h4>
-            <div className="space-y-3">
-              <a
-                href={`https://wa.me/${RAHMAN_WHATSAPP_NUMBER}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-white hover:text-amber-300 font-bold text-sm transition"
-              >
-                <MessageCircle className="w-4 h-4 text-green-400" />
-                <span>Ansar Hussain: 0304-0450065</span>
+            <h4 className="text-xs font-black text-amber-400 uppercase tracking-widest mb-4">Direct Helplines & Tech Lead</h4>
+            <div className="space-y-2.5 text-xs font-medium">
+              <div className="flex items-center justify-between gap-1">
+                <a
+                  href={`https://wa.me/${RAHMAN_WHATSAPP_NUMBER}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-white hover:text-amber-300 font-bold transition truncate"
+                >
+                  <MessageCircle className="w-3.5 h-3.5 text-green-400 flex-shrink-0" />
+                  <span className="truncate">Ansar: 0304-0450065</span>
+                </a>
+                <a href="https://www.linkedin.com/in/chansarhussain/" target="_blank" rel="noopener noreferrer" className="text-[10px] text-blue-400 hover:underline font-bold flex-shrink-0">
+                  LinkedIn
+                </a>
+              </div>
+
+              <div className="flex items-center justify-between gap-1">
+                <div className="flex items-center gap-1.5 text-gray-300 font-bold truncate">
+                  <span className="text-blue-400 text-xs">💻</span>
+                  <span className="truncate">Kashif: Tech Lead</span>
+                </div>
+                <a href="https://www.linkedin.com/in/muhammad-kashif-a3a6a0144/" target="_blank" rel="noopener noreferrer" className="text-[10px] text-blue-400 hover:underline font-bold flex-shrink-0">
+                  LinkedIn
+                </a>
+              </div>
+
+              <a href="tel:+923445155160" className="flex items-center gap-1.5 text-gray-400 hover:text-white font-medium transition">
+                <Phone className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
+                <span>Bashart: 0344-5155160</span>
               </a>
-              <a href="tel:+923445155160" className="flex items-center gap-2 text-gray-400 hover:text-white font-medium text-sm transition">
-                <Phone className="w-4 h-4 text-amber-400" />
-                <span>Bashart Saleem: 0344-5155160</span>
+              <a href="tel:+923041001600" className="flex items-center gap-1.5 text-gray-400 hover:text-white font-medium transition">
+                <Phone className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
+                <span>Kashir: 0304-1001600</span>
               </a>
-              <a href="tel:+923041001600" className="flex items-center gap-2 text-gray-400 hover:text-white font-medium text-sm transition">
-                <Phone className="w-4 h-4 text-amber-400" />
-                <span>Kashir Saleem: 0304-1001600</span>
-              </a>
-              <div className="pt-3 border-t border-gray-800">
+              <div className="pt-2 border-t border-gray-800">
                 <div className="flex items-start gap-2 text-gray-400 font-medium text-xs">
                   <MapPin className="w-3.5 h-3.5 text-amber-400 flex-shrink-0 mt-0.5" />
                   <span>Chak Hassan Arain, Tehsil Arifwala, District Pakpattan, Punjab, Pakistan</span>

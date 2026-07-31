@@ -60,6 +60,16 @@ export const FamilyHeritagSection = ({ onOpenContact }) => {
       address: 'Main Head Farm: Chak Hassan Arain (Online Dispatch)',
       note: 'Manages all website orders, digital customer inquiries, online plant dispatches, and nationwide truck deliveries.',
     },
+    {
+      name: 'Muhammad Kashif',
+      role: 'Software Engineer & Digital Tech Lead',
+      urdu: 'محمد کاشف',
+      linkedin: 'https://www.linkedin.com/in/muhammad-kashif-a3a6a0144/',
+      icon: '💻',
+      isTech: true,
+      address: 'Software House & IT Infrastructure Division',
+      note: 'Brother of Bashart Saleem & Kashir Saleem. Senior Software Engineer working at a leading software house; architects and powers Rahman Nursery\'s digital technology infrastructure, e-commerce platform, and smart farm management systems.',
+    },
   ];
 
   return (
@@ -180,28 +190,16 @@ export const FamilyHeritagSection = ({ onOpenContact }) => {
                     </p>
                   </div>
                 </div>
-
-                <div className="bg-white border border-emerald-200 rounded-2xl p-4 flex items-start gap-3 shadow-md">
-                  <MapPin className="w-5 h-5 text-emerald-700 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="text-xs font-black text-emerald-900 uppercase tracking-wide mb-0.5">Main Head Farm</p>
-                    <p className="text-xs text-emerald-800 font-bold">
-                      Chak Hassan Arain, Arifwala, District Pakpattan, Punjab, Pakistan
-                    </p>
-                  </div>
-                </div>
               </div>
 
             </div>
           </div>
         </motion.div>
 
-        {/* SONS SECTION */}
-        <div className="mb-12">
-          <h3 className="font-serif text-xl font-black text-emerald-950 mb-6 flex items-center justify-center gap-3">
-            <span className="w-12 h-0.5 bg-amber-500 rounded-full inline-block" />
-            Sons of Muhammad Shareef (Late)
-            <span className="w-12 h-0.5 bg-amber-500 rounded-full inline-block" />
+        {/* SONS OF MUHAMMAD SHAREEF */}
+        <div className="mb-14">
+          <h3 className="font-serif text-2xl font-black text-emerald-950 mb-6 text-center">
+            Sons of Muhammad Shareef (Late) — Senior Leadership
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {nurserySons.map((member, idx) => (
@@ -211,32 +209,19 @@ export const FamilyHeritagSection = ({ onOpenContact }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className={`rounded-3xl p-6 border flex flex-col justify-between shadow-lg ${
-                  member.special
-                    ? 'bg-amber-50/80 border-amber-300'
-                    : 'bg-white border-emerald-200'
-                }`}
+                className="bg-white rounded-3xl p-6 border border-emerald-200 shadow-lg flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-start gap-3 mb-3">
-                    <span className="text-3xl flex-shrink-0">{member.icon}</span>
+                  <div className="flex items-start gap-3.5 mb-3">
+                    <span className="text-3xl p-2.5 rounded-2xl bg-emerald-50 border border-emerald-200">{member.icon}</span>
                     <div>
-                      <h4 className="font-serif font-black text-emerald-950 text-lg leading-tight">{member.name}</h4>
-                      <p className={`text-[11px] font-black uppercase tracking-wider mt-0.5 ${member.special ? 'text-amber-800' : 'text-emerald-700'}`}>
-                        {member.role}
-                      </p>
-                      <p className="text-xs text-emerald-800 font-bold">{member.urdu}</p>
+                      <h4 className="font-serif font-black text-lg text-emerald-950">{member.name}</h4>
+                      <p className="text-[11px] font-black text-emerald-700 uppercase tracking-wider">{member.role}</p>
+                      <p className="text-xs font-bold text-amber-700">{member.urdu}</p>
                     </div>
                   </div>
                   <p className="text-xs text-emerald-900 leading-relaxed font-bold" dangerouslySetInnerHTML={{ __html: member.note }} />
                 </div>
-
-                {member.special && (
-                  <div className="mt-4 flex items-center gap-2 text-xs text-amber-900 font-black bg-amber-100 rounded-2xl p-3 border border-amber-300">
-                    <span>🦴</span>
-                    <span>Continuing Baba Shareef's tradition — Haddi Jorne Wala (ہڈی جوڑنے والا)</span>
-                  </div>
-                )}
               </motion.div>
             ))}
           </div>
@@ -246,10 +231,10 @@ export const FamilyHeritagSection = ({ onOpenContact }) => {
         <div className="mb-14">
           <h3 className="font-serif text-xl font-black text-emerald-950 mb-6 flex items-center justify-center gap-3">
             <span className="w-12 h-0.5 bg-emerald-600 rounded-full inline-block" />
-            Next Generation — Physical Nurseries & Digital Delivery
+            Next Generation — Physical Nurseries, Tech & Digital Operations
             <span className="w-12 h-0.5 bg-emerald-600 rounded-full inline-block" />
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {nextGen.map((member, idx) => (
               <motion.div
                 key={idx}
@@ -260,48 +245,72 @@ export const FamilyHeritagSection = ({ onOpenContact }) => {
                 className={`rounded-3xl p-6 border flex flex-col justify-between shadow-lg ${
                   member.highlight
                     ? 'bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-950 text-white border-amber-400'
+                    : member.isTech
+                    ? 'bg-gradient-to-br from-slate-900 via-gray-900 to-slate-950 text-white border-blue-400/60'
                     : 'bg-white border-emerald-200 text-emerald-950'
                 }`}
               >
                 <div>
-                  <div className="flex items-start gap-3.5 mb-3">
+                  <div className="flex items-start gap-3 mb-3">
                     <span className="text-3xl flex-shrink-0">{member.icon}</span>
                     <div>
-                      <h4 className={`font-serif font-black text-lg leading-tight ${member.highlight ? 'text-amber-300' : 'text-emerald-950'}`}>
+                      <h4 className={`font-serif font-black text-base leading-tight ${member.highlight ? 'text-amber-300' : member.isTech ? 'text-blue-300' : 'text-emerald-950'}`}>
                         {member.name}
                       </h4>
-                      <p className={`text-[11px] font-black uppercase tracking-wider mt-0.5 ${member.highlight ? 'text-emerald-200' : 'text-emerald-700'}`}>
+                      <p className={`text-[10px] font-black uppercase tracking-wider mt-0.5 ${member.highlight ? 'text-emerald-200' : member.isTech ? 'text-blue-200' : 'text-emerald-700'}`}>
                         {member.role}
                       </p>
-                      <p className={`text-xs font-bold ${member.highlight ? 'text-white/80' : 'text-emerald-800'}`}>{member.urdu}</p>
+                      <p className={`text-xs font-bold ${member.highlight ? 'text-white/80' : member.isTech ? 'text-slate-300' : 'text-emerald-800'}`}>{member.urdu}</p>
                     </div>
                   </div>
 
-                  <p className={`text-xs leading-relaxed font-bold mb-4 ${member.highlight ? 'text-emerald-100' : 'text-emerald-900'}`}>
+                  <p className={`text-xs leading-relaxed font-bold mb-4 ${member.highlight ? 'text-emerald-100' : member.isTech ? 'text-slate-300' : 'text-emerald-900'}`}>
                     {member.note}
                   </p>
 
-                  <div className={`p-3 rounded-2xl text-xs font-bold border ${
-                    member.highlight ? 'bg-emerald-950/60 border-emerald-700 text-emerald-200' : 'bg-slate-50 border-slate-200 text-emerald-950'
+                  <div className={`p-2.5 rounded-2xl text-[11px] font-bold border ${
+                    member.highlight
+                      ? 'bg-emerald-950/60 border-emerald-700 text-emerald-200'
+                      : member.isTech
+                      ? 'bg-slate-950/80 border-slate-700 text-blue-200'
+                      : 'bg-slate-50 border-slate-200 text-emerald-950'
                   }`}>
                     <MapPin className="w-3.5 h-3.5 inline mr-1 text-amber-500" />
                     {member.address}
                   </div>
                 </div>
 
-                <a
-                  href={`https://wa.me/92${member.phone.replace(/[^0-9]/g, '').slice(-10)}?text=${encodeURIComponent('Assalam o Alaikum, main Rahman Nursery Farm website se contact kar raha hun.')}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`mt-4 py-3 rounded-2xl text-xs font-black flex items-center justify-center gap-2 shadow-md transition-all ${
-                    member.highlight
-                      ? 'btn-luxury-gold text-white'
-                      : 'bg-emerald-700 text-white hover:bg-emerald-800'
-                  }`}
-                >
-                  <Phone className="w-3.5 h-3.5" />
-                  Contact: {member.phone}
-                </a>
+                <div className="mt-4 space-y-2">
+                  {member.phone && (
+                    <a
+                      href={`https://wa.me/92${member.phone.replace(/[^0-9]/g, '').slice(-10)}?text=${encodeURIComponent('Assalam o Alaikum, main Rahman Nursery Farm website se contact kar raha hun.')}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`w-full py-2.5 rounded-2xl text-xs font-black flex items-center justify-center gap-2 shadow-md transition-all ${
+                        member.highlight
+                          ? 'bg-gradient-to-r from-amber-400 to-amber-500 text-emerald-950 font-black'
+                          : 'bg-emerald-700 text-white hover:bg-emerald-800'
+                      }`}
+                    >
+                      <Phone className="w-3.5 h-3.5" />
+                      Contact: {member.phone}
+                    </a>
+                  )}
+
+                  {member.linkedin && (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-2.5 rounded-2xl text-xs font-black flex items-center justify-center gap-2 bg-[#0A66C2] text-white hover:bg-[#004182] transition-all shadow-md"
+                    >
+                      <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1-2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                      </svg>
+                      <span>LinkedIn Profile</span>
+                    </a>
+                  )}
+                </div>
               </motion.div>
             ))}
           </div>
