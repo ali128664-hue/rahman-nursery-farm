@@ -30,25 +30,16 @@ export const FamilyHeritagSection = ({ onOpenContact }) => {
     },
   ];
 
-  // Next generation — currently running operations
   const nextGen = [
     {
       name: 'Bashart Saleem',
-      role: 'Physical Nursery Branch Manager — Qaboola & Arifwala',
-      urdu: 'بشارت سلیم',
+      role: 'Main Nursery Lead & Physical Branch Manager',
+      urdu: 'بشارت سلیم (مین نرسری فارم انچارج)',
       phone: '0344-5155160',
       icon: '🏡',
+      highlight: true,
       address: 'Barakt Chowk, Opposite Royal Palm City, Qaboola',
-      note: 'Manages physical nursery operations, walk-in customers, and plant stock at the Qaboola / Royal Palm City branch.',
-    },
-    {
-      name: 'Kashir Saleem',
-      role: 'Physical Nursery Branch Manager — Pakpattan Road',
-      urdu: 'کاشر سلیم',
-      phone: '0304-1001600',
-      icon: '🏡',
-      address: 'Ada 17 Wali Puli, Pakpattan Rd, near Al-Madni Cotton Mill, Arifwala (57450)',
-      note: 'Manages plant supply, nursery dispatch, and physical sales at the main Pakpattan Road Ada 17 branch in Arifwala.',
+      note: 'Primary Family Lead managing main physical nursery operations, walk-in customers, plant cultivation, and stock distribution across Qaboola and Royal Palm City branches.',
     },
     {
       name: 'Ansar Hussain',
@@ -57,19 +48,27 @@ export const FamilyHeritagSection = ({ onOpenContact }) => {
       phone: '03040450065',
       linkedin: 'https://www.linkedin.com/in/chansarhussain/',
       icon: '📱',
-      highlight: true,
       address: 'Main Head Farm: Chak Hassan Arain (Nationwide Dispatch)',
       note: 'Leads digital sales, customer consultation, plant orders, commercial orchard bookings, express truck cargo dispatches, and nationwide delivery tracking across all major cities of Pakistan.',
     },
     {
+      name: 'Kashir Saleem',
+      role: 'Physical Nursery Branch Manager — Pakpattan Road',
+      urdu: 'کاشر سلیم (پاکپتن روڈ برانچ انچارج)',
+      phone: '0304-1001600',
+      icon: '🏡',
+      address: 'Ada 17 Wali Puli, Pakpattan Rd, near Al-Madni Cotton Mill, Arifwala (57450)',
+      note: 'Manages plant supply, nursery dispatch, and physical sales at the main Pakpattan Road Ada 17 branch in Arifwala.',
+    },
+    {
       name: 'Muhammad Kashif',
-      role: 'Senior Software Engineer & Digital Tech Lead',
-      urdu: 'محمد کاشف (سافٹ ویئر انجینئر و ٹیک لیڈ)',
+      role: 'Principal Engineer — Adaxiom Organization',
+      urdu: 'محمد کاشف (پرنسپل سافٹ ویئر انجینئر — ایڈیکسیئم)',
       linkedin: 'https://www.linkedin.com/in/muhammad-kashif-a3a6a0144/',
       icon: '💻',
       isTech: true,
-      address: 'Adaxiom / Adsells Group — Software Engineering Lead',
-      note: 'Senior Software Engineer working at Adaxiom / Adsells Software Group; designs, powers, and architects Rahman Nursery Farm\'s digital web platform, e-commerce infrastructure, and smart farm technology.',
+      address: 'Adaxiom Organization • Quaid-E-Azam Blvd, Lahore',
+      note: 'Software Engineer with 9+ years experience architecting and scaling fullstack applications (Python, Flask, Django, Node.js, PHP Laravel, React, AWS & DevOps). Promoted from Intern to Junior Engineer, Full-Stack Developer, and now Principal Engineer leading software development teams and cloud infrastructure at Adaxiom Organization, Lahore.',
     },
   ];
 

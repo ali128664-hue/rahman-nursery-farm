@@ -119,7 +119,7 @@ I am submitting a consultation inquiry from Rahman Nursery Farm website. Please 
                   <div className="flex items-center justify-between gap-2">
                     <div>
                       <div className="font-black text-blue-300 text-sm">💻 Muhammad Kashif</div>
-                      <div className="text-[11px] text-slate-300 font-bold">Senior Software Engineer & Digital Tech Lead</div>
+                      <div className="text-[11px] text-slate-300 font-bold">Principal Engineer — Adaxiom Organization (Lahore)</div>
                     </div>
                     <a
                       href="https://www.linkedin.com/in/muhammad-kashif-a3a6a0144/"
@@ -132,7 +132,7 @@ I am submitting a consultation inquiry from Rahman Nursery Farm website. Please 
                     </a>
                   </div>
                   <p className="text-[11px] text-slate-300 font-medium leading-relaxed">
-                    Senior Software Engineer working at Adaxiom / Adsells Software Group; heads IT architecture, e-commerce web platform, and digital systems for Rahman Nursery Farm.
+                    Principal Engineer with 9+ years experience leading software architecture, cloud infrastructure, Python/NodeJS/DevOps workflows, and scaling enterprise fullstack applications at Adaxiom Organization.
                   </p>
                 </div>
 

@@ -19,6 +19,7 @@ import { ReviewsSection } from './components/ui/ReviewsSection';
 import { ContactModal } from './components/ui/ContactModal';
 import { CartDrawer } from './components/ui/CartDrawer';
 import { Footer } from './components/ui/Footer';
+import { WhatsAppSelectorModal } from './components/ui/WhatsAppSelectorModal';
 import { PLANTS_DATA } from './data/plantCatalog';
 import { MessageCircle, ShoppingCart, Store, Home } from 'lucide-react';
 import { RAHMAN_WHATSAPP_NUMBER } from './utils/whatsappHelper';
@@ -35,6 +36,8 @@ export default function App() {
   const [isLandscapingOpen, setIsLandscapingOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isWhatsAppSelectorOpen, setIsWhatsAppSelectorOpen] = useState(false);
+  const [whatsAppMessageText, setWhatsAppMessageText] = useState('');
 
   // Cart State
   const [cart, setCart] = useState([]);
@@ -176,15 +179,16 @@ export default function App() {
         </button>
 
         {/* WhatsApp Helpline Button */}
-        <a
-          href={`https://wa.me/${RAHMAN_WHATSAPP_NUMBER}?text=${encodeURIComponent('Assalam o Alaikum Ansar Bhai (03040450065), I am visiting Rahman Nursery Farm website and would like to order plants!')}`}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={() => {
+            setWhatsAppMessageText('Assalam o Alaikum, I am visiting Rahman Nursery Farm website and would like to inquire/order plants!');
+            setIsWhatsAppSelectorOpen(true);
+          }}
           className="p-3.5 rounded-full bg-emerald-600 text-white hover:bg-emerald-700 transition-all shadow-2xl border border-emerald-400 hover:scale-105"
-          title="Direct WhatsApp Helpline 03040450065"
+          title="Choose WhatsApp Representative"
         >
           <MessageCircle className="w-5 h-5 fill-white/20" />
-        </a>
+        </button>
       </div>
 
       {/* Toast Notification */}
@@ -235,6 +239,12 @@ export default function App() {
       <ContactModal
         isOpen={isContactOpen}
         onClose={() => setIsContactOpen(false)}
+      />
+
+      <WhatsAppSelectorModal
+        isOpen={isWhatsAppSelectorOpen}
+        onClose={() => setIsWhatsAppSelectorOpen(false)}
+        messageText={whatsAppMessageText}
       />
     </div>
   );
