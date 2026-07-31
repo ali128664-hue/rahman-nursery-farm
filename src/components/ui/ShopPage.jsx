@@ -70,7 +70,7 @@ export const ShopPage = ({
   }, [activeCategory, externalSearch, selectedDifficulty, sortBy]);
 
   return (
-    <div className="min-h-screen bg-[#F7F8F5] text-gray-900 pt-28 sm:pt-36 pb-24 px-3 sm:px-6 lg:px-12 pointer-events-auto">
+    <div className="min-h-screen bg-[#F7F8F5] text-gray-900 pt-16 sm:pt-36 pb-24 px-3 sm:px-6 lg:px-12 pointer-events-auto">
       <div className="max-w-7xl mx-auto">
 
         {/* Page Header */}

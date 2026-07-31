@@ -10,7 +10,7 @@ const TRUST_POINTS = [
 
 export const HeroOverlay = ({ onExploreClick, onOpenCatalog, onOpenAIPlanner, onOpenWhatsAppModal }) => {
   return (
-    <section className="relative pt-28 sm:pt-40 md:pt-44 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-12 pointer-events-auto bg-[#F7F8F5]">
+    <section className="relative pt-16 sm:pt-40 md:pt-44 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-12 pointer-events-auto bg-[#F7F8F5]">
       <div className="max-w-5xl mx-auto text-center">
 
         {/* Official Brand Logo */}

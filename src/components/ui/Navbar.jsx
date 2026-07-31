@@ -30,7 +30,7 @@ export const Navbar = ({
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 pointer-events-auto">
+    <header className="hidden md:block fixed top-0 left-0 right-0 z-40 pointer-events-auto">
 
       {/* ── Row 1: Announcement Bar ── */}
       <div className="bg-gray-900 text-amber-300 py-1 px-3 text-center text-[10px] font-bold tracking-widest uppercase overflow-hidden">

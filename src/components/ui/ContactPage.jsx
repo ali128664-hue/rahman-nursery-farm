@@ -26,7 +26,7 @@ I am submitting a consultation inquiry from Rahman Nursery Farm website. Please 
   };
 
   return (
-    <div className="min-h-screen bg-[#F7F8F5] text-gray-900 pt-28 sm:pt-36 pb-20 px-4 sm:px-6 lg:px-12 pointer-events-auto">
+    <div className="min-h-screen bg-[#F7F8F5] text-gray-900 pt-16 sm:pt-36 pb-20 px-4 sm:px-6 lg:px-12 pointer-events-auto">
       <div className="max-w-6xl mx-auto space-y-10">
 
         {/* Header */}
