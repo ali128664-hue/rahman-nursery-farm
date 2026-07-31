@@ -35,14 +35,25 @@ export default function App() {
   // PWA Install Prompt State
   const [deferredPrompt, setDeferredPrompt] = useState(null);
   const [showInstallBanner, setShowInstallBanner] = useState(false);
+  const [showIOSInstallGuide, setShowIOSInstallGuide] = useState(false);
 
   useEffect(() => {
+    // Detect Chrome/Android PWA install prompt
     const handler = (e) => {
       e.preventDefault();
       setDeferredPrompt(e);
       setShowInstallBanner(true);
     };
     window.addEventListener('beforeinstallprompt', handler);
+
+    // Detect Apple iOS Safari
+    const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    const isStandaloneMode = window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
+
+    if (isIOSDevice && !isStandaloneMode) {
+      setShowIOSInstallGuide(true);
+    }
+
     return () => window.removeEventListener('beforeinstallprompt', handler);
   }, []);
 
@@ -136,6 +147,24 @@ export default function App() {
               ✕
             </button>
           </div>
+        </div>
+      )}
+
+      {/* 🍏 Apple iOS Safari App Install Banner (Shows on iPhone/iPad) */}
+      {showIOSInstallGuide && (
+        <div className="bg-emerald-950 text-white px-4 py-2.5 text-xs font-bold flex items-center justify-between z-50 fixed top-0 left-0 right-0 shadow-2xl border-b border-amber-400">
+          <div className="flex items-center gap-2.5 min-w-0">
+            <img src="/logo.png" alt="Logo" className="w-7 h-7 object-contain rounded-xl bg-white p-0.5 border border-emerald-300 flex-shrink-0" />
+            <span className="truncate">
+              iPhone: Tap <strong className="text-amber-300">Share (⎋)</strong> then <strong className="text-amber-300">Add to Home Screen (➕)</strong> to install App!
+            </span>
+          </div>
+          <button
+            onClick={() => setShowIOSInstallGuide(false)}
+            className="text-gray-400 hover:text-white p-1 font-black flex-shrink-0 ml-2"
+          >
+            ✕
+          </button>
         </div>
       )}
 
