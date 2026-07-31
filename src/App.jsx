@@ -107,6 +107,7 @@ export default function App() {
       {/* ── MOBILE TOP APP BAR (hidden on desktop) ── */}
       <MobileTopBar
         activeTab={activeTab}
+        onTabChange={handleTabChange}
         cartCount={totalCartItems}
         onOpenCart={() => setIsCartOpen(true)}
         onOpenWhatsAppModal={triggerWhatsApp}

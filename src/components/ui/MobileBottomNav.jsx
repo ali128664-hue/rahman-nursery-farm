@@ -1,11 +1,11 @@
 import React from 'react';
-import { Home, Store, TreePine, Users, PhoneCall } from 'lucide-react';
+import { Home, Store, TreePine, Wrench, PhoneCall } from 'lucide-react';
 
 const TABS = [
   { id: 'home',     label: 'Home',     icon: Home },
   { id: 'shop',     label: 'Store',    icon: Store },
   { id: 'orchard',  label: 'Bagh',     icon: TreePine },
-  { id: 'about',    label: 'About Us', icon: Users },
+  { id: 'services', label: 'Services', icon: Wrench },
   { id: 'contact',  label: 'Contact',  icon: PhoneCall },
 ];
 
