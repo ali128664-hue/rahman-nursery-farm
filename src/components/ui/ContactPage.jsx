@@ -88,37 +88,52 @@ I am submitting a consultation inquiry from Rahman Nursery Farm website. Please 
 
             {/* Regional Dispatch Hubs & Leadership Contacts */}
             <div className="p-6 rounded-3xl bg-white border border-emerald-200 shadow-xl space-y-4">
-              <h4 className="font-serif text-base font-black text-gray-900">Key Management & Digital Leadership</h4>
+              <h4 className="font-serif text-base font-black text-gray-900">Digital Leadership & Management Team</h4>
               
               <div className="space-y-3 text-xs font-bold">
-                <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-2">
-                  <div>
-                    <div className="font-black text-gray-900">📱 Ansar Hussain</div>
-                    <div className="text-[11px] text-slate-500">Online Sales & Digital Dispatch • 0304-0450065</div>
+                {/* Ansar Hussain Card */}
+                <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200 space-y-2">
+                  <div className="flex items-center justify-between gap-2">
+                    <div>
+                      <div className="font-black text-gray-900 text-sm">📱 Ansar Hussain</div>
+                      <div className="text-[11px] text-emerald-800 font-bold">Senior Sales & Digital Delivery Manager</div>
+                    </div>
+                    <a
+                      href="https://www.linkedin.com/in/chansarhussain/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3 py-1.5 rounded-xl bg-[#0A66C2] text-white text-[11px] font-black flex items-center gap-1 hover:bg-[#004182] transition shadow"
+                    >
+                      <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1-2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                      <span>LinkedIn Profile</span>
+                    </a>
                   </div>
-                  <a
-                    href="https://www.linkedin.com/in/chansarhussain/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-3 py-1.5 rounded-xl bg-[#0A66C2] text-white text-[10px] font-black flex items-center gap-1 hover:bg-[#004182] transition"
-                  >
-                    <span>LinkedIn</span>
-                  </a>
+                  <p className="text-[11px] text-slate-600 font-medium leading-relaxed">
+                    Leads online plant dispatches, customer consultation, WhatsApp plant orders, commercial orchard bookings, and nationwide cargo tracking across Pakistan.
+                  </p>
+                  <div className="text-xs font-black text-emerald-950">📞 Direct Line: 0304-0450065</div>
                 </div>
 
-                <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-2">
-                  <div>
-                    <div className="font-black text-gray-900">💻 Muhammad Kashif</div>
-                    <div className="text-[11px] text-slate-500">Software Engineer & Tech Lead (Software House)</div>
+                {/* Muhammad Kashif Card */}
+                <div className="p-4 rounded-2xl bg-slate-900 text-white border border-slate-700 space-y-2">
+                  <div className="flex items-center justify-between gap-2">
+                    <div>
+                      <div className="font-black text-blue-300 text-sm">💻 Muhammad Kashif</div>
+                      <div className="text-[11px] text-slate-300 font-bold">Senior Software Engineer & Digital Tech Lead</div>
+                    </div>
+                    <a
+                      href="https://www.linkedin.com/in/muhammad-kashif-a3a6a0144/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3 py-1.5 rounded-xl bg-[#0A66C2] text-white text-[11px] font-black flex items-center gap-1 hover:bg-[#004182] transition shadow"
+                    >
+                      <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1-2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                      <span>LinkedIn Profile</span>
+                    </a>
                   </div>
-                  <a
-                    href="https://www.linkedin.com/in/muhammad-kashif-a3a6a0144/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-3 py-1.5 rounded-xl bg-[#0A66C2] text-white text-[10px] font-black flex items-center gap-1 hover:bg-[#004182] transition"
-                  >
-                    <span>LinkedIn</span>
-                  </a>
+                  <p className="text-[11px] text-slate-300 font-medium leading-relaxed">
+                    Brother of Bashart Saleem & Kashir Saleem (sons of Baba Shareef family). Senior Software Engineer working at a software house; heads IT architecture, e-commerce web platform, and farm digital systems.
+                  </p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
