@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShoppingCart, MessageCircle, Search, X, Menu } from 'lucide-react';
+import { ShoppingCart, MessageCircle, Search, X, Menu, Bell } from 'lucide-react';
 
 const MENU_LINKS = [
   { id: 'home',     label: 'Home Page',           icon: '🏠' },
@@ -15,6 +15,7 @@ export const MobileTopBar = ({
   cartCount = 0,
   onOpenCart,
   onOpenWhatsAppModal,
+  onOpenReminderModal,
   searchQuery = '',
   onSearchChange,
   activeTab,
@@ -106,6 +107,15 @@ export const MobileTopBar = ({
 
             {/* Right Actions */}
             <div className="flex items-center gap-1.5 flex-shrink-0">
+              {/* Daily Watering Reminder Bell */}
+              <button
+                onClick={onOpenReminderModal}
+                className="p-2 rounded-full bg-amber-50 text-amber-800 border border-amber-300 min-h-[40px] min-w-[40px] flex items-center justify-center"
+                title="7 AM & 6 PM Plant Care Reminders"
+              >
+                <Bell className="w-4 h-4 text-amber-700" />
+              </button>
+
               {/* Search toggle */}
               <button
                 onClick={() => setShowSearch(true)}

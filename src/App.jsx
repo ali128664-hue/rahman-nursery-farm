@@ -22,9 +22,11 @@ import { ContactModal }          from './components/ui/ContactModal';
 import { CartDrawer }            from './components/ui/CartDrawer';
 import { Footer }                from './components/ui/Footer';
 import { WhatsAppSelectorModal } from './components/ui/WhatsAppSelectorModal';
+import { WateringReminderModal } from './components/ui/WateringReminderModal';
 import { PLANTS_DATA }           from './data/plantCatalog';
-import { MessageCircle, ShoppingCart, Store, Home, Download } from 'lucide-react';
+import { MessageCircle, ShoppingCart, Store, Home, Download, Bell } from 'lucide-react';
 import { RAHMAN_WHATSAPP_NUMBER } from './utils/whatsappHelper';
+import { checkAndTriggerDailyReminders } from './utils/notificationManager';
 
 export default function App() {
   const [selectedPlant, setSelectedPlant]   = useState(null);
@@ -32,10 +34,11 @@ export default function App() {
   const [activeTab, setActiveTab]           = useState('home');
   const [globalSearch, setGlobalSearch]     = useState('');
 
-  // PWA Install Prompt State
+  // PWA & Notification State
   const [deferredPrompt, setDeferredPrompt] = useState(null);
   const [showInstallBanner, setShowInstallBanner] = useState(false);
   const [showIOSInstallGuide, setShowIOSInstallGuide] = useState(false);
+  const [isReminderModalOpen, setIsReminderModalOpen] = useState(false);
 
   useEffect(() => {
     // Detect Chrome/Android PWA install prompt
@@ -54,7 +57,16 @@ export default function App() {
       setShowIOSInstallGuide(true);
     }
 
-    return () => window.removeEventListener('beforeinstallprompt', handler);
+    // Daily Plant Watering Reminders Checker (7:00 AM & 6:00 PM)
+    checkAndTriggerDailyReminders();
+    const reminderInterval = setInterval(() => {
+      checkAndTriggerDailyReminders();
+    }, 60000);
+
+    return () => {
+      window.removeEventListener('beforeinstallprompt', handler);
+      clearInterval(reminderInterval);
+    };
   }, []);
 
   const handleInstallApp = async () => {
@@ -189,6 +201,7 @@ export default function App() {
         cartCount={totalCartItems}
         onOpenCart={() => setIsCartOpen(true)}
         onOpenWhatsAppModal={triggerWhatsApp}
+        onOpenReminderModal={() => setIsReminderModalOpen(true)}
         searchQuery={globalSearch}
         onSearchChange={(q) => {
           setGlobalSearch(q);
@@ -344,6 +357,11 @@ export default function App() {
         isOpen={isWhatsAppSelectorOpen}
         onClose={() => setIsWhatsAppSelectorOpen(false)}
         messageText={whatsAppMessageText}
+      />
+
+      <WateringReminderModal
+        isOpen={isReminderModalOpen}
+        onClose={() => setIsReminderModalOpen(false)}
       />
     </div>
   );
