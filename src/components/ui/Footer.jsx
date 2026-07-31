@@ -35,8 +35,10 @@ export const Footer = ({ onNavigateTab }) => {
 
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-10 h-10 rounded-full bg-gray-800 border-2 border-amber-400 flex items-center justify-center font-serif font-black text-xl text-amber-400">R</div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 rounded-xl bg-white p-1 shadow border border-gray-700 flex items-center justify-center overflow-hidden">
+                <img src="/logo.png" alt="Rahman Nursery Farm Logo" className="w-full h-full object-contain" />
+              </div>
               <div>
                 <div className="font-serif text-base font-black text-white">RAHMAN <span className="text-green-400">NURSERY</span></div>
                 <div className="text-[9px] font-bold text-amber-400 uppercase tracking-widest">50+ YRS HERITAGE • PAKISTAN HUB</div>

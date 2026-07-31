@@ -57,16 +57,17 @@ export const Navbar = ({
           </button>
 
           {/* Brand */}
+          {/* Brand Logo */}
           <div
             className="flex items-center gap-2.5 cursor-pointer flex-shrink-0"
             onClick={() => handleNav('home')}
           >
-            <div className="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center font-serif font-black text-xl text-amber-400 shadow border-2 border-amber-400">
-              R
+            <div className="w-11 h-11 rounded-xl bg-white p-1 shadow border border-gray-200 flex items-center justify-center overflow-hidden">
+              <img src="/logo.png" alt="Rahman Nursery Farm Logo" className="w-full h-full object-contain" />
             </div>
             <div className="hidden sm:block leading-tight">
-              <div className="text-sm font-black text-gray-900 tracking-tight">
-                RAHMAN <span className="text-green-700">NURSERY</span>
+              <div className="text-sm font-black text-gray-900 tracking-tight flex items-center gap-1">
+                <span>RAHMAN</span> <span className="text-green-700">NURSERY</span>
               </div>
               <div className="text-[9px] font-bold text-amber-600 uppercase tracking-widest">
                 50+ YRS HERITAGE • PAKISTAN HUB

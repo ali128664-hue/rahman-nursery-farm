@@ -173,10 +173,38 @@ I am submitting a commercial orchard package inquiry from Rahman Nursery Farm we
 
                   <div className="p-6 space-y-4">
                     <p className="text-xs text-slate-600 font-bold leading-relaxed">{pkg.description}</p>
+
+                    {/* Quick Stats Grid */}
+                    <div className="grid grid-cols-2 gap-2 text-[11px] font-bold">
+                      {pkg.saplingCount && (
+                        <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                          <span className="text-slate-400 block text-[9px] uppercase font-black">Sapling Count</span>
+                          <span className="text-gray-900">{pkg.saplingCount}</span>
+                        </div>
+                      )}
+                      {pkg.spacing && (
+                        <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                          <span className="text-slate-400 block text-[9px] uppercase font-black">Plant Spacing</span>
+                          <span className="text-gray-900">{pkg.spacing}</span>
+                        </div>
+                      )}
+                      {pkg.firstFruit && (
+                        <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                          <span className="text-slate-400 block text-[9px] uppercase font-black">First Commercial Harvest</span>
+                          <span className="text-gray-900">{pkg.firstFruit}</span>
+                        </div>
+                      )}
+                      {pkg.yieldPerAcre && (
+                        <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                          <span className="text-amber-700 block text-[9px] uppercase font-black">Est. Acre Yield</span>
+                          <span className="text-amber-600 font-black">{pkg.yieldPerAcre}</span>
+                        </div>
+                      )}
+                    </div>
                     
                     <div className="space-y-2">
                       <span className="text-[10px] font-black text-emerald-900 uppercase tracking-wide block">Package Features Included:</span>
-                      {pkg.features.map((feat, i) => (
+                      {(pkg.includes || pkg.features || []).map((feat, i) => (
                         <div key={i} className="text-xs font-bold text-gray-900 flex items-center gap-2">
                           <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                           <span>{feat}</span>
@@ -184,6 +212,7 @@ I am submitting a commercial orchard package inquiry from Rahman Nursery Farm we
                       ))}
                     </div>
                   </div>
+
                 </div>
 
                 <div className="p-6 pt-0 border-t border-slate-100 mt-4">

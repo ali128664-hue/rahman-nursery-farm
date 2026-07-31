@@ -14,6 +14,13 @@ export const HeroOverlay = ({ onExploreClick, onOpenCatalog, onOpenAIPlanner }) 
     <section className="relative pt-44 pb-20 px-4 sm:px-6 lg:px-12 pointer-events-auto bg-[#F7F8F5]">
       <div className="max-w-5xl mx-auto text-center">
 
+        {/* Official Brand Logo */}
+        <div className="flex justify-center mb-6">
+          <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-white p-2 shadow-md border border-green-200 flex items-center justify-center">
+            <img src="/logo.png" alt="Rahman Nursery Farm Logo" className="w-full h-full object-contain" />
+          </div>
+        </div>
+
         {/* Heritage Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 border border-green-300 text-green-800 text-xs font-black uppercase tracking-wider mb-6 shadow-sm">
           <ShieldCheck className="w-3.5 h-3.5 text-green-700" />
