@@ -9,7 +9,7 @@ const TRUST_POINTS = [
   { icon: '📱', title: 'Direct Farm Prices', desc: 'No middleman, WhatsApp order' },
 ];
 
-export const HeroOverlay = ({ onExploreClick, onOpenCatalog, onOpenAIPlanner }) => {
+export const HeroOverlay = ({ onExploreClick, onOpenCatalog, onOpenAIPlanner, onOpenWhatsAppModal }) => {
   return (
     <section className="relative pt-44 pb-20 px-4 sm:px-6 lg:px-12 pointer-events-auto bg-[#F7F8F5]">
       <div className="max-w-5xl mx-auto text-center">
@@ -61,15 +61,13 @@ export const HeroOverlay = ({ onExploreClick, onOpenCatalog, onOpenAIPlanner }) 
             <span>Bagh Packages</span>
           </button>
 
-          <a
-            href={`https://wa.me/${RAHMAN_WHATSAPP_NUMBER}?text=${encodeURIComponent('Hello Ansar Hussain (0304-0450065)! I am on Rahman Nursery Farm website and want to place an order.')}`}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => onOpenWhatsAppModal && onOpenWhatsAppModal('Assalam o Alaikum! Main Rahman Nursery Farm website se plant order karna chahta hun. Please guide karein.')}
             className="px-7 py-3.5 rounded-full text-sm font-black flex items-center gap-2.5 shadow-lg bg-green-700 text-white hover:bg-green-800 transition border border-green-700"
           >
             <MessageCircle className="w-4 h-4 fill-white/20" />
             <span>WhatsApp Order</span>
-          </a>
+          </button>
         </div>
 
         {/* Trust Bar */}

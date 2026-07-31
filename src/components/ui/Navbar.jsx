@@ -19,6 +19,7 @@ export const Navbar = ({
   onOpenCart,
   searchQuery = '',
   onSearchChange,
+  onOpenWhatsAppModal,
 }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -108,15 +109,13 @@ export const Navbar = ({
           </button>
 
           {/* WhatsApp */}
-          <a
-            href={`https://wa.me/${RAHMAN_WHATSAPP_NUMBER}?text=${encodeURIComponent('Hello Ansar Hussain (0304-0450065), I am visiting Rahman Nursery Farm website and want to place an order.')}`}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => onOpenWhatsAppModal && onOpenWhatsAppModal('Assalam o Alaikum! Main Rahman Nursery Farm website visit kar raha hun, please guide me about plants and orders.')}
             className="flex items-center gap-1.5 px-3.5 py-2.5 rounded-full bg-green-700 text-white font-black text-xs shadow hover:bg-green-800 transition flex-shrink-0"
           >
             <MessageCircle className="w-4 h-4 fill-white/20" />
             <span className="hidden lg:inline">WhatsApp</span>
-          </a>
+          </button>
         </div>
       </div>
 
@@ -167,15 +166,13 @@ export const Navbar = ({
               ))}
             </div>
             <div className="p-4 border-t border-gray-100">
-              <a
-                href={`https://wa.me/${RAHMAN_WHATSAPP_NUMBER}`}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => { setIsMobileMenuOpen(false); onOpenWhatsAppModal && onOpenWhatsAppModal('Assalam o Alaikum! Main Rahman Nursery Farm website visit kar raha hun, please guide me.'); }}
                 className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-green-700 text-white font-black text-sm shadow"
               >
                 <MessageCircle className="w-4 h-4 fill-white/20" />
-                <span>WhatsApp: 0304-0450065</span>
-              </a>
+                <span>WhatsApp Order</span>
+              </button>
             </div>
           </div>
           <div className="flex-1 bg-black/50" onClick={() => setIsMobileMenuOpen(false)} />

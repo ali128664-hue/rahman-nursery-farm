@@ -2,7 +2,7 @@ import React from 'react';
 import { MessageCircle, Phone, MapPin, Send, Map } from 'lucide-react';
 import { RAHMAN_WHATSAPP_NUMBER } from '../../utils/whatsappHelper';
 
-export const Footer = ({ onNavigateTab }) => {
+export const Footer = ({ onNavigateTab, onOpenWhatsAppModal }) => {
 
   const nav = (tab) => {
     if (onNavigateTab) onNavigateTab(tab);
@@ -19,15 +19,13 @@ export const Footer = ({ onNavigateTab }) => {
             <h3 className="font-serif text-xl sm:text-2xl font-black text-white">Get Seasonal Planting Alerts & Discounts</h3>
             <p className="text-sm text-gray-400 font-medium mt-1">Join 5,000+ Pakistani gardeners for monthly care guides.</p>
           </div>
-          <a
-            href={`https://wa.me/${RAHMAN_WHATSAPP_NUMBER}?text=${encodeURIComponent('Hello! I want to subscribe to Rahman Nursery Farm WhatsApp updates for seasonal plant discounts.')}`}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => onOpenWhatsAppModal && onOpenWhatsAppModal('Hello! I want to subscribe to Rahman Nursery Farm WhatsApp updates for seasonal plant discounts.')}
             className="flex-shrink-0 px-6 py-3 rounded-full bg-amber-500 text-gray-900 hover:bg-amber-400 font-black text-sm flex items-center gap-2 shadow-lg transition"
           >
             <Send className="w-4 h-4" />
             <span>Subscribe on WhatsApp</span>
-          </a>
+          </button>
         </div>
 
         {/* Main Sitemap Grid */}
@@ -109,7 +107,7 @@ export const Footer = ({ onNavigateTab }) => {
               <div className="flex items-center justify-between gap-1">
                 <div className="flex items-center gap-1.5 text-gray-300 font-bold truncate">
                   <span className="text-blue-400 text-xs">💻</span>
-                  <span className="truncate">Kashif: Tech Lead</span>
+                  <span className="truncate">Kashif: Principal Engineer</span>
                 </div>
                 <a href="https://www.linkedin.com/in/muhammad-kashif-a3a6a0144/" target="_blank" rel="noopener noreferrer" className="text-[10px] text-blue-400 hover:underline font-bold flex-shrink-0">
                   LinkedIn

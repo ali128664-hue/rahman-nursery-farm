@@ -90,6 +90,12 @@ export default function App() {
 
   const totalCartItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
+  // Central WhatsApp modal trigger
+  const triggerWhatsApp = (text = '') => {
+    setWhatsAppMessageText(text || 'Assalam o Alaikum! Main Rahman Nursery Farm se contact karna chahta hun.');
+    setIsWhatsAppSelectorOpen(true);
+  };
+
   return (
     <div className="relative min-h-screen bg-[#F7F8F5] text-gray-900 overflow-x-hidden font-sans">
       {/* Background canvas removed — clean white Shopify theme */}
@@ -108,6 +114,7 @@ export default function App() {
           setGlobalSearch(q);
           if (activeTab !== 'shop') setActiveTab('shop');
         }}
+        onOpenWhatsAppModal={triggerWhatsApp}
       />
 
       {/* 3. MULTI-PAGE VIEW ROUTING */}
@@ -123,11 +130,11 @@ export default function App() {
       ) : activeTab === 'blog' ? (
         <BlogPage onOpenStore={() => setActiveTab('shop')} />
       ) : activeTab === 'contact' ? (
-        <ContactPage />
+        <ContactPage onOpenWhatsAppModal={triggerWhatsApp} />
       ) : activeTab === 'orchard' ? (
-        <BaghPackagesPage />
+        <BaghPackagesPage onOpenWhatsAppModal={triggerWhatsApp} />
       ) : activeTab === 'services' ? (
-        <ServicesPage onOpenContact={() => setActiveTab('contact')} />
+        <ServicesPage onOpenContact={() => setActiveTab('contact')} onOpenWhatsAppModal={triggerWhatsApp} />
       ) : activeTab === 'about' ? (
         <div className="pt-36 min-h-screen">
           <FamilyHeritagSection onOpenContact={() => setActiveTab('contact')} />
@@ -141,6 +148,7 @@ export default function App() {
             onExploreClick={() => setActiveTab('orchard')}
             onOpenCatalog={() => setActiveTab('shop')}
             onOpenAIPlanner={() => setIsAIPlannerOpen(true)}
+            onOpenWhatsAppModal={triggerWhatsApp}
           />
 
           {/* Clean Botanical Collections */}
@@ -161,6 +169,7 @@ export default function App() {
           setActiveTab(tab);
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
+        onOpenWhatsAppModal={triggerWhatsApp}
       />
 
       {/* Floating Bottom Quick Action Bar (Mobile & Desktop) */}
