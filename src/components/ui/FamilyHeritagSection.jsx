@@ -86,10 +86,10 @@ export const FamilyHeritagSection = ({ onOpenContact }) => {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-black text-amber-800 border border-amber-300 bg-amber-50 mb-3">
             <Heart className="w-4 h-4 text-amber-600 fill-amber-500" />
-            <span>OVER 50 YEARS OF FAMILY & FARM HERITAGE</span>
+            <span>ABOUT US — OVER 50 YEARS OF FAMILY & FARM HERITAGE</span>
           </div>
           <h2 className="font-serif text-3xl md:text-5xl font-black text-emerald-950 mb-4">
-            50+ Years of Nature's Legacy
+            About Rahman Nursery Farm
           </h2>
           <p className="text-base text-emerald-900 max-w-2xl mx-auto font-bold leading-relaxed">
             Rooted in the soil of{' '}

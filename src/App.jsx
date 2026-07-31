@@ -152,11 +152,17 @@ export default function App() {
               onOpenAIPlanner={() => setIsAIPlannerOpen(true)}
               onOpenWhatsAppModal={triggerWhatsApp}
             />
+            {/* Clean Botanical Collections */}
             <StorySections
               onOpenCatalog={() => handleTabChange('shop')}
               onSelectPlantById={(id) => handleSelectPlantById(id)}
               onOpenLandscaping={() => handleTabChange('services')}
             />
+
+            {/* About Us & 50+ Years Family Heritage Section */}
+            <FamilyHeritagSection onOpenContact={() => handleTabChange('contact')} />
+
+            {/* Clean Verified Reviews */}
             <ReviewsSection />
           </>
         )}

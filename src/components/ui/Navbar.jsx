@@ -8,7 +8,7 @@ const NAV_LINKS = [
   { id: 'orchard',  label: 'Bagh Packages',   icon: '🏡' },
   { id: 'services', label: 'Services',         icon: '🛠️' },
   { id: 'blog',     label: 'Blog & Guides',    icon: '📖' },
-  { id: 'about',    label: '50+ Yrs Heritage', icon: '📜' },
+  { id: 'about',    label: 'About Us',         icon: '📜' },
   { id: 'contact',  label: 'Contact Us',       icon: '📞' },
 ];
 
